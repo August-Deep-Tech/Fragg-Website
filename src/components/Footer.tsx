@@ -6,7 +6,7 @@ import { bebasNeue, redHatDisplay } from '@/styles/font';
 const Footer = () => {
     return (
         <footer className='border-t-8 border-redish-20'>
-            <div className='p-[80px] flex flex-col gap-[64px]'>
+            <div className='p-[20px] sm:p-[40px] xl:p-[80px] flex flex-col gap-[64px]'>
                 <div className='flex justify-between items-center'>
                     <div className={`relative h-[49px] lg:h-[48px] w-[117px] lg:w-[202px]`}>
                         <Image
@@ -16,7 +16,7 @@ const Footer = () => {
                         />
                     </div>
                     <div>
-                        <div className={`relative h-[49px] w-[48px]`}>
+                        <div className={`relative h-[25px] w-[25px] sm:h-[49px] sm:w-[48px]`}>
                             <Image
                                 src="/assets/footer-icon.svg"
                                 fill
@@ -25,7 +25,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className={` grid grid-cols-2 flex-row gap-[28px] gap-y-[35px] sm:flex justify-between lg:mt-0`}>
+                <div className={` flex flex-wrap flex-row gap-[28px] gap-y-[35px] sm:flex justify-between lg:mt-0`}>
                     {[
                         {
                             categoryName: "GET IN TOUCH",
@@ -33,19 +33,19 @@ const Footer = () => {
                                 {
                                     text: "Facebook",
                                     linkTo: "#",
-                                    ext: false,
+                                    ext: true,
                                     isLink: true
                                 },
                                 {
                                     text: "Linkedln",
                                     linkTo: "#",
-                                    ext: false,
+                                    ext: true,
                                     isLink: true
                                 },
                                 {
                                     text: "X",
                                     linkTo: "#",
-                                    ext: false,
+                                    ext: true,
                                     isLink: true
                                 },
                             ],
@@ -128,7 +128,7 @@ const Footer = () => {
                                 }
                             >
                                 <ul className="space-y-3 md:space-y-4">
-                                    <span className={`${bebasNeue.className} font-heading text-[18px] font-bold md:text-[40px] text-redish-20`}>
+                                    <span className={`${bebasNeue.className} font-heading text-[24px] font-bold md:text-[40px] text-redish-20`}>
                                         {"["}{e.categoryName}{"]"}
                                     </span>
                                     {e.children.map(
@@ -139,7 +139,7 @@ const Footer = () => {
                                             return (
                                                 <li
                                                     key={idx}
-                                                    className={`${redHatDisplay.className} block text-[20px] leading-[21px] text-redish-20`}
+                                                    className={`${redHatDisplay.className} block text-[16px] md:text-[20px] leading-[21px] text-redish-20`}
                                                 >
                                                     {item.isLink ? !item?.ext ? (
                                                         <Link
@@ -173,7 +173,7 @@ const Footer = () => {
 
                 <div className=''>
                     <p className='border border-t-[#9C0000A3] border-opacity-65 w-[100%]'></p>
-                    <h1 className={`${bebasNeue.className} text-[32px] leading-[48px] text-greyish-10 pt-[33px]`}>© 2024 FRAGG</h1>
+                    <h1 className={`${bebasNeue.className} text-[24px] md:text-[32px] leading-[48px] text-greyish-10 pt-[33px]`}>© 2024 FRAGG</h1>
                 </div>
             </div>
         </footer>
