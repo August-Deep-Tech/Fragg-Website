@@ -33,19 +33,19 @@ const Footer = () => {
                                 {
                                     text: "Facebook",
                                     linkTo: "#",
-                                    ext: false,
+                                    ext: true,
                                     isLink: true
                                 },
                                 {
                                     text: "Linkedln",
                                     linkTo: "#",
-                                    ext: false,
+                                    ext: true,
                                     isLink: true
                                 },
                                 {
                                     text: "X",
                                     linkTo: "#",
-                                    ext: false,
+                                    ext: true,
                                     isLink: true
                                 },
                             ],
