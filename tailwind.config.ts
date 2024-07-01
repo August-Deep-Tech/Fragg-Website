@@ -5,6 +5,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -16,7 +17,8 @@ const config: Config = {
       colors: {
         redish: {
           10: "#400101",
-          20: "#700000"
+          20: "#700000",
+          30: "#FAF5F5"
         },
         greyish: {
           10: "#757575"

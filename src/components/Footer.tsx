@@ -25,7 +25,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className={` flex flex-wrap flex-row gap-[28px] gap-y-[35px] sm:flex justify-between lg:mt-0`}>
+                <div className={` flex flex-wrap flex-row gap-[28px] gap-y-[35px] md:flex-nowrap sm:flex justify-between lg:mt-0`}>
                     {[
                         {
                             categoryName: "GET IN TOUCH",
