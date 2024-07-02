@@ -1,18 +1,26 @@
 "use client";
 
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
+import {usePathname} from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  // const [isHomePage, setIsHomePage] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <header className="bg-white">
+    <header
+      className={`${
+        isHomePage ? "bg-transparent absolute top-0 left-0 w-full" : "bg-white"
+      }`}
+    >
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* logo */}
         <div className="flex items-center">
