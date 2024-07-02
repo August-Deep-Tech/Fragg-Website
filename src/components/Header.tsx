@@ -7,7 +7,6 @@ import Image from "next/image";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
-  // const [isHomePage, setIsHomePage] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
@@ -121,14 +120,14 @@ export const Header = () => {
         </div>
         <nav className="flex flex-col items-center space-y-6 py-4">
           <Link
-            href="/"
+            href="/about-us"
             className="text-greyish-10 hover:text-black"
             onClick={toggleMenu}
           >
             About Us
           </Link>
           <Link
-            href="/about"
+            href="/fragg-group"
             className="text-greyish-10 hover:text-black"
             onClick={toggleMenu}
           >
@@ -142,14 +141,14 @@ export const Header = () => {
             Our Services
           </Link>
           <Link
-            href="/blog"
+            href="/impact-and-sustainability"
             className="text-greyish-10 hover:text-black"
             onClick={toggleMenu}
           >
             Impact and Sustainability
           </Link>
           <Link
-            href="/contact"
+            href="/advisory"
             className="text-greyish-10 hover:text-black"
             onClick={toggleMenu}
           >
