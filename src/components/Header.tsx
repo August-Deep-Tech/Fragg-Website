@@ -120,7 +120,7 @@ export const Header = () => {
         </div>
         <nav className="flex flex-col items-center space-y-6 py-4">
           <Link
-            href="/about-us+"
+            href="/about-us"
             className="text-greyish-10 hover:text-black"
             onClick={toggleMenu}
           >
