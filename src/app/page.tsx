@@ -1,5 +1,5 @@
-import BecomeanInvestor from "@/pageSections/Home/BecomeanInvestor";
-import Image from "next/image";
+"use client"
+
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
