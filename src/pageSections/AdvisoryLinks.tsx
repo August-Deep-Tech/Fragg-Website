@@ -33,7 +33,7 @@ const AdvisoryCard: React.FC<AdvisoryCardProps> = ({
   <div
     className={`relative group flex-1 flex items-end bg-cover bg-center ${backgroundUrl}`}
   >
-    <div className="z-10 hidden group-hover:flex bg-black opacity-50 absolute h-full w-full items-center justify-center">
+    <div className="z-10 hidden transition-all group-hover:flex bg-black opacity-50 absolute h-full w-full items-center justify-center">
       <Link
         href={linkHref}
         className="bg-white rounded-full px-[14px] py-[17px]"
