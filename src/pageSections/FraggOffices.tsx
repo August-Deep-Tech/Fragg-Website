@@ -75,8 +75,8 @@ const CountryCard: React.FC<CountryCardProps> = ({
         {/* phone number */}
         <div className="flex gap-6">
           {phoneNumbers.map((phoneNumber, index) => (
-            <a href={`tel: ${phoneNumber}`}>
-              <div key={index} className="flex md:gap-2">
+            <a key={index} href={`tel: ${phoneNumber}`}>
+              <div className="flex md:gap-2">
                 <Image
                   src="/assets/svg/call.svg"
                   width={24}
@@ -108,9 +108,8 @@ const FraggOffices = () => {
 
       <div className=" flex flex-col md:flex-row rounded-3xl overflow-hidden">
         {props.map((prop, index) => (
-          <div className="flex-1">
+          <div key={index} className="flex-1">
             <CountryCard
-              key={index}
               backgroundUrl={prop.backgroundUrl}
               phoneNumbers={prop.phoneNumbers}
               addressTitle={prop.addressTitle}
