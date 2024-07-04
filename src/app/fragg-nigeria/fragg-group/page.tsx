@@ -11,24 +11,24 @@ const props: LinkCardProps[] = [
   {
     backgroundUrl: 'bg-[url("/assets/png/fraggGroup/fragg-ng.png")]',
     title: "FRAGG Investment Management, Nigeria",
-    linkHref: "/fragg-nigeria/advisory/raising-funds",
+    linkHref: "/fragg-nigeria",
   },
   {
     backgroundUrl: 'bg-[url("/assets/png/fraggGroup/fragg-germany.png")]',
     title: "FRAGG-Invest GmbH, Germany",
-    linkHref: "/fragg-nigeria/advisory/technical-assistance",
+    linkHref: "/fragg-gmbh",
   },
   {
     backgroundUrl: 'bg-[url("/assets/png/fraggGroup/fragg-luxemborg.png")]',
     title: "FRAGG-Invest GP Sàrl, Luxembourg",
-    linkHref: "/",
+    linkHref: "/fragg-sarl",
   },
 ];
 
 const FraggGroup = () => {
   return (
     <div>
-      <div className="container mx-auto text-center px-4 md:px-0 py-10">
+      <div className="container mx-auto text-center  py-10">
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">FRAGG Group</h2>
         <p className="text-greyish-10">
           Join the network of FRAGG Group, which includes FRAGG Investment
