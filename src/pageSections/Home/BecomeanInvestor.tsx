@@ -119,8 +119,8 @@ const BecomeanInvestor = () => {
           </h1>
           <p className="text-greyish-10 mx-auto text-center w-[90%] sm:w-[70%] xl:w-[50%] text-base">
             After our initial consultation, expect personalized conditions
-            perfectly suited to your needs. Let's begin shaping your investment
-            success story together!
+            perfectly suited to your needs. Let&apos;s begin shaping your
+            investment success story together!
           </p>
         </div>
       ) : (
@@ -130,8 +130,8 @@ const BecomeanInvestor = () => {
           </h1>
           <p className="text-greyish-10 mx-auto text-center w-[90%] sm:w-[70%] xl:w-[50%] text-base">
             After our initial discussion, anticipate tailor-made terms
-            meticulously crafted to match your unique requirements. Let's embark
-            on shaping your financial success journey together!
+            meticulously crafted to match your unique requirements. Let&apos;s
+            embark on shaping your financial success journey together!
           </p>
         </div>
       )}

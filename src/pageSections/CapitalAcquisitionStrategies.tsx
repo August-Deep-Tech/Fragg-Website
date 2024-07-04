@@ -77,8 +77,8 @@ const CapitalAcquisitionStrategies = () => {
         Capital Acquisition Strategies
       </h2>
       <p className="text-greyish-10 mb-20">
-        FRAGG's capital strategies drive growth. From debt to partnerships, we
-        secure funds for innovation and expansion, ensuring sustained <br />{" "}
+        FRAGG&apos;s capital strategies drive growth. From debt to partnerships,
+        we secure funds for innovation and expansion, ensuring sustained <br />{" "}
         success. We also offer non financial services to accelerate your growth.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
