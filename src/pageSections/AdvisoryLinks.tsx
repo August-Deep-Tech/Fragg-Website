@@ -82,8 +82,9 @@ const AdvisoryCard: React.FC<AdvisoryCardProps> = ({
 const AdvisoryLinks = () => {
   return (
     <div className="h-[85dvh] flex flex-col md:flex-row justify-between">
-      {props.map(prop => (
+      {props.map((prop, index) => (
         <AdvisoryCard
+          key={index}
           backgroundUrl={prop.backgroundUrl}
           title={prop.title}
           linkHref={prop.linkHref}
