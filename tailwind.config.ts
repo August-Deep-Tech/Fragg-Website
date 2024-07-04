@@ -8,9 +8,9 @@ const config: Config = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    {
-      pattern: /bg-\[url\(.*\)\]/,
-    },
+    // {
+    //   pattern: /bg-\[url\(.*\)\]/,
+    // },
   ],
   theme: {
     extend: {
@@ -28,6 +28,9 @@ const config: Config = {
         greyish: {
           10: "#757575",
           30: "#18181B",
+        },
+        pinkish: {
+          10: "rgba(238, 108, 108, 0.2)",
         },
       },
     },
