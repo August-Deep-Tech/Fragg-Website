@@ -26,7 +26,7 @@ const Advisory = () => {
           />
         </div>
         {/* title */}
-        <h3 className="font-semibold mb-5 text-5xl">Advisory</h3>
+        <h3 className="font-semibold mb-5 text-4xl md:text-5xl">Advisory</h3>
         {/* description  */}
         <p className="text-greyish-10 mb-5">
           FRAGG Investment Management provides advisory services to investors,
