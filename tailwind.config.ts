@@ -1,4 +1,4 @@
-import type { Config } from "tailwindcss";
+import type {Config} from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -6,6 +6,11 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
+  safelist: [
+    {
+      pattern: /bg-\[url\(.*\)\]/,
+    },
   ],
   theme: {
     extend: {
@@ -18,12 +23,13 @@ const config: Config = {
         redish: {
           10: "#400101",
           20: "#700000",
-          30: "#FAF5F5"
+          30: "#FAF5F5",
         },
         greyish: {
-          10: "#757575"
-        }
-      }
+          10: "#757575",
+          30: "#18181B",
+        },
+      },
     },
   },
   plugins: [],

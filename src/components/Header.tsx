@@ -43,7 +43,10 @@ export const Header = () => {
           >
             FRAGG Group
           </Link>
-          <Link href="/services" className="text-greyish-10 hover:text-black">
+          <Link
+            href="/fragg-nigeria/services"
+            className="text-greyish-10 hover:text-black"
+          >
             Our Services
           </Link>
           <Link
@@ -52,7 +55,10 @@ export const Header = () => {
           >
             Impact and Sustainability
           </Link>
-          <Link href="/advisory" className="text-greyish-10 hover:text-black">
+          <Link
+            href="/fragg-nigeria/advisory"
+            className="text-greyish-10 hover:text-black"
+          >
             Advisory
           </Link>
         </nav>
@@ -134,7 +140,7 @@ export const Header = () => {
             FRAGG Group
           </Link>
           <Link
-            href="/services"
+            href="/fragg-nigeria/services"
             className="text-greyish-10 hover:text-black"
             onClick={toggleMenu}
           >
@@ -148,7 +154,7 @@ export const Header = () => {
             Impact and Sustainability
           </Link>
           <Link
-            href="/advisory"
+            href="/fragg-nigeria/advisory"
             className="text-greyish-10 hover:text-black"
             onClick={toggleMenu}
           >
