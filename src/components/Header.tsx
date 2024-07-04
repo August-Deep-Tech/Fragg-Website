@@ -38,7 +38,7 @@ export const Header = () => {
             About Us
           </Link>
           <Link
-            href="/fragg-group"
+            href="/fragg-nigeria/fragg-group"
             className="text-greyish-10 hover:text-black"
           >
             FRAGG Group
