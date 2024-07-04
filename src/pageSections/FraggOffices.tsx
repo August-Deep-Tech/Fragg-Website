@@ -16,7 +16,7 @@ const props: CountryCardProps[] = [
     phoneNumbers: ["+234 806 519 2718"],
     location: "Nigeria",
     addressTitle: "FRAGG Investment Management, Nigeria",
-    addressBody: "45b, Oluwaleimu Street,Off Allen Avenue, Ikeja, Lagos.",
+    addressBody: "45b, Oluwaleimu Street,Off Allen Avenue, Ikeja, <br/> Lagos.",
   },
   {
     backgroundUrl: 'bg-[url("/assets/png/fraggGroup/fragg-germany.png")]',
@@ -24,7 +24,7 @@ const props: CountryCardProps[] = [
     location: "Germany",
     addressTitle: "FRAGG-Invest GmbH, Germany",
     addressBody:
-      "HRB 9048 -Amtsgericht Düren Landstraße 37, D-52445 Titz, Germany",
+      "HRB 9048 -Amtsgericht Düren Landstraße 37, <br/> D-52445 Titz, Germany",
   },
   {
     backgroundUrl: 'bg-[url("/assets/png/fraggGroup/fragg-luxemborg.png")]',
@@ -32,7 +32,7 @@ const props: CountryCardProps[] = [
     location: "Luxemborg",
     addressTitle: "FRAGG-Invest GP Sàrl, Luxembourg",
     addressBody:
-      "2C, Parc D'Activités-BP027 L-8308 Capellen Grand-Duchy of Luxembourg",
+      "2C, Parc D'Activités-BP027 L-8308 Capellen <br/> Grand-Duchy of Luxembourg",
   },
 ];
 
@@ -69,7 +69,7 @@ const CountryCard: React.FC<CountryCardProps> = ({
             {/* address title */}
             <h3 className="font-semibold">{addressTitle}</h3>
             {/* address body */}
-            <p>{addressBody}</p>
+            <p dangerouslySetInnerHTML={{__html: addressBody}} />
           </div>
         </div>
         {/* phone number */}
