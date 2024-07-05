@@ -35,7 +35,7 @@ const RaisingFunds = () => {
 
       <div className="bg-[url('/assets/png/raisingFundsImg.png')] bg-cover">
         <div className="container mx-auto px-4 md:px-0 py-28">
-          <h3 className="text-4xl md:text-5xl font-semibold text-greyish-10">
+          <h3 className="text-4xl md:text-5xl text-white">
             FRAGG provides Fund Mobilization/ <br /> Capital Raising services to
             SMEs and <br /> projects in the impact and climate <br /> sectors.
           </h3>

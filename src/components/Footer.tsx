@@ -85,7 +85,7 @@ const Footer = () => {
                 },
                 {
                   text: "FRAGG Group",
-                  linkTo: "#",
+                  linkTo: "/fragg-nigeria/fragg-group",
                   ext: false,
                   isLink: true,
                 },

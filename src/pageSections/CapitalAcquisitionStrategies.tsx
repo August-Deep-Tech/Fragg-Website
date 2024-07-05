@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Image from "next/image";
 
 interface strategyItemProps {
@@ -47,28 +47,53 @@ const strategyItemsArr: strategyItemProps[] = [
   },
 ];
 
+const removeBrTags = (htmlString: string) => {
+  return htmlString.replace(/<br\s*\/?>/gi, " ");
+};
+
 const StrategyItem: React.FC<strategyItemProps> = ({
   icon,
   title,
   description,
-}) => (
-  <div className="flex flex-col items-center">
-    {/* icon  */}
-    <div className={`relative h-10 w-10 mb-3`}>
-      <Image
-        // "/assets/services-svg/chart-arrow-up.svg"
-        src={icon}
-        fill
-        alt={"Banner preview"}
+}) => {
+  const [modifiedDescription, setModifiedDescription] = useState(description);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setModifiedDescription(removeBrTags(description));
+      } else {
+        setModifiedDescription(description);
+      }
+    };
+
+    handleResize(); // Call once on mount
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [description]);
+
+  return (
+    <div className="flex flex-col items-center">
+      {/* icon  */}
+      <div className={`relative h-10 w-10 mb-3`}>
+        <Image
+          // "/assets/services-svg/chart-arrow-up.svg"
+          src={icon}
+          fill
+          alt={"Banner preview"}
+        />
+      </div>
+      <h2 className="text-xl font-bold mb-4">{title}</h2>
+      <p
+        className="text-greyish-10"
+        dangerouslySetInnerHTML={{__html: modifiedDescription}}
       />
     </div>
-    <h2 className="text-xl font-bold mb-4">{title}</h2>
-    <p
-      className="text-greyish-10"
-      dangerouslySetInnerHTML={{__html: description}}
-    />
-  </div>
-);
+  );
+};
 
 const CapitalAcquisitionStrategies = () => {
   return (
