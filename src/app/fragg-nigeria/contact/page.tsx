@@ -11,9 +11,9 @@ const ContactUs = () => {
     <div>
       <div className="container mx-auto px-4 md:px-0">
         {/* contact form */}
-        <div className="grid grid-cols-1 md:grid-cols-2 py-10 md:py-24 ">
+        <div className="flex flex-col md:flex-row gap-x-20 py-10 md:py-24 ">
           {/* image */}
-          <div className="mb-7 md:mb-0">
+          <div className=" mb-7 md:mb-0">
             <Image
               src="/assets/png/contact/contactFormImage.png"
               height={651}
@@ -22,7 +22,7 @@ const ContactUs = () => {
             />
           </div>
           {/* form */}
-          <div>
+          <div className="w-full flex-1">
             <div className="bg-pinkish-10 w-fit flex space-x-2 py-3 px-5 rounded-full mb-5">
               <Image
                 src="/assets/svg/deal.svg"
