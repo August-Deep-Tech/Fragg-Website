@@ -65,10 +65,10 @@ const Funds = () => {
         <p className="text-greyish-10 mb-5">
           With a keen eye on market trends and a dedication to sustainable
           practices, we tailor our funding solutions to match the unique needs
-          and ambitions of each business. Whether you're seeking seed capital to
-          kickstart your venture or expansion funding to propel your enterprise
-          to new heights, FRAGG Investment is your trusted partner in realizing
-          your financial goals.
+          and ambitions of each business. Whether you&apos;re seeking seed
+          capital to kickstart your venture or expansion funding to propel your
+          enterprise to new heights, FRAGG Investment is your trusted partner in
+          realizing your financial goals.
         </p>
 
         <p className="text-redish-20 font-semibold md:text-xl">
