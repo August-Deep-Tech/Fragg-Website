@@ -3,6 +3,7 @@ import Image from "next/image";
 import {SubpageHero} from "@/components/SubpageHero";
 import ImpactFundDarkBgSection from "@/pageSections/ImpactFundDarkBgSection";
 import OurGeographicFocus from "@/pageSections/OurGeographicFocus";
+import {BeginYourInvestment} from "@/pageSections/BeginYourInvestment";
 
 const ImpactFund = () => {
   return (
@@ -153,6 +154,9 @@ const ImpactFund = () => {
           alt="icon"
         />
       </div>
+
+      {/* begin your investment journey */}
+      <BeginYourInvestment />
     </div>
   );
 };
