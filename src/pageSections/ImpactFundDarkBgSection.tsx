@@ -33,9 +33,8 @@ const ImpactFundDarkBgSection: React.FC<ImpactFundDarkBgSectionProps> = ({
         {/* list col 1 */}
         <div className="grid grid-cols-1 md:grid-cols-2  md:col-span-2 gap-y-8 text-xl md:text-2xl">
           {listItems.map((item, index) => (
-            <div className="flex items-start gap-x-6">
+            <div key={index} className="flex items-start gap-x-6">
               <Image
-                key={index}
                 src="/assets/svg/tick-circle.svg"
                 width={40}
                 height={40}
