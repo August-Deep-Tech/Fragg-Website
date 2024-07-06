@@ -29,7 +29,7 @@ const props: CountryCardProps[] = [
   {
     backgroundUrl: 'bg-[url("/assets/png/fraggGroup/fragg-luxemborg.png")]',
     phoneNumbers: ["+49 2463 7953579", "+49 176 23286609"],
-    location: "Luxemborg",
+    location: "Luxembourg",
     addressTitle: "FRAGG-Invest GP Sàrl, Luxembourg",
     addressBody:
       "2C, Parc D'Activités-BP027 L-8308 Capellen <br/> Grand-Duchy of Luxembourg",
