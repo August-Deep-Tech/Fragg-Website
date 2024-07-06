@@ -1,13 +1,61 @@
-import React from "react";
+"use client";
+import React, {useState} from "react";
 import Image from "next/image";
 
+// NEXT_PUBLIC_SPREADSHEET_WEB_APP_URL
+
 interface ContactFormProps {
-  onSubmit?: React.FC;
+  onSubmitSuccess: () => void; // Callback function to notify parent component
 }
 
-const ContactForm: React.FC<ContactFormProps> = ({onSubmit}) => {
+const ContactForm: React.FC<ContactFormProps> = ({onSubmitSuccess}) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const formData = {
+      name,
+      email,
+      message,
+    };
+    setLoading(true);
+    setError(""); // Clear previous errors
+
+    try {
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbzmVpJd4_znq9IjUyQ8OQWRjhao9AvF4ohbS5949PByKJHJDt8I_pnn-fuRw-JoW5aw/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+        }
+      );
+
+      const result = await response.json();
+      if (result.result === "success") {
+        // alert("Form submitted successfully!");
+        onSubmitSuccess(); // Notify parent component of successful submission
+      } else {
+        setError("Please try again");
+      }
+    } catch (error: any) {
+      console.error(error);
+      setError("An error occurred. Please try again ");
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
-    <form onSubmit={onSubmit} className="flex flex-col space-y-5">
+    <form
+      onSubmit={handleSubmit}
+      className={`flex flex-col ${
+        error.length > 1 ? "space-y-3" : "space-y-5"
+      } `}
+    >
       <div className="flex flex-col">
         <label htmlFor="name" className="mb-2">
           Your Name
@@ -18,6 +66,9 @@ const ContactForm: React.FC<ContactFormProps> = ({onSubmit}) => {
           id="name"
           placeholder="John Doe"
           className="border-2 rounded-lg py-2 px-4"
+          value={name}
+          onChange={e => setName(e.target.value)}
+          required
         />
       </div>
 
@@ -32,6 +83,9 @@ const ContactForm: React.FC<ContactFormProps> = ({onSubmit}) => {
           id="email"
           placeholder="johndoe@gmail.com"
           className="border-2 rounded-lg py-2 px-4"
+          value={email}
+          onChange={e => setEmail(e.target.value)}
+          required
         />
       </div>
 
@@ -45,12 +99,18 @@ const ContactForm: React.FC<ContactFormProps> = ({onSubmit}) => {
           placeholder="Good day..."
           className="border-2 rounded-lg py-2 px-4"
           rows={6}
+          value={message}
+          onChange={e => setMessage(e.target.value)}
+          required
         ></textarea>
       </div>
 
+      {error.length > 1 && <p className=" text-redish-10">{error}</p>}
+
       <input
         type="submit"
-        value="Send Message"
+        value={loading ? "Loading..." : "Send Message"}
+        disabled={loading} //disables button when loading is true
         className="bg-redish-20 text-white w-fit py-3 px-7 rounded-full hover:bg-redish-10 cursor-pointer "
       />
     </form>
