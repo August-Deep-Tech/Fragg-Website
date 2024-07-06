@@ -76,7 +76,7 @@ const GssBond = () => {
         </p>
       </div>
       {/* green social sustainable image */}
-      <div>
+      <div className="flex justify-center">
         <Image
           src="/assets/png/greenSocialSustainable.png"
           width={1440}
