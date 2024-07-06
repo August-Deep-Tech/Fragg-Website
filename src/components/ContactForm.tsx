@@ -20,7 +20,6 @@ const ContactForm: React.FC<ContactFormProps> = ({onSubmitSuccess}) => {
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(appsScriptWebAppUrl);
 
     const formData = {
       name,
