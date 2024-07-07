@@ -16,7 +16,7 @@ export const BeginYourInvestment = () => {
   return (
     <div className="md:mt-36">
       {/* text  */}
-      <div className="text-center mb-16">
+      <div className="text-center flex flex-col items-center mb-16">
         <h2 className="text-4xl md:text-5xl font-semibold mb-7">
           Begin your Investment Journey
         </h2>
