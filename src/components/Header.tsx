@@ -12,7 +12,7 @@ export const Header = () => {
   const {isFraggNigeria, isFraggGmbh, isFraggSarl} = usePathCheck();
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isHomePage = pathname === "/";
+  const isHomePage = pathname === "/fragg-nigeria";
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
