@@ -50,8 +50,8 @@ const Gregor = () => {
           FRAGG-INVEST GmbH, and multiple investment agencies.
         </p>
         <p className="text-greyish-10">
-          Gregor's expertise also extends to the academic sector, where he has
-          contributed as a lecturer at the Department of Labour and Human
+          Gregor&apos;s expertise also extends to the academic sector, where he
+          has contributed as a lecturer at the Department of Labour and Human
           Resource Management at the University of Bochum. His academic roles
           underscore his commitment to nurturing future professionals by
           imparting essential knowledge and skills related to the complexities

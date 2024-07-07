@@ -38,18 +38,19 @@ const Nuela = () => {
           Nuela Unije, with over 13 years of experience, is a leading figure in
           transformative finance, currently serving as Partner and Investment
           Director at FRAGG-INVEST. Her educational journey, equipped with a
-          Bachelor's in Banking and Finance and a Master's in Finance Management
-          from the University of Lagos, Nigeria, has laid the foundation for a
-          career characterized by strategic success and significant investments.
+          Bachelor&apos;s in Banking and Finance and a Master&apos;s in Finance
+          Management from the University of Lagos, Nigeria, has laid the
+          foundation for a career characterized by strategic success and
+          significant investments.
         </p>
         <p className="text-greyish-10">
           Dedicated to fostering economic growth and sustainability, Nuela
           played a key role in launching the FRAGG Impact SME Fund I,
           demonstrating her capability in impact investing and commitment to SME
-          development. Her ambitions didn't stop there; Nuela co-founded and
-          currently leads the FRAGG-INVEST Green and Impact Fund SCSp, driving
-          investments in crucial sectors like financial institutions,
-          infrastructure, and SMEs, thereby amplifying the fund’s impact on
+          development. Her ambitions didn&apos;t stop there; Nuela co-founded
+          and currently leads the FRAGG-INVEST Green and Impact Fund SCSp,
+          driving investments in crucial sectors like financial institutions,
+          infrastructure, and SMEs, thereby amplifying the fund&apos;s impact on
           sustainable development.
         </p>
         <p className="text-greyish-10">
@@ -61,13 +62,13 @@ const Nuela = () => {
           significantly propelled various impact projects across West Africa.
         </p>
         <p className="text-greyish-10">
-          Beyond her executive responsibilities, Nuela's influence extends into
-          the governance of investment funds. She has served on the investment
-          committees of several funds, both closed and active, where her
-          insights and expertise have guided critical investment decisions and
-          policy formulations. This role has allowed her to shape the financial
-          landscape of the projects and enterprises supported by these funds,
-          ensuring their alignment with broader economic objectives and
+          Beyond her executive responsibilities, Nuela&apos;s influence extends
+          into the governance of investment funds. She has served on the
+          investment committees of several funds, both closed and active, where
+          her insights and expertise have guided critical investment decisions
+          and policy formulations. This role has allowed her to shape the
+          financial landscape of the projects and enterprises supported by these
+          funds, ensuring their alignment with broader economic objectives and
           sustainability goals.
         </p>
         <p className="text-greyish-10">

@@ -33,31 +33,31 @@ const Olugbenga = () => {
         <p className="text-greyish-10">
           Olugbenga Musa, an esteemed Investment Manager at FRAGG Investment
           Management Ltd, brings to the table over 12 years of rich experience
-          in investment banking and advisory services. Olugbenga's proficiency
-          in strategy development, financial modeling, investment origination,
-          and appraisal underscores his ability to navigate complex investment
-          landscapes. His skill set has been instrumental in spearheading
-          several cohorts of Accelerator programs at FRAGG Investment
-          Management, where his leadership has not only fostered successful
-          mentorship but also catalyzed strategic investments into numerous
-          startups across West Africa.
+          in investment banking and advisory services. Olugbenga&apos;s
+          proficiency in strategy development, financial modeling, investment
+          origination, and appraisal underscores his ability to navigate complex
+          investment landscapes. His skill set has been instrumental in
+          spearheading several cohorts of Accelerator programs at FRAGG
+          Investment Management, where his leadership has not only fostered
+          successful mentorship but also catalyzed strategic investments into
+          numerous startups across West Africa.
         </p>
         <p className="text-greyish-10">
           Olugbenga Musa brings an enriched professional portfolio to his role
           as an Investment Manager at FRAGG Investment Management Ltd, grounded
-          in a Bachelor’s degree in Economics. Since joining the team in 2017,
-          Olugbenga has developed a notable proficiency in analyzing investment
-          opportunities and performing meticulous due diligence processes. His
-          expertise is not limited to financial assessments; Olugbenga is also
-          adept in Environmental, Social, and Governance (ESG) evaluations, as
-          well as in measuring impacts on environmental and community levels.
-          This comprehensive approach ensures that all investments not only
-          yield financial returns but also contribute positively to societal and
-          environmental outcomes.
+          in a Bachelor&apos;s degree in Economics. Since joining the team in
+          2017, Olugbenga has developed a notable proficiency in analyzing
+          investment opportunities and performing meticulous due diligence
+          processes. His expertise is not limited to financial assessments;
+          Olugbenga is also adept in Environmental, Social, and Governance (ESG)
+          evaluations, as well as in measuring impacts on environmental and
+          community levels. This comprehensive approach ensures that all
+          investments not only yield financial returns but also contribute
+          positively to societal and environmental outcomes.
         </p>
         <p className="text-greyish-10">
-          Olugbenga's role at FRAGG extends beyond investment analysis. He has
-          been a dynamic trainer and mentor within various accelerator and
+          Olugbenga&apos;s role at FRAGG extends beyond investment analysis. He
+          has been a dynamic trainer and mentor within various accelerator and
           incubation programs operated by FRAGG Investment Management and other
           collaborating entities. His guidance is often sought in the realms of
           financial modeling, strategic planning, and ESG integration, where he
@@ -65,8 +65,8 @@ const Olugbenga = () => {
           startups and SMEs.
         </p>
         <p className="text-greyish-10">
-          Holding a Bachelor's degree in Economics, Olugbenga Musa's academic
-          foundation complements his professional acumen, enhancing his
+          Holding a Bachelor&apos;s degree in Economics, Olugbenga Musa&apos;s
+          academic foundation complements his professional acumen, enhancing his
           contributions to the investment management field.
         </p>
       </div>

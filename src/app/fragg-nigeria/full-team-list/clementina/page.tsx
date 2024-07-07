@@ -48,12 +48,12 @@ const Clementina = () => {
         </p>
         <p className="text-greyish-10">
           She has managed a trust fund of over 10 Million USD with investments
-          in the Impact domain – Education and Health – and co-managed the FRAGG
+          in the Impact domain - Education and Health - and co-managed the FRAGG
           Impact SME 25 Million USD Fund and was instrumental in closing
           multiple deals. She is a Chartered Accountant and a Chartered Banker
           with International Financial Reporting Standard certification. She
-          holds a master's degree in Financial Management and Finance, and a
-          Ph.D in Economics
+          holds a master&apos;s degree in Financial Management and Finance, and
+          a Ph.D in Economics
         </p>
       </div>
     </div>

@@ -39,17 +39,17 @@ const Maurice = () => {
           startups has been marked by a passion for building enterprises from
           the foundation up, offering critical investment advisory and readiness
           services. His pivotal three-year tenure in Mexico at Fragg-Invest GmbH
-          showcased Maurice's exceptional capabilities in deal origination,
+          showcased Maurice&apos;s exceptional capabilities in deal origination,
           forging strategic partnerships, conducting due diligence, and closing
           investments. This period underscored his commitment to enhancing the
-          start-up ecosystem's growth and sustainability, solidifying his role
-          as an integral part of our investment team.
+          start-up ecosystem&apos;s growth and sustainability, solidifying his
+          role as an integral part of our investment team.
         </p>
         <p className="text-greyish-10">
-          Maurice's approach is characterized by a global perspective paired
-          with a nuanced understanding of local market intricacies. This unique
-          combination allows him to uncover and leverage unparalleled investment
-          opportunities. His efforts in nurturing emerging companies
+          Maurice&apos;s approach is characterized by a global perspective
+          paired with a nuanced understanding of local market intricacies. This
+          unique combination allows him to uncover and leverage unparalleled
+          investment opportunities. His efforts in nurturing emerging companies
           significantly propel their growth, diversifying and strengthening our
           investment portfolio.
         </p>
