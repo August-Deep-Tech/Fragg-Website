@@ -18,3 +18,19 @@
     margin-top: 80px;
   }
 
+  .priorityOne {
+    background-image: url(/assets/svg/home/priorityOne.svg);
+    background-size: cover;
+  }
+  .priorityTwo {
+    background-image: url(/assets/svg/home/priorityTwo.svg);
+    background-size: cover;
+  }
+  .priorityThree {
+    background-image: url(/assets/svg/home/priorityThree.svg);
+    background-size: cover;
+  }
+  .priorityFour {
+    background-image: url(/assets/svg/home/priorityFour.svg);
+    background-size: cover;
+  }
