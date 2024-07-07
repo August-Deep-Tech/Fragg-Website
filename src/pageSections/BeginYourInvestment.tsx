@@ -10,7 +10,7 @@ export const BeginYourInvestment = () => {
 
   const clickButton = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
-    router.push("/");
+    router.push("/fragg-nigeria/apply-for-funding");
   };
 
   return (
