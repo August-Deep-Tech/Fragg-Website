@@ -14,12 +14,12 @@ const linkCards: LinkCardProps[] = [
   {
     backgroundUrl: 'bg-[url("/assets/png/advisory/raisingFunds.png")]',
     title: "Raising Funds",
-    linkHref: "/fragg-nigeria/advisory/raising-funds",
+    linkHref: "/fragg-gmbh/advisory/raising-funds",
   },
   {
     backgroundUrl: 'bg-[url("/assets/png/advisory/technicalAssistance.png")]',
     title: "Technical Assistance",
-    linkHref: "/fragg-nigeria/advisory/technical-assistance",
+    linkHref: "/fragg-gmbh/advisory/technical-assistance",
   },
   {
     backgroundUrl: 'bg-[url("/assets/png/advisory/acceleratorPrograms.png")]',

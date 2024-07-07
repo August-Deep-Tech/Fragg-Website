@@ -32,6 +32,9 @@ const config: Config = {
         pinkish: {
           10: "rgba(238, 108, 108, 0.2)",
         },
+        orangish: {
+          20: "#F22000",
+        },
       },
     },
   },

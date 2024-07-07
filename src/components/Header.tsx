@@ -2,10 +2,14 @@
 
 import React, {useState, useEffect} from "react";
 import {usePathname} from "next/navigation";
+import usePathCheck from "@/hooks/usePathCheck";
 import Link from "next/link";
 import Image from "next/image";
+import PathBasedNav from "./PathBasedNav";
+import PathBasedSideNav from "./PathBasedSideNav";
 
 export const Header = () => {
+  const {isFraggNigeria, isFraggGmbh, isFraggSarl} = usePathCheck();
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
@@ -13,6 +17,21 @@ export const Header = () => {
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
+  let logoSrc = "";
+  let logoHref = "";
+  if (isFraggNigeria) {
+    logoSrc = "/assets/fragginvest-logo.svg";
+    logoHref = "/fragg-nigeria";
+  }
+  if (isFraggGmbh) {
+    logoSrc = "/assets/fragginvest-logo-gmbh.svg";
+    logoHref = "/fragg-gmbh";
+  }
+  if (isFraggSarl) {
+    logoSrc = "/assets/fragginvest-logo-sarl.svg";
+    logoHref = "/fragg-sarl";
+  }
 
   return (
     <header
@@ -23,9 +42,9 @@ export const Header = () => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* logo */}
         <div className="flex items-center">
-          <Link href="/">
+          <Link href={logoHref}>
             <Image
-              src="/assets/fragginvest-logo.svg"
+              src={logoSrc}
               width={200}
               height={200}
               alt={"Banner preview"}
@@ -33,35 +52,7 @@ export const Header = () => {
           </Link>
         </div>
         {/* nav links */}
-        <nav className="hidden md:flex items-center space-x-16  ">
-          <Link href="fragg-nigeria/about" className="text-greyish-10 hover:text-black">
-            About Us
-          </Link>
-          <Link
-            href="/fragg-nigeria/fragg-group"
-            className="text-greyish-10 hover:text-black"
-          >
-            FRAGG Group
-          </Link>
-          <Link
-            href="/fragg-nigeria/services"
-            className="text-greyish-10 hover:text-black"
-          >
-            Our Services
-          </Link>
-          <Link
-            href="/impact-and-sustainability"
-            className="text-greyish-10 hover:text-black"
-          >
-            Impact and Sustainability
-          </Link>
-          <Link
-            href="/fragg-nigeria/advisory"
-            className="text-greyish-10 hover:text-black"
-          >
-            Advisory
-          </Link>
-        </nav>
+        <PathBasedNav />
         {/* action button  */}
         <div className="hidden md:block">
           <button className="bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10">
@@ -124,46 +115,8 @@ export const Header = () => {
             </svg>
           </button>
         </div>
-        <nav className="flex flex-col items-center space-y-6 py-4">
-          <Link
-            href="ragg-nigeria/about"
-            className="text-greyish-10 hover:text-black"
-            onClick={toggleMenu}
-          >
-            About Us
-          </Link>
-          <Link
-            href="/fragg-group"
-            className="text-greyish-10 hover:text-black"
-            onClick={toggleMenu}
-          >
-            FRAGG Group
-          </Link>
-          <Link
-            href="/fragg-nigeria/services"
-            className="text-greyish-10 hover:text-black"
-            onClick={toggleMenu}
-          >
-            Our Services
-          </Link>
-          <Link
-            href="/impact-and-sustainability"
-            className="text-greyish-10 hover:text-black"
-            onClick={toggleMenu}
-          >
-            Impact and Sustainability
-          </Link>
-          <Link
-            href="/fragg-nigeria/advisory"
-            className="text-greyish-10 hover:text-black"
-            onClick={toggleMenu}
-          >
-            Advisory
-          </Link>
-          <button className="bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10">
-            Start Investing
-          </button>
-        </nav>
+        {/* side nav */}
+        <PathBasedSideNav toggleMenu={toggleMenu} />
       </div>
     </header>
   );
