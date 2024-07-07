@@ -6,7 +6,7 @@ import Link from "next/link";
 
 const WhatWeOffer = () => {
     return (
-        <div className={`${redHatDisplay.className} py-[60px] lg:py-[120px]`}>
+        <div className={`${redHatDisplay.className} pt-[350px] pb-[60px] lg:py-[120px]`}>
             <div className="pt-[40px]">
                 <h1 className="text-[30px] sm:text-[48px] leading-[57px] text-black font-[600] text-center pb-[10px] sm:pb-[24px]">
                     What We Offer
