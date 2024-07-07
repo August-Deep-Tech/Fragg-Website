@@ -3,3 +3,18 @@
 @tailwind utilities;
 
 
+.home-nigeria {
+  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(https://s3-alpha-sig.figma.com/img/3a13/2db6/5f19697c6cb82568c69337e5c29e1cd9?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ERbLyPpImnCVm9NND3a0dYOagmfIvn7EgFVF--9kzFg8Utljz~lIr4P7UBE6a9W0QKzuIpxkIyhdNf7VaKwgFLCsXbQviuYHe16-F~b1YPwLr6lxdD9tJcepzBrGY0ncQtCaNI9AiBy1Iffbivf3sxo0ezGf2QUnXl2e-AFU-ukiwhrIXCSlueFQbabcZeKs4j-nLROoXQhl64trtStlbheKrkVqSuypfgGGarNjKbMsopyzv9p1kyV2IaNEBGis6KPCSTWPSzQbD-0bq6VCA-1aPhwgcDZ6PKHEFjdJbqKf2-tyY7y5MHfP5USxeumpC3wHabOO0JKj7dueAU11Gg__);
+  background-size: cover;
+  background-position: top;
+  height: 100vh;
+}
+
+.map-nigeria {
+    background-image: url(/assets/svg/home/fragginvest-nigeria-map.svg);
+    background-size: cover;
+    background-position: top;
+    height: 600px;
+    margin-top: 80px;
+  }
+

@@ -34,7 +34,7 @@ export const Header = () => {
         </div>
         {/* nav links */}
         <nav className="hidden md:flex items-center space-x-16  ">
-          <Link href="/about" className="text-greyish-10 hover:text-black">
+          <Link href="fragg-nigeria/about" className="text-greyish-10 hover:text-black">
             About Us
           </Link>
           <Link
@@ -126,7 +126,7 @@ export const Header = () => {
         </div>
         <nav className="flex flex-col items-center space-y-6 py-4">
           <Link
-            href="/about-us"
+            href="ragg-nigeria/about"
             className="text-greyish-10 hover:text-black"
             onClick={toggleMenu}
           >
