@@ -43,14 +43,15 @@ const Amaka = () => {
           ventures across West Africa.
         </p>
         <p className="text-greyish-10">
-          Amaka's academic foundation, with a BSc in Public Administration from
-          Nnamdi Azikiwe University, Awka Nigeria has been instrumental in her
-          professional development. This background, combined with her expansive
-          role at Fragg Investment Management Ltd, plays a crucial role in
-          advancing our strategic objectives and fostering organizational
-          growth. Amaka's blend of skills and experience not only enhances our
-          operational efficiency but also enriches our firm's culture of
-          innovation and impact-driven investment strategy.
+          Amaka&apos;s academic foundation, with a BSc in Public Administration
+          from Nnamdi Azikiwe University, Awka Nigeria has been instrumental in
+          her professional development. This background, combined with her
+          expansive role at Fragg Investment Management Ltd, plays a crucial
+          role in advancing our strategic objectives and fostering
+          organizational growth. Amaka&apos;s blend of skills and experience not
+          only enhances our operational efficiency but also enriches our
+          firm&apos;s culture of innovation and impact-driven investment
+          strategy.
         </p>
       </div>
     </div>

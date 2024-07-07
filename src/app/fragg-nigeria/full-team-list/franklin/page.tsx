@@ -47,7 +47,7 @@ const Franklin = () => {
           growth.
         </p>
         <p className="text-greyish-10">
-          Franklin's leadership extends into designing and managing several
+          Franklin&apos;s leadership extends into designing and managing several
           accelerator programs aimed at fostering economic development and
           sustainability. Notably, he has overseen the FIGAP from 2018 to 2020
           and facilitated the Youth Entrepreneurship Initiative (YEI) in
@@ -64,14 +64,14 @@ const Franklin = () => {
           preparing them for investment readiness and scalable growth.
         </p>
         <p className="text-greyish-10">
-          His academic background, with a Master's Degree in Development
+          His academic background, with a Master&apos;s Degree in Development
           Planning and Policy from the University of Bielefeld, Germany, and an
-          Advanced Master’s degree in Microfinance from the Solvay Business
+          Advanced Master&apos;s degree in Microfinance from the Solvay Business
           School, ULB-Brussels, Belgium provides a solid foundation for his
           innovative contributions to the field of impact investing and
-          development finance. Franklin's expertise and strategic initiatives
-          continue to drive positive change and sustainability in the finance
-          industry.
+          development finance. Franklin&apos;s expertise and strategic
+          initiatives continue to drive positive change and sustainability in
+          the finance industry.
         </p>
       </div>
     </div>
