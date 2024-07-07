@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="relative">
+      <body className="relative 2xl:container 2xl:mx-auto">
         {/* <Header /> */}
         {children}
         {/* <Footer /> */}
