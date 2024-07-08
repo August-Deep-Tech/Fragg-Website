@@ -17,48 +17,174 @@ body {
 }
 
 .home-nigeria {
-  background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(https://s3-alpha-sig.figma.com/img/3a13/2db6/5f19697c6cb82568c69337e5c29e1cd9?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ERbLyPpImnCVm9NND3a0dYOagmfIvn7EgFVF--9kzFg8Utljz~lIr4P7UBE6a9W0QKzuIpxkIyhdNf7VaKwgFLCsXbQviuYHe16-F~b1YPwLr6lxdD9tJcepzBrGY0ncQtCaNI9AiBy1Iffbivf3sxo0ezGf2QUnXl2e-AFU-ukiwhrIXCSlueFQbabcZeKs4j-nLROoXQhl64trtStlbheKrkVqSuypfgGGarNjKbMsopyzv9p1kyV2IaNEBGis6KPCSTWPSzQbD-0bq6VCA-1aPhwgcDZ6PKHEFjdJbqKf2-tyY7y5MHfP5USxeumpC3wHabOO0JKj7dueAU11Gg__);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(/assets/webp/home-nigeria.webp);
   background-size: cover;
   background-position: top;
   height: 100vh;
 }
 
 .home-germany {
-  background-image: url(https://s3-alpha-sig.figma.com/img/734f/bfe8/ac4811f917230c82c7eeac63d258404d?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=K0QzOf68e4cs6yyTqsjtbBiOyGa~dSoFtWN0fWiJu1T0JfApVzFl0xk8u3cGHL4a0VweyPc3oZfS9xtUx67271enqWv5Xq0hKse51WmcbulmW~MuyELK3KdbKtUjtQ860Pkf7bm-b5OJ~r0WrTosrM0R0cp53yaSRnTGcWlzz~GvxHgu5pOXoK7wG-iI5D~21WIkzXHJqzlWh04CAdL2LzCgvboJv0A5HZf0nLUc5ctFn6y4kqTabrvvPh4Vmhyl6bwlCCin-1VsbkddKonVfsf~3KuYlUj--hR0sAhljL~Nq8hbb231Czp3SQeMnmQUwqBs7OZJBgw0yBQR1kYRzA__);
+  background-image: url(/assets/webp/home-germany.webp);
+  background-size: cover;
+  background-position: top;
+  height: 100vh;
+}
+
+.home-sarl {
+  background-image: url(/assets/svg/home/home-sarl.svg);
   background-size: cover;
   background-position: top;
   height: 100vh;
 }
 
 .map-nigeria {
-    background-image: url(/assets/svg/home/fragginvest-nigeria-map.svg);
-    background-size: cover;
-    background-position: top;
-    height: 600px;
-    margin-top: 80px;
+  background-image: url(/assets/svg/home/fragginvest-nigeria-map.svg);
+  background-size: cover;
+  background-position: top;
+  height: 600px;
+  margin-top: 80px;
+}
+
+.map-germany {
+  background-image: url(/assets/svg/home/fragginvest-germany-map.svg.svg);
+  background-size: cover;
+  background-position: top;
+  height: 600px;
+  margin-top: 80px;
+}
+
+.map-sarl {
+  background-image: url(/assets/svg/home/fragginvest-sarl-map.svg);
+  background-size: cover;
+  background-position: top;
+  height: 600px;
+  margin-top: 80px;
+}
+
+.priorityOne {
+  background-image: url(/assets/svg/home/priorityOne.svg);
+  background-size: cover;
+}
+
+.priorityTwo {
+  background-image: url(/assets/svg/home/priorityTwo.svg);
+  background-size: cover;
+}
+
+.priorityThree {
+  background-image: url(/assets/svg/home/priorityThree.svg);
+  background-size: cover;
+}
+
+.priorityFour {
+  background-image: url(/assets/svg/home/priorityFour.svg);
+  background-size: cover;
+}
+
+.investAboutOne {
+  background-image: url(/assets/svg/home/investAboutOne.svg);
+  background-size: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.investAboutTwo {
+  background-image: url(/assets/svg/home/investAboutTwo.svg);
+  background-size: cover;
+}
+
+.investAboutThree {
+  background-image: url(/assets/svg/home/investAboutThree.svg);
+  background-size: cover;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .investAboutOne {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
   }
 
-  .map-germany {
-    background-image: url(/assets/svg/home/fragginvest-germany-map.svg.svg);
-    background-size: cover;
-    background-position: top;
-    height: 600px;
-    margin-top: 80px;
+  .investAboutThree {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+  }
+}
+
+.aboutInvestments {
+  background-image: url(/assets/svg/about/aboutInvestments.svg);
+  background-size: cover;
+  height: 640px;
+  background-position: right;
+}
+
+.courtGmbh {
+  background-image: url(/assets/webp/court-gmbh.webp);
+  background-size: cover;
+  height: 640px;
+  background-position: right;
+}
+
+.approachOne {
+  background-image: url(/assets/webp/approachOne.webp);
+  background-size: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.approachTwo {
+  background-image: url(/assets/webp/approachTwo.webp);
+  background-size: cover;
+}
+
+.approachThree {
+  background-image: url(/assets/webp/approachThree.webp);
+  background-size: cover;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .approachOne {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
   }
 
-  .priorityOne {
-    background-image: url(/assets/svg/home/priorityOne.svg);
-    background-size: cover;
+  .approachThree {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
-  .priorityTwo {
-    background-image: url(/assets/svg/home/priorityTwo.svg);
-    background-size: cover;
+}
+
+.homesarlOne {
+  background-image: url(/assets/webp/homesarlOne.webp);
+  background-size: cover;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.homesarlTwo {
+  background-image: url(/assets/webp/homesarlTwo.webp);
+  background-size: cover;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .homesarlOne {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 0px;
   }
-  .priorityThree {
-    background-image: url(/assets/svg/home/priorityThree.svg);
-    background-size: cover;
+
+  .homesarlTwo {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
   }
-  .priorityFour {
-    background-image: url(/assets/svg/home/priorityFour.svg);
-    background-size: cover;
-  }
+}

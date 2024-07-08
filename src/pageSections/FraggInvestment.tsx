@@ -4,12 +4,13 @@ import Image from 'next/image';
 
 interface Iinvestment {
     Data: {
+        bg?: string,
         title: string,
         subText: string
     }[]
 }
 
-const FraggInvestmentManagement = ({Data}: Iinvestment) => {
+const FraggInvestmentManagement = ({ Data }: Iinvestment) => {
     return (
         <div className={`${redHatDisplay.className}`}>
             <div className="pb-[40px] pt-[40px]">
@@ -20,13 +21,13 @@ const FraggInvestmentManagement = ({Data}: Iinvestment) => {
                     At FRAGG Investment, we specialize in offering personalized investment management, advisory, and financial planning services to our clients. We provide a variety of investment products and strategies customized to meet your unique needs and objectives, with a primary focus on achieving long-term financial growth and stability.
                 </p>
             </div>
-            <div className="">
+            {Data.length === 3 ? <div className="">
                 <section className="h-[400px] text-white bg-[url('/assets/svg/home/investOne.svg')] px-[24px] py-[40px] flex items-end">
                     <div>
                         <Image src="/assets/fragginvest-logo-small-white.svg" width={30} height={30} alt="" />
                         <h2 className="text-2xl font-semibold mb-4 pt-[20px]">{Data[0].title}</h2>
                         <p>
-                        {Data[0].subText}
+                            {Data[0].subText}
                         </p>
                     </div>
                 </section>
@@ -36,7 +37,7 @@ const FraggInvestmentManagement = ({Data}: Iinvestment) => {
                             <Goal />
                             <h3 className="text-xl font-semibold mb-4 pt-[20px]">{Data[1].title}</h3>
                             <p>
-                            {Data[1].subText}
+                                {Data[1].subText}
                             </p>
                         </div>
                     </section>
@@ -45,12 +46,33 @@ const FraggInvestmentManagement = ({Data}: Iinvestment) => {
                             <Earth />
                             <h3 className="text-xl font-semibold mb-4 pt-[20px]">{Data[2].title}</h3>
                             <p>
-                            {Data[2].subText}
+                                {Data[2].subText}
                             </p>
                         </div>
                     </section>
                 </div>
             </div>
+                :
+                <div className="flex flex-col md:flex-row justify-between h-[400px]">
+                    <section className={`md:w-1/2  px-[24px] py-[40px] flex items-end ${Data[0].bg}  text-white`}>
+                        <div>
+                            <Goal />
+                            <h3 className="text-xl font-semibold mb-4 pt-[20px]">{Data[0].title}</h3>
+                            <p>
+                                {Data[0].subText}
+                            </p>
+                        </div>
+                    </section>
+                    <section className={`md:w-1/2 px-[24px] py-[40px] flex items-end ${Data[1].bg} text-white`}>
+                        <div>
+                            <Earth />
+                            <h3 className="text-xl font-semibold mb-4 pt-[20px]">{Data[1].title}</h3>
+                            <p>
+                                {Data[1].subText}
+                            </p>
+                        </div>
+                    </section>
+                </div>}
         </div>
     );
 };
