@@ -1,7 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  letter-spacing: 0.5px;
+  /* overscroll-behavior-y: none;
+  overscroll-behavior: none; */
+}
+
+body {
+  font-family: "Red Hat Display", sans-serif;
+}
 
 .home-nigeria {
   background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(https://s3-alpha-sig.figma.com/img/3a13/2db6/5f19697c6cb82568c69337e5c29e1cd9?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=ERbLyPpImnCVm9NND3a0dYOagmfIvn7EgFVF--9kzFg8Utljz~lIr4P7UBE6a9W0QKzuIpxkIyhdNf7VaKwgFLCsXbQviuYHe16-F~b1YPwLr6lxdD9tJcepzBrGY0ncQtCaNI9AiBy1Iffbivf3sxo0ezGf2QUnXl2e-AFU-ukiwhrIXCSlueFQbabcZeKs4j-nLROoXQhl64trtStlbheKrkVqSuypfgGGarNjKbMsopyzv9p1kyV2IaNEBGis6KPCSTWPSzQbD-0bq6VCA-1aPhwgcDZ6PKHEFjdJbqKf2-tyY7y5MHfP5USxeumpC3wHabOO0JKj7dueAU11Gg__);
@@ -10,8 +23,23 @@
   height: 100vh;
 }
 
+.home-germany {
+  background-image: url(https://s3-alpha-sig.figma.com/img/734f/bfe8/ac4811f917230c82c7eeac63d258404d?Expires=1721606400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=K0QzOf68e4cs6yyTqsjtbBiOyGa~dSoFtWN0fWiJu1T0JfApVzFl0xk8u3cGHL4a0VweyPc3oZfS9xtUx67271enqWv5Xq0hKse51WmcbulmW~MuyELK3KdbKtUjtQ860Pkf7bm-b5OJ~r0WrTosrM0R0cp53yaSRnTGcWlzz~GvxHgu5pOXoK7wG-iI5D~21WIkzXHJqzlWh04CAdL2LzCgvboJv0A5HZf0nLUc5ctFn6y4kqTabrvvPh4Vmhyl6bwlCCin-1VsbkddKonVfsf~3KuYlUj--hR0sAhljL~Nq8hbb231Czp3SQeMnmQUwqBs7OZJBgw0yBQR1kYRzA__);
+  background-size: cover;
+  background-position: top;
+  height: 100vh;
+}
+
 .map-nigeria {
     background-image: url(/assets/svg/home/fragginvest-nigeria-map.svg);
+    background-size: cover;
+    background-position: top;
+    height: 600px;
+    margin-top: 80px;
+  }
+
+  .map-germany {
+    background-image: url(/assets/svg/home/fragginvest-germany-map.svg.svg);
     background-size: cover;
     background-position: top;
     height: 600px;
