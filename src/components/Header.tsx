@@ -43,19 +43,34 @@ export const Header = () => {
         {/* logo */}
         <div className="flex items-center">
           <Link href={logoHref}>
-            <Image
-              src={logoSrc}
-              width={200}
-              height={200}
-              alt={"Banner preview"}
-            />
+            {isHomePage ? (
+              <Image
+                src="/assets/fragginvest-logo-header-white.svg"
+                width={200}
+                height={200}
+                alt={"Banner preview"}
+              />
+            ) : (
+              <Image
+                src={logoSrc}
+                width={200}
+                height={200}
+                alt={"Banner preview"}
+              />
+            )}
           </Link>
         </div>
         {/* nav links */}
         <PathBasedNav />
         {/* action button  */}
         <div className="hidden md:block">
-          <button className="bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10">
+          <button
+            className={`${
+              isHomePage
+                ? "bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-redish-20"
+                : "bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10"
+            } `}
+          >
             Start Investing
           </button>
         </div>

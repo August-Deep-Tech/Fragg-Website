@@ -1,14 +1,21 @@
 // components/PathBasedNav.tsx
 import Link from "next/link";
+import {usePathname} from "next/navigation";
 import usePathCheck from "../hooks/usePathCheck";
 
 const PathBasedNav: React.FC = () => {
   const {isFraggNigeria, isFraggGmbh, isFraggSarl} = usePathCheck();
+  const pathname = usePathname();
+  const isHomePage = pathname === "/fragg-nigeria";
 
   if (isFraggNigeria || isFraggGmbh) {
     const basePath = isFraggNigeria ? "/fragg-nigeria" : "/fragg-gmbh";
     return (
-      <nav className="hidden md:flex items-center space-x-16">
+      <nav
+        className={`${
+          isHomePage && "*:text-white"
+        } hidden md:flex items-center space-x-16`}
+      >
         <Link
           href={`${basePath}/about`}
           className="text-greyish-10 hover:text-black"
