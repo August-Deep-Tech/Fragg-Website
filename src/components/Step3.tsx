@@ -17,9 +17,11 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
 
   const handleInputChange = (
     index: number,
-    e: ChangeEvent<HTMLInputElement>
+    e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const {name, value} = e.target;
+    console.log(value);
+
     setLocalData(prevData => {
       const updatedOwners = [...(prevData.owners || [])];
       updatedOwners[index] = {
@@ -132,17 +134,28 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
                 <label htmlFor={`highestLevelOfEducation-${index}`}>
                   Highest Level of Education
                 </label>
-                <input
-                  type="text"
+                <select
                   name="highestLevelOfEducation"
                   id={`highestLevelOfEducation-${index}`}
                   value={
                     localData.owners?.[index]?.highestLevelOfEducation || ""
                   }
                   onChange={e => handleInputChange(index, e)}
-                  className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full"
-                  placeholder="Choose Highest Level Of Education"
-                />
+                  className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+                >
+                  <option value="" disabled hidden>
+                    Choose highest level of education
+                  </option>
+                  <option value="Secondary Education">
+                    Secondary Education
+                  </option>
+                  <option value="Bachelor's Degree">
+                    Bachelor&apos;s Degree
+                  </option>
+                  <option value="Master's Degree">Master&apos;s Degree</option>
+                  <option value="Doctorate (PhD)">Doctorate (PhD)</option>
+                  <option value="Others">Others</option>
+                </select>
               </div>
               {/* percentage input */}
               <div className="flex flex-col space-y-2">
@@ -159,12 +172,13 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
                   placeholder="20%"
                 />
               </div>
+              {/* years in the organization input */}
               <div className="flex flex-col space-y-2">
                 <label htmlFor={`yearsInTheOrganization-${index}`}>
                   Years in the Organization
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="yearsInTheOrganization"
                   id={`yearsInTheOrganization-${index}`}
                   value={

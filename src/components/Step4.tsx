@@ -4,21 +4,44 @@ import {useState, useEffect} from "react";
 import DynamicDoubleInputForm from "./DynamicDoubleInputForm";
 
 interface Step4Props {
-  formData: {[key: string]: any};
+  formData: {
+    industry?: string;
+    numberOfEmployees?: string | number;
+    numberOfClients?: string | number;
+    loanPortfolioSize?: string;
+    averageLoanAmountPerClient?: string;
+    financingType?: string;
+    geographicCoverageOfServices?: string;
+    products?: string[];
+    percentageOfRuralAndUrbanExtension?: string;
+    // Add any other properties you expect in formData
+    [key: string]: any;
+  };
   handleChange: (step: string, data: {[key: string]: any}) => void;
 }
 
 const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
-  const [localData, setLocalData] = useState(formData);
+  const [localData, setLocalData] = useState({
+    ...(formData as Step4Props["formData"]),
+    industry: formData.industry || "Inclusive Finance",
+  });
   const [productFields, setProductFields] = useState([{value: ""}]);
-  const [portfolioValues, setPortfolioValues] = useState<string[]>([]);
+  const [percentageOfLoanPortfolioValues, setPercentageOfLoanPortfolioValues] =
+    useState<string[]>([]);
   const [creditorValues, setCreditorValues] = useState<string[]>([]);
+  const [industry, setIndustry] = useState("Inclusive Finance");
 
   useEffect(() => {
-    handleChange("step4", {...localData, portfolioValues, creditorValues});
-  }, [localData, portfolioValues, creditorValues]);
+    handleChange("step4", {
+      ...localData,
+      percentageOfLoanPortfolioValues,
+      creditorValues,
+    });
+  }, [localData, percentageOfLoanPortfolioValues, creditorValues]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const {name, value} = e.target;
     setLocalData(prev => ({
       ...prev,
@@ -53,6 +76,24 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
     }));
   };
 
+  const handleIndustryChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedIndustry = e.target.value;
+    setIndustry(selectedIndustry);
+    // Update localData with the selected industry
+    setLocalData(prev => ({
+      ...prev,
+      industry: selectedIndustry,
+      // Reset or set other fields based on selected industry
+      loanPortfolioSize: selectedIndustry !== "Inclusive Finance" ? "NIL" : "",
+      averageLoanAmountPerClient:
+        selectedIndustry !== "Inclusive Finance" ? "NIL" : "",
+      percentageOfLoanPortfolioValues:
+        selectedIndustry !== "Inclusive Finance" ? ["NIL"] : [""],
+      percentageOfRuralAndUrbanExtension:
+        selectedIndustry !== "Inclusive Finance" ? "NIL" : "",
+    }));
+  };
+
   return (
     <div>
       <Image
@@ -68,19 +109,34 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
           Please provide details for your current loan situation below:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5">
-          {" "}
-          {/* loan portfolio size input */}
+          {/* Industry/Sector input */}
+          <div className="flex flex-col space-y-2 md:w-1/2 md:col-span-2">
+            <label htmlFor="industry">Industry/Sector</label>
+            <select
+              name="industry"
+              value={industry}
+              onChange={handleIndustryChange}
+              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+            >
+              <option value="Inclusive Finance">Inclusive Finance</option>
+              <option value="Agriculture">Agriculture</option>
+              <option value="Health">Health</option>
+              <option value="Affordable Housing">Affordable Housing</option>
+              <option value="Education">Education</option>
+              <option value="Climate Finance">Climate Finance</option>
+            </select>
+          </div>
+
+          {/* number of employees input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="loanPortfolioSize">
-              Loan portfolio size (Financial Institutions)
-            </label>
+            <label htmlFor="numberOfEmployees">Number of employees</label>
             <input
-              type="text"
-              name="loanPortfolioSize"
-              value={localData.loanPortfolioSize || ""}
+              type="number"
+              name="numberOfEmployees"
+              value={localData.numberOfEmployees || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="$10,000"
+              placeholder="20"
             />
           </div>
           {/* number of clients input */}
@@ -95,34 +151,58 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
               placeholder="20"
             />
           </div>
+          {/* loan portfolio size input */}
+          {industry === "Inclusive Finance" && (
+            <div className="flex flex-col space-y-2">
+              <label htmlFor="loanPortfolioSize">Loan portfolio size</label>
+              <input
+                type="text"
+                name="loanPortfolioSize"
+                value={localData.loanPortfolioSize || ""}
+                onChange={handleInputChange}
+                className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+                placeholder="$10,000"
+              />
+            </div>
+          )}
           {/* average loan amount per client input */}
+          {industry === "Inclusive Finance" && (
+            <div className="flex flex-col space-y-2">
+              <label htmlFor="averageLoanAmountPerClient">
+                Average loan amount per client
+              </label>
+              <input
+                type="text"
+                name="averageLoanAmountPerClient"
+                value={localData.averageLoanAmountPerClient || ""}
+                onChange={handleInputChange}
+                className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+                placeholder="$10,000"
+              />
+            </div>
+          )}
+          {/* Type of financing input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="averageLoanAmountPerClient">
-              Average loan amount per client (Financial Institutions)
+            <label htmlFor="financingType">
+              Type of financing (Debt & Equity)
             </label>
-            <input
-              type="text"
-              name="averageLoanAmountPerClient"
-              value={localData.averageLoanAmountPerClient || ""}
+            <select
+              name="financingType"
+              value={localData.financingType || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="$10,000"
-            />
-          </div>
-          {/* number of employees input */}
-          <div className="flex flex-col space-y-2">
-            <label htmlFor="numberOfEmployees">Number of employees</label>
-            <input
-              type="number"
-              name="numberOfEmployees"
-              value={localData.numberOfEmployees || ""}
-              onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="20"
-            />
+            >
+              <option value="" disabled hidden>
+                Select your financing type
+              </option>
+              <option value="Debt">Debt</option>
+              <option value="Equity">Equity</option>
+              <option value="Bonds">Bonds</option>
+              <option value="Syndicated Finance">Syndicated Finance</option>
+            </select>
           </div>
           {/* geographic coverage of services input */}
-          <div className="flex flex-col space-y-2 md:w-1/2 md:col-span-2">
+          <div className="flex flex-col space-y-2">
             <label htmlFor="geographicCoverageOfServices">
               Geographic coverage of services
             </label>
@@ -132,22 +212,7 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
               value={localData.geographicCoverageOfServices || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="$10,000"
-            />
-          </div>
-          {/* Percentages of rural and urban extension of organization and coverage financing need input */}
-          <div className="flex flex-col space-y-2 md:w-1/2 md:col-span-2">
-            <label htmlFor="percentageOfRuralAndUrbanExtension">
-              Percentages of rural and urban extension of organization and
-              coverage financing need (amount)
-            </label>
-            <input
-              type="text"
-              name="percentageOfRuralAndUrbanExtension"
-              value={localData.percentageOfRuralAndUrbanExtension || ""}
-              onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="$10,000"
+              placeholder="North-West"
             />
           </div>
           {/* Types of products and services input */}
@@ -194,19 +259,38 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
             ))}
           </div>
           {/* Percentage of loan portfolio according to products */}
-          <DynamicDoubleInputForm
-            label="Percentage of loan portfolio according to products"
-            firstPlaceholder="Product"
-            secondPlaceholder="Percentage"
-            onChange={values => setPortfolioValues(values)}
-          />
+          {industry === "Inclusive Finance" && (
+            <DynamicDoubleInputForm
+              label="Percentage of loan portfolio according to products"
+              firstPlaceholder="Individual Loan"
+              secondPlaceholder="20%"
+              onChange={values => setPercentageOfLoanPortfolioValues(values)}
+            />
+          )}
           {/* Names of current creditors and investment currency */}
           <DynamicDoubleInputForm
             label="Names of current creditors and investment currency"
             firstPlaceholder="Investor name"
-            secondPlaceholder="Currency"
+            secondPlaceholder="Currency (USD,EUR,e.t.c.)"
             onChange={values => setCreditorValues(values)}
           />
+          {/* Percentages of rural and urban extension of organization and coverage financing need input */}
+          {industry === "Inclusive Finance" && (
+            <div className="flex flex-col space-y-2 md:w-1/2 md:col-span-2">
+              <label htmlFor="percentageOfRuralAndUrbanExtension">
+                Percentages of rural and urban extension of organization and
+                coverage financing need (amount)
+              </label>
+              <input
+                type="text"
+                name="percentageOfRuralAndUrbanExtension"
+                value={localData.percentageOfRuralAndUrbanExtension || ""}
+                onChange={handleInputChange}
+                className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+                placeholder="$10,000"
+              />
+            </div>
+          )}
         </div>
       </div>
       {/* Add more fields as needed */}

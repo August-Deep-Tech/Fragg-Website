@@ -14,8 +14,11 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
     handleChange("step1", localData);
   }, [localData]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const {name, value} = e.target;
+
     setLocalData(prev => ({
       ...prev,
       [name]: value,
@@ -75,18 +78,6 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
               placeholder="Email"
             />
           </div>
-          {/* company website input */}
-          <div className="flex flex-col space-y-2">
-            <label htmlFor="website">Company Website</label>
-            <input
-              type="url"
-              name="website"
-              value={localData.website || ""}
-              onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Company Website"
-            />
-          </div>
           {/* phone number input */}
           <div className="flex flex-col space-y-2">
             <label htmlFor="phoneNumber">Your Phone</label>
@@ -99,30 +90,57 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
               placeholder="Phone Number"
             />
           </div>
-          {/* company street input */}
-          <div className="flex flex-col space-y-2">
-            <label htmlFor="companyStreet">Company Street Address</label>
-            <input
-              type="text"
-              name="companyStreet"
-              value={localData.companyStreet || ""}
-              onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Company Street"
-            />
-          </div>
           {/* linkedin link input */}
           <div className="flex flex-col space-y-2">
             <label htmlFor="linkedinProfile">Your LinkedIn profile link</label>
             <input
-              type="url"
+              type="text"
               name="linkedinProfile"
-              value={localData.linkedin || ""}
+              value={localData.linkedinProfile || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
               placeholder="LinkedIn Profile Link"
             />
           </div>
+          {/* How did you learn about FRAGG input */}
+          <div className="flex flex-col space-y-2">
+            <label htmlFor="howDidYouLearnAboutFragg">
+              How did you learn about FRAGG?
+            </label>
+            <select
+              name="howDidYouLearnAboutFragg"
+              value={localData.howDidYouLearnAboutFragg || ""}
+              onChange={handleInputChange}
+              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+            >
+              <option value="" disabled hidden>
+                Select an option
+              </option>
+              <option value="Google Search">Google Search</option>
+              <option value="Facebook">Facebook</option>
+              <option value="Twitter">Twitter</option>
+              <option value="LinkedIn">LinkedIn</option>
+              <option value="Online Advertisement">Online Advertisement</option>
+              <option value="Referral from a Friend/Colleague/Family Member">
+                Referral from a Friend / Colleague / Family Member
+              </option>
+              <option value="Industry Event">Industry Event</option>
+              <option value="Online Seminar">Online Seminar</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+          {/* company website input */}
+          {/* <div className="flex flex-col space-y-2">
+            <label htmlFor="website">Company Website</label>
+            <input
+              type="url"
+              name="website"
+              value={localData.website || ""}
+              onChange={handleInputChange}
+              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              placeholder="Company Website"
+            />
+          </div> */}
         </div>
       </div>
 

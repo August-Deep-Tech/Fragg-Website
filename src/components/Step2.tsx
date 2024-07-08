@@ -14,7 +14,9 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
     handleChange("step2", localData);
   }, [localData]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const {name, value} = e.target;
     setLocalData(prev => ({
       ...prev,
@@ -48,7 +50,7 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               value={localData.organizationName || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Organization's Name"
+              placeholder="John Doe Ltd."
             />
           </div>
           {/* Date of Incorporation input */}
@@ -62,18 +64,28 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               className="border-2 text-[#D9D9D9] border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
             />
           </div>
-          {/* Company Profile Link input */}
+          {/* company address input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="companyProfileLink">
-              Company Profile (please submit a link to the .doc or .pdf file)
-            </label>
+            <label htmlFor="companyAddress">Company Address</label>
             <input
-              type="url"
-              name="companyProfileLink"
-              value={localData.companyProfileLink || ""}
+              type="text"
+              name="companyAddress"
+              value={localData.companyAddress || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Company Profile"
+              placeholder="456 Unity Avenue, Victoria Island, Lagos, Nigeria"
+            />
+          </div>
+          {/* company telephone input */}
+          <div className="flex flex-col space-y-2">
+            <label htmlFor="companyTelephone">Company Telephone</label>
+            <input
+              type="text"
+              name="companyTelephone"
+              value={localData.companyTelephone || ""}
+              onChange={handleInputChange}
+              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              placeholder="+23480999988472"
             />
           </div>
           {/* Structure / legal status of organization input */}
@@ -81,27 +93,45 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
             <label htmlFor="organizationStructure">
               Structure / legal status of organization
             </label>
-            <input
-              type="text"
+            <select
               name="organizationStructure"
               value={localData.organizationStructure || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Select your organizations structure"
-            />
+            >
+              <option value="" disabled hidden>
+                Select your organizations structure
+              </option>
+              <option value="Sole Proprietorship">Sole Proprietorship</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Limited Liability Company (LLC)">
+                Limited Liability Company (LLC)
+              </option>
+              <option value="Non-profit Organization">
+                Non-profit Organization
+              </option>
+              <option value="Government Agency">Government Agency</option>
+              <option value="Public Sector Organization">
+                Public Sector Organization
+              </option>
+              <option value="Private Sector Organization">
+                Private Sector Organization
+              </option>
+              <option value="Others">Others</option>
+            </select>
           </div>
-          {/* Type of financing input */}
+          {/*Number of branches input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="typeOfFinancing">
-              Type of financing (Debt & Equity)
+            <label htmlFor="numberOfBranches">
+              How many branches does the organization have?
             </label>
             <input
-              type="text"
-              name="typeOfFinancing"
-              value={localData.typeOfFinancing || ""}
+              type="number"
+              name="numberOfBranches"
+              value={localData.numberOfBranches || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Select your financing type"
+              placeholder="2"
             />
           </div>
           {/* Headquarters location input */}
@@ -118,18 +148,18 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               placeholder="City"
             />
           </div>
-          {/*Number of branches input */}
+          {/* Company Profile Link input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="numberOfBranches">
-              How many branches does the organization have?
+            <label htmlFor="companyProfileLink">
+              Link to Company Profile Document
             </label>
             <input
-              type="url"
-              name="numberOfBranches"
-              value={localData.numberOfBranches || ""}
+              type="text"
+              name="companyProfileLink"
+              value={localData.companyProfileLink || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="2"
+              placeholder="Company Profile"
             />
           </div>
         </div>

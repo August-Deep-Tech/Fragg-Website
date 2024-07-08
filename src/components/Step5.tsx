@@ -2,19 +2,35 @@
 import Image from "next/image";
 import {useState, useEffect} from "react";
 
+interface FormData {
+  investmentAmountYouNeed: string;
+  whenIsTheInvestmentNeeded: string;
+  expectedMaturityOfTheInvestment: string;
+  desiredInterestRate: string;
+  hasTheInstitutionUndergoneARatingExercise: string;
+  ifSoWhenAndWhichAgency: string;
+  [key: string]: any; // This allows for additional properties
+}
+
 interface Step5Props {
-  formData: {[key: string]: any};
+  formData: FormData;
   handleChange: (step: string, data: {[key: string]: any}) => void;
 }
 
 const Step5: React.FC<Step5Props> = ({formData, handleChange}) => {
-  const [localData, setLocalData] = useState(formData);
+  const [localData, setLocalData] = useState<FormData>({
+    ...formData,
+    hasTheInstitutionUndergoneARatingExercise:
+      formData.hasTheInstitutionUndergoneARatingExercise || "Yes",
+  });
 
   useEffect(() => {
     handleChange("step5", localData);
   }, [localData]);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
+  ) => {
     const {name, value} = e.target;
     setLocalData(prev => ({
       ...prev,
@@ -31,96 +47,98 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange}) => {
         alt={"Thank you"}
       />
       <div className="py-10">
-        <p className="text-redish-20 mb-2">Step 1/5</p>
-        <h2 className="text-4xl font-semibold mb-2">Contact Details</h2>
+        <p className="text-redish-20 mb-2">Step 5/5</p>
+        <h2 className="text-4xl font-semibold mb-2">Investment Information</h2>
         <p className="text-greyish-10 mb-6">
-          Please provide information for the key contact person and company
-          below:
+          Please provide investment details below, outlining the type of
+          investment you're interested in and any other pertinent information to
+          assist us in tailoring our offerings to your needs.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5">
           {" "}
-          {/* full name input */}
+          {/* investment amount you need input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="fullName">Your Full Name</label>
+            <label htmlFor="investmentAmountYouNeed">
+              Investment Amount you need
+            </label>
             <input
               type="text"
-              name="fullName"
-              value={localData.fullName || ""}
+              name="investmentAmountYouNeed"
+              value={localData.investmentAmountYouNeed || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Full Name"
+              placeholder="$10,000"
             />
           </div>
-          {/* role in organisation input */}
+          {/*  When is the Investment needed? input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="role">Role in the organisation</label>
+            <label htmlFor="whenIsTheInvestmentNeeded">
+              When is the Investment needed?
+            </label>
+            <input
+              type="date"
+              name="whenIsTheInvestmentNeeded"
+              value={localData.whenIsTheInvestmentNeeded || ""}
+              onChange={handleInputChange}
+              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+            />
+          </div>
+          {/* expected maturity of the investment input */}
+          <div className="flex flex-col space-y-2">
+            <label htmlFor="expectedMaturityOfTheInvestment">
+              Expected maturity of the investment (years)
+            </label>
+            <input
+              type="number"
+              name="expectedMaturityOfTheInvestment"
+              value={localData.expectedMaturityOfTheInvestment || ""}
+              onChange={handleInputChange}
+              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              placeholder="4"
+            />
+          </div>
+          {/* desired interest rate input */}
+          <div className="flex flex-col space-y-2">
+            <label htmlFor="desiredInterestRate">
+              If it is a loan, what is the desired interest rate?
+            </label>
             <input
               type="text"
-              name="role"
-              value={localData.role || ""}
+              name="desiredInterestRate"
+              value={localData.desiredInterestRate || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Role in Organization"
+              placeholder="10%"
             />
           </div>
-          {/* email input */}
+          {/* Has the institution undergone a rating exercise or External Auditing input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="email">Your Email</label>
-            <input
-              type="email"
-              name="email"
-              value={localData.email || ""}
+            <label htmlFor="hasTheInstitutionUndergoneARatingExercise">
+              Has the institution undergone a rating exercise or External
+              Auditing?
+            </label>
+            <select
+              name="hasTheInstitutionUndergoneARatingExercise"
+              value={localData.hasTheInstitutionUndergoneARatingExercise || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Email"
-            />
+            >
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
           </div>
-          {/* company website input */}
+          {/* If so, when and which agency input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="website">Company Website</label>
-            <input
-              type="url"
-              name="website"
-              value={localData.website || ""}
-              onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Company Website"
-            />
-          </div>
-          {/* phone number input */}
-          <div className="flex flex-col space-y-2">
-            <label htmlFor="phoneNumber">Your Phone</label>
-            <input
-              type="tel"
-              name="phoneNumber"
-              value={localData.phoneNumber || ""}
-              onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Phone Number"
-            />
-          </div>
-          {/* company street input */}
-          <div className="flex flex-col space-y-2">
-            <label htmlFor="companyStreet">Company Street Address</label>
+            <label htmlFor="ifSoWhenAndWhichAgency">
+              If so, when and which agency?
+            </label>
             <input
               type="text"
-              name="companyStreet"
-              value={localData.companyStreet || ""}
+              name="ifSoWhenAndWhichAgency"
+              value={localData.ifSoWhenAndWhichAgency || ""}
               onChange={handleInputChange}
               className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Company Street"
-            />
-          </div>
-          {/* linkedin link input */}
-          <div className="flex flex-col space-y-2">
-            <label htmlFor="linkedinProfile">Your LinkedIn profile link</label>
-            <input
-              type="url"
-              name="linkedinProfile"
-              value={localData.linkedin || ""}
-              onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="LinkedIn Profile Link"
+              placeholder="In 2017 , by X & Y Agency, here are more details ..."
             />
           </div>
         </div>

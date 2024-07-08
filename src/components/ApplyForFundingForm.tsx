@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
@@ -11,7 +11,15 @@ interface FormData {
   step2: {[key: string]: any};
   step3: {[key: string]: any};
   step4: {[key: string]: any};
-  step5: {[key: string]: any};
+  step5: {
+    investmentAmountYouNeed: string;
+    whenIsTheInvestmentNeeded: string;
+    expectedMaturityOfTheInvestment: string;
+    desiredInterestRate: string;
+    hasTheInstitutionUndergoneARatingExercise: string;
+    ifSoWhenAndWhichAgency: string;
+    [key: string]: any;
+  };
 }
 
 const ApplyForFundingForm = () => {
@@ -21,11 +29,24 @@ const ApplyForFundingForm = () => {
     step2: {},
     step3: {},
     step4: {},
-    step5: {},
+    step5: {
+      investmentAmountYouNeed: "",
+      whenIsTheInvestmentNeeded: "",
+      expectedMaturityOfTheInvestment: "",
+      desiredInterestRate: "",
+      hasTheInstitutionUndergoneARatingExercise: "Yes", // Set default to "Yes"
+      ifSoWhenAndWhichAgency: "",
+    },
   });
 
+  useEffect(() => {
+    // console.log("Current step updated to", currentStep);
+  }, [currentStep]);
+
   const nextStep = () => {
+    // console.log("before", currentStep);
     setCurrentStep(prev => Math.min(prev + 1, 5));
+    // console.log("after", currentStep);
   };
 
   const prevStep = () => {
@@ -41,8 +62,12 @@ const ApplyForFundingForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log("Form submitted", formData);
+    if (currentStep === 5) {
+      // Handle form submission here
+      console.log("Form submitted", formData);
+    } else {
+      nextStep();
+    }
   };
 
   return (
@@ -65,7 +90,7 @@ const ApplyForFundingForm = () => {
         )}
 
         <div className="flex justify-end gap-3 mt-2">
-          {currentStep < 5 ? (
+          {currentStep < 5 && (
             <button
               type="button"
               onClick={nextStep}
@@ -73,9 +98,11 @@ const ApplyForFundingForm = () => {
             >
               Next
             </button>
-          ) : (
+          )}
+          {currentStep === 5 && (
             <button
               type="submit"
+              onClick={handleSubmit}
               className="bg-redish-20 text-white py-4 px-5 rounded-full"
             >
               Submit Application
