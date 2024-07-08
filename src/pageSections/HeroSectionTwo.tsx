@@ -17,7 +17,7 @@ const HeroSectionTwo = ({bg}: IHero) => {
                         Strategic Financial <br /> Solutions for Growth
                     </h1>
                     <p className="text-white pt-[12px] pb-[24px]">
-                        Empower your business with FRAGG's strategic financial solutions, designed to foster inclusive corporate growth.
+                        Empower your business with FRAGG{"'"}s strategic financial solutions, designed to foster inclusive corporate growth.
                     </p>
                     <div className="">
                         <div className="flex gap-[10px] w-[100%]">

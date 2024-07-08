@@ -64,7 +64,7 @@ const About = () => {
           </h1>
           <p className="text-greyish-10 w-[100%] text-base">
             FRAGG Investment Management has a strong network and partnerships in fundraising, implementation,
-            and management of numerous impact investment initiatives that address market needs within the Africa and LAC region. As a fund manager, FRAGG Investment has a proven track record of designing, structuring, launching, implementing, and divesting innovative funds. FRAGG's mission is to enable the flow of sustainable financial instruments to emerging and frontier economies by closing the financial needs of financial intermediaries, and SMEs through the facilitation of access to funds from diversified sources. Our vision is to improve people’s skills and capacities through impact investments to achieve more equality, social and financial inclusion, and climate resilience.
+            and management of numerous impact investment initiatives that address market needs within the Africa and LAC region. As a fund manager, FRAGG Investment has a proven track record of designing, structuring, launching, implementing, and divesting innovative funds. FRAGG{"'"}s mission is to enable the flow of sustainable financial instruments to emerging and frontier economies by closing the financial needs of financial intermediaries, and SMEs through the facilitation of access to funds from diversified sources. Our vision is to improve people{"'"}s skills and capacities through impact investments to achieve more equality, social and financial inclusion, and climate resilience.
           </p>
         </div>
         <div className='flex flex-col lg:flex-row gap-[0px] mt-[20px]'>
@@ -202,7 +202,7 @@ const About = () => {
             <div className='w-[100%]'>
               <h1 className='text-white text-[24px] sm:text-[64px]'>Our Values</h1>
               <h1 className='text-white text-[16px] sm:text-[24px] w-[100%] font-[400]'>
-                With a diverse international team across continents, we're dedicated to enhancing financial inclusion and environmental stewardship. Our flexible client solutions and focused impact areas leverage a global network for added client and investor value,
+                With a diverse international team across continents, we{"'"}re dedicated to enhancing financial inclusion and environmental stewardship. Our flexible client solutions and focused impact areas leverage a global network for added client and investor value,
                 reflecting our commitment to growth and societal impact. At the core of our investment strategy is the triple bottom line approach, prioritizing Profit, People, and Planet, to ensure sustainable and inclusive growth
               </h1>
             </div>

@@ -39,7 +39,7 @@ const Landing = () => {
           Our Approach
           </h1>
           <p className="text-greyish-10 w-[100%] text-base">
-          FRAGG-Invest has a strong network and partnerships in fundraising, implementation, and management of numerous impact investment initiatives that address market needs within the Africa and LAC region. As a fund manager, FRAGG-Invest has a proven track record of designing, structuring, launching, implementing, and divesting innovative funds. FRAGG's mission is to enable the flow of sustainable financial instruments to emerging and frontier economies by closing the financial needs of financial intermediaries, and SMEs through the facilitation of access to funds from diversified sources. Our vision is to improve people’s skills and capacities through impact investments to achieve more equality, social and financial inclusion, and climate resilience.
+          FRAGG-Invest has a strong network and partnerships in fundraising, implementation, and management of numerous impact investment initiatives that address market needs within the Africa and LAC region. As a fund manager, FRAGG-Invest has a proven track record of designing, structuring, launching, implementing, and divesting innovative funds. FRAGG{"'"}s mission is to enable the flow of sustainable financial instruments to emerging and frontier economies by closing the financial needs of financial intermediaries, and SMEs through the facilitation of access to funds from diversified sources. Our vision is to improve people’s skills and capacities through impact investments to achieve more equality, social and financial inclusion, and climate resilience.
           </p>
         </div>
         <div className='flex flex-col lg:flex-row gap-[0px] mt-[20px]'>

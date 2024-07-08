@@ -12,7 +12,7 @@ const WhatWeOffer = () => {
                     What We Offer
                 </h1>
                 <p className="text-greyish-10 mx-auto text-center w-[90%] sm:w-[70%] xl:w-[50%] text-base">
-                    FRAGG's capital strategies drive growth. From debt to partnerships, we secure funds for innovation and expansion,
+                    FRAGG{"'"}s capital strategies drive growth. From debt to partnerships, we secure funds for innovation and expansion,
                     ensuring sustained success. We also offer non financial services to accelerate your growth.
                 </p>
             </div>
