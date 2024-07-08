@@ -117,7 +117,7 @@ const FullTeamList = () => {
   return (
     <div>
       <SubpageHero
-        backgroundImageUrl={`bg-[url('/assets/png/technicalAssistanceHeroImage.png')]`}
+        backgroundImageUrl={`bg-[url('/assets/png/fullTeamListHeroImage.png')]`}
         breadcrumb="Our Team"
         pageTitle="A global team of <br />committed professionals"
       />

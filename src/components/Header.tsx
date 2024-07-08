@@ -77,7 +77,9 @@ export const Header = () => {
         {/* hamburger icon */}
         <div className="md:hidden">
           <button
-            className="text-greyish-10 hover:text-black focus:outline-none"
+            className={`${
+              isHomePage ? "text-white" : "text-greyish-10"
+            }  hover:text-black focus:outline-none`}
             onClick={toggleMenu}
           >
             <svg
