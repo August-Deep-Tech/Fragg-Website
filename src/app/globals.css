@@ -195,3 +195,10 @@ body {
   height: 640px;
   background-position: right; 
 }
+
+.accelerator-cta {
+  background-image: url(/assets/webp/accelerator-cta.webp);
+  background-size: cover;
+  height: 640px;
+  background-position: right; 
+}
