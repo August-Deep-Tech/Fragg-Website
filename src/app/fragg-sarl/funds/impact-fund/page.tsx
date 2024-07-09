@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import {SubpageHero} from "@/components/SubpageHero";
+import { SubpageHero } from "@/components/SubpageHero";
 import ImpactFundDarkBgSection from "@/pageSections/ImpactFundDarkBgSection";
 import OurGeographicFocus from "@/pageSections/OurGeographicFocus";
-import {BeginYourInvestment} from "@/pageSections/BeginYourInvestment";
+import { BeginYourInvestment } from "@/pageSections/BeginYourInvestment";
 
 const ImpactFund = () => {
   return (
@@ -153,6 +153,50 @@ const ImpactFund = () => {
           height={320}
           alt="icon"
         />
+      </div>
+
+      {/* legacy of success */}
+      <div className="container mx-auto px-4 md:px-0 py-28  flex flex-col items-center">
+        <h3 className="text-4xl md:text-5xl font-semibold mb-6 text-center">
+          A Legacy of Success
+        </h3>
+        <p className="mb-10 sm:mb-20 text-greyish-10 text-center">
+          FRAGG Investment{"'"}s <span className="text-redish-20"> proven track record </span> speaks for itself, leading
+          to a legacy of unparalleled success. Our journey is defined by innovation, <br />
+          strategic vision, and unwavering dedication. Join us as we continue to shape
+          the future of finance with integrity and expertise.
+
+        </p>
+        <div className="hidden sm:block relative w-[700px] h-[500px] lg:w-[900px] lg:h-[700px]">
+        <Image
+          src="/assets/svg/funds/legacy.svg"
+          fill
+          alt="icon"
+          className=""
+        />
+        </div>
+        <div className="flex flex-col  gap-[15px] sm:hidden">
+          <div className="flex flex-col gap-[0px]">
+            <h1 className="text-[24x] font-[700]">Money Management</h1>
+            <p className="text-[16px] text-left text-[#757575] ">FRAGG managed a 25 Million USD Debt Fund with 99.8% recovery rate and 10% ROI to investors.</p>
+          </div>
+          <div className="flex flex-col gap-[0px]">
+            <h1 className="text-[24x] font-[700]">Experience</h1>
+            <p className="text-[16px] text-left text-[#757575]">FRAGG has over 100 years combined experience in SME Fund Management, Fund Mobilisation, and implementation of Business Development Services for SMEs and Impact Project.</p>
+          </div>
+          <div className="flex flex-col gap-[0px]">
+            <h1 className="text-[24x] font-[700]">Trends</h1>
+            <p className="text-[16px] text-left text-[#757575]">FRAGG has an understanding of the local trends in monetary policies, hence FX risk advice is tailored to fully protect investees.</p>
+          </div>
+          <div className="flex flex-col gap-[0px]">
+            <h1 className="text-[24x] font-[700]">Network</h1>
+            <p className="text-[16px] text-left text-[#757575]">FRAGG has a high network in the Impact Investment ecosystem covering the investors, local financial institutions, regulatory bodies and good pipelines.</p>
+          </div>
+          <div className="flex flex-col gap-[0px]">
+            <h1 className="text-[24x] font-[700]">Team</h1>
+            <p className="text-[16px] text-left text-[#757575]">FRAGG has an experienced local team, with deep knowledge of the local market, culture, language, socio-political and regulatory environment in the West African region, while maintaining a strong external affiliation with international stakeholders in the impact ecosystem.</p>
+          </div>
+        </div>
       </div>
 
       {/* begin your investment journey */}
