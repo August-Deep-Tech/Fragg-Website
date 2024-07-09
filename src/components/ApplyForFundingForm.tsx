@@ -89,6 +89,7 @@ const requiredFields: RequiredFields = {
     "expectedMaturityOfTheInvestment",
     "desiredInterestRate",
     "hasTheInstitutionUndergoneARatingExercise",
+    "ifSoWhenAndWhichAgency",
   ],
 };
 
@@ -193,7 +194,7 @@ const ApplyForFundingForm = () => {
       setCurrentStep(prev => Math.min(prev + 1, 5));
       console.log(formData);
     }
-    console.log(formData);
+    // console.log(formData);
   };
 
   const prevStep = () => {
@@ -251,7 +252,11 @@ const ApplyForFundingForm = () => {
           />
         )}
         {currentStep === 5 && (
-          <Step5 formData={formData.step5} handleChange={handleChange} />
+          <Step5
+            formData={formData.step5}
+            handleChange={handleChange}
+            errors={errors}
+          />
         )}
 
         <div className="flex justify-end gap-3 mt-2">

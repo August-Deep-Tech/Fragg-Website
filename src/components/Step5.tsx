@@ -15,9 +15,10 @@ interface FormData {
 interface Step5Props {
   formData: FormData;
   handleChange: (step: string, data: {[key: string]: any}) => void;
+  errors: {[key: string]: string};
 }
 
-const Step5: React.FC<Step5Props> = ({formData, handleChange}) => {
+const Step5: React.FC<Step5Props> = ({formData, handleChange, errors}) => {
   const [localData, setLocalData] = useState<FormData>({
     ...formData,
     hasTheInstitutionUndergoneARatingExercise:
@@ -66,9 +67,18 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange}) => {
               name="investmentAmountYouNeed"
               value={localData.investmentAmountYouNeed || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.investmentAmountYouNeed
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
               placeholder="$10,000"
             />
+            {errors.investmentAmountYouNeed && (
+              <p className="text-red-500 text-sm">
+                {errors.investmentAmountYouNeed}
+              </p>
+            )}
           </div>
           {/*  When is the Investment needed? input */}
           <div className="flex flex-col space-y-2">
@@ -80,8 +90,17 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange}) => {
               name="whenIsTheInvestmentNeeded"
               value={localData.whenIsTheInvestmentNeeded || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.whenIsTheInvestmentNeeded
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
             />
+            {errors.whenIsTheInvestmentNeeded && (
+              <p className="text-red-500 text-sm">
+                {errors.whenIsTheInvestmentNeeded}
+              </p>
+            )}
           </div>
           {/* expected maturity of the investment input */}
           <div className="flex flex-col space-y-2">
@@ -93,9 +112,18 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange}) => {
               name="expectedMaturityOfTheInvestment"
               value={localData.expectedMaturityOfTheInvestment || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.expectedMaturityOfTheInvestment
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
               placeholder="4"
             />
+            {errors.expectedMaturityOfTheInvestment && (
+              <p className="text-red-500 text-sm">
+                {errors.expectedMaturityOfTheInvestment}
+              </p>
+            )}
           </div>
           {/* desired interest rate input */}
           <div className="flex flex-col space-y-2">
@@ -107,9 +135,18 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange}) => {
               name="desiredInterestRate"
               value={localData.desiredInterestRate || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.desiredInterestRate
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
               placeholder="10%"
             />
+            {errors.desiredInterestRate && (
+              <p className="text-red-500 text-sm">
+                {errors.desiredInterestRate}
+              </p>
+            )}
           </div>
           {/* Has the institution undergone a rating exercise or External Auditing input */}
           <div className="flex flex-col space-y-2">
@@ -121,11 +158,20 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange}) => {
               name="hasTheInstitutionUndergoneARatingExercise"
               value={localData.hasTheInstitutionUndergoneARatingExercise || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.hasTheInstitutionUndergoneARatingExercise
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
             >
               <option value="Yes">Yes</option>
               <option value="No">No</option>
             </select>
+            {errors.hasTheInstitutionUndergoneARatingExercise && (
+              <p className="text-red-500 text-sm">
+                {errors.hasTheInstitutionUndergoneARatingExercise}
+              </p>
+            )}
           </div>
           {/* If so, when and which agency input */}
           <div className="flex flex-col space-y-2">
@@ -137,9 +183,18 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange}) => {
               name="ifSoWhenAndWhichAgency"
               value={localData.ifSoWhenAndWhichAgency || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.ifSoWhenAndWhichAgency
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
               placeholder="In 2017 , by X & Y Agency, here are more details ..."
             />
+            {errors.ifSoWhenAndWhichAgency && (
+              <p className="text-red-500 text-sm">
+                {errors.ifSoWhenAndWhichAgency}
+              </p>
+            )}
           </div>
         </div>
       </div>
