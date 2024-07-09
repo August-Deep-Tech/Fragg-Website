@@ -13,6 +13,7 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange, errors}) => {
 
   useEffect(() => {
     handleChange("step1", localData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [localData]);
 
   const handleInputChange = (

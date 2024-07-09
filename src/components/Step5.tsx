@@ -27,6 +27,7 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange, errors}) => {
 
   useEffect(() => {
     handleChange("step5", localData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [localData]);
 
   const handleInputChange = (
@@ -52,8 +53,8 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange, errors}) => {
         <h2 className="text-4xl font-semibold mb-2">Investment Information</h2>
         <p className="text-greyish-10 mb-6">
           Please provide investment details below, outlining the type of
-          investment you're interested in and any other pertinent information to
-          assist us in tailoring our offerings to your needs.
+          investment you&apos;re interested in and any other pertinent
+          information to assist us in tailoring our offerings to your needs.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-5">
           {" "}
