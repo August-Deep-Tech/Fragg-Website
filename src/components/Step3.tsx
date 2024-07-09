@@ -30,6 +30,7 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange, errors}) => {
 
   useEffect(() => {
     handleChange("step3", localData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [localData]);
 
   useEffect(() => {
