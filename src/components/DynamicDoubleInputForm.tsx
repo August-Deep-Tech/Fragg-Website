@@ -6,6 +6,7 @@ interface DynamicDoubleInputFormProps {
   firstPlaceholder: string;
   secondPlaceholder: string;
   onChange: (values: string[]) => void;
+  error?: string;
 }
 
 const DynamicDoubleInputForm: React.FC<DynamicDoubleInputFormProps> = ({
@@ -13,6 +14,7 @@ const DynamicDoubleInputForm: React.FC<DynamicDoubleInputFormProps> = ({
   firstPlaceholder,
   secondPlaceholder,
   onChange,
+  error,
 }) => {
   const [fields, setFields] = useState([{firstValue: "", secondValue: ""}]);
 
@@ -91,6 +93,7 @@ const DynamicDoubleInputForm: React.FC<DynamicDoubleInputFormProps> = ({
           )}
         </div>
       ))}
+      {error && <p className="text-red-500 text-sm">{error}</p>}
     </div>
   );
 };

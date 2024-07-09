@@ -79,6 +79,9 @@ const requiredFields: RequiredFields = {
     "numberOfClients",
     "financingType",
     "geographicCoverageOfServices",
+    "loanPortfolioSize",
+    "averageLoanAmountPerClient",
+    "percentageOfRuralAndUrbanExtension",
   ],
   step5: [
     "investmentAmountYouNeed",
@@ -135,6 +138,43 @@ const ApplyForFundingForm = () => {
           }
         });
       });
+    } else if (step === 4) {
+      // Special handling for Step 4
+      if (Array.isArray(stepRequiredFields)) {
+        stepRequiredFields.forEach((field: string) => {
+          if (!stepData[field] || stepData[field].trim() === "") {
+            newErrors[field] = "This field is required";
+          }
+        });
+      }
+
+      // Check for array inputs
+
+      if (
+        !stepData.products ||
+        stepData.products.length === 0 ||
+        stepData.products.every((product: string) => product.trim() === "")
+      ) {
+        newErrors.products = "Please add at least one product or service";
+      }
+
+      if (
+        stepData.industry === "Inclusive Finance" &&
+        (!stepData.percentageOfLoanPortfolioValues ||
+          stepData.percentageOfLoanPortfolioValues.length === 0)
+      ) {
+        newErrors.percentageOfLoanPortfolioValues =
+          "Please add at least one loan portfolio percentage";
+      }
+
+      if (!stepData.creditorValues || stepData.creditorValues.length === 0) {
+        newErrors.creditorValues = "Please add at least one creditor";
+      }
+
+      // Merge with any errors from the Step4 component
+      if (stepData.errors) {
+        Object.assign(newErrors, stepData.errors);
+      }
     } else if (Array.isArray(stepRequiredFields)) {
       // Existing validation for other steps
       stepRequiredFields.forEach((field: string) => {
@@ -204,7 +244,11 @@ const ApplyForFundingForm = () => {
           />
         )}
         {currentStep === 4 && (
-          <Step4 formData={formData.step4} handleChange={handleChange} />
+          <Step4
+            formData={formData.step4}
+            handleChange={handleChange}
+            errors={errors}
+          />
         )}
         {currentStep === 5 && (
           <Step5 formData={formData.step5} handleChange={handleChange} />

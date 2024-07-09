@@ -18,9 +18,10 @@ interface Step4Props {
     [key: string]: any;
   };
   handleChange: (step: string, data: {[key: string]: any}) => void;
+  errors: {[key: string]: string};
 }
 
-const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
+const Step4: React.FC<Step4Props> = ({formData, handleChange, errors}) => {
   const [localData, setLocalData] = useState({
     ...(formData as Step4Props["formData"]),
     industry: formData.industry || "Inclusive Finance",
@@ -32,12 +33,40 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
   const [industry, setIndustry] = useState("Inclusive Finance");
 
   useEffect(() => {
+    const newErrors: {[key: string]: string} = {};
+
+    if (
+      productFields.length === 0 ||
+      productFields.every(field => field.value.trim() === "")
+    ) {
+      newErrors.products = "Please add at least one product or service";
+    }
+
+    if (
+      industry === "Inclusive Finance" &&
+      percentageOfLoanPortfolioValues.length === 0
+    ) {
+      newErrors.percentageOfLoanPortfolioValues =
+        "Please add at least one loan portfolio percentage";
+    }
+
+    if (creditorValues.length === 0) {
+      newErrors.creditorValues = "Please add at least one creditor";
+    }
+
     handleChange("step4", {
       ...localData,
+      products: productFields.map(field => field.value),
       percentageOfLoanPortfolioValues,
       creditorValues,
+      errors: newErrors,
     });
-  }, [localData, percentageOfLoanPortfolioValues, creditorValues]);
+  }, [
+    localData,
+    productFields,
+    percentageOfLoanPortfolioValues,
+    creditorValues,
+  ]);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -116,7 +145,9 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
               name="industry"
               value={industry}
               onChange={handleIndustryChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.industry ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
             >
               <option value="Inclusive Finance">Inclusive Finance</option>
               <option value="Agriculture">Agriculture</option>
@@ -125,6 +156,9 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
               <option value="Education">Education</option>
               <option value="Climate Finance">Climate Finance</option>
             </select>
+            {errors.industry && (
+              <p className="text-red-500 text-sm">{errors.industry}</p>
+            )}
           </div>
 
           {/* number of employees input */}
@@ -135,9 +169,14 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
               name="numberOfEmployees"
               value={localData.numberOfEmployees || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.numberOfEmployees ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
               placeholder="20"
             />
+            {errors.numberOfEmployees && (
+              <p className="text-red-500 text-sm">{errors.numberOfEmployees}</p>
+            )}
           </div>
           {/* number of clients input */}
           <div className="flex flex-col space-y-2">
@@ -147,9 +186,14 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
               name="numberOfClients"
               value={localData.numberOfClients || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.numberOfClients ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
               placeholder="20"
             />
+            {errors.numberOfClients && (
+              <p className="text-red-500 text-sm">{errors.numberOfClients}</p>
+            )}
           </div>
           {/* loan portfolio size input */}
           {industry === "Inclusive Finance" && (
@@ -160,9 +204,18 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
                 name="loanPortfolioSize"
                 value={localData.loanPortfolioSize || ""}
                 onChange={handleInputChange}
-                className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+                className={`border-2 ${
+                  errors.loanPortfolioSize
+                    ? "border-red-500"
+                    : "border-[#D9D9D9]"
+                } py-4 px-6 rounded-xl w-full mb-4`}
                 placeholder="$10,000"
               />
+              {errors.loanPortfolioSize && (
+                <p className="text-red-500 text-sm">
+                  {errors.loanPortfolioSize}
+                </p>
+              )}
             </div>
           )}
           {/* average loan amount per client input */}
@@ -176,9 +229,18 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
                 name="averageLoanAmountPerClient"
                 value={localData.averageLoanAmountPerClient || ""}
                 onChange={handleInputChange}
-                className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+                className={`border-2 ${
+                  errors.averageLoanAmountPerClient
+                    ? "border-red-500"
+                    : "border-[#D9D9D9]"
+                } py-4 px-6 rounded-xl w-full mb-4`}
                 placeholder="$10,000"
               />
+              {errors.averageLoanAmountPerClient && (
+                <p className="text-red-500 text-sm">
+                  {errors.averageLoanAmountPerClient}
+                </p>
+              )}
             </div>
           )}
           {/* Type of financing input */}
@@ -190,7 +252,9 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
               name="financingType"
               value={localData.financingType || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.financingType ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
             >
               <option value="" disabled hidden>
                 Select your financing type
@@ -200,6 +264,9 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
               <option value="Bonds">Bonds</option>
               <option value="Syndicated Finance">Syndicated Finance</option>
             </select>
+            {errors.financingType && (
+              <p className="text-red-500 text-sm">{errors.financingType}</p>
+            )}
           </div>
           {/* geographic coverage of services input */}
           <div className="flex flex-col space-y-2">
@@ -211,9 +278,18 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
               name="geographicCoverageOfServices"
               value={localData.geographicCoverageOfServices || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.geographicCoverageOfServices
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full mb-4`}
               placeholder="North-West"
             />
+            {errors.geographicCoverageOfServices && (
+              <p className="text-red-500 text-sm">
+                {errors.geographicCoverageOfServices}
+              </p>
+            )}
           </div>
           {/* Types of products and services input */}
           <div className="flex flex-col space-y-2 md:w-1/2 md:col-span-2">
@@ -226,7 +302,9 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
                   type="text"
                   value={field.value}
                   onChange={event => handleProductFieldChange(index, event)}
-                  className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full"
+                  className={`border-2 ${
+                    errors.products ? "border-red-500" : "border-[#D9D9D9]"
+                  } py-4 px-6 rounded-xl w-full`}
                   placeholder="Enter product/service"
                 />
                 <button
@@ -257,23 +335,42 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
                 )}
               </div>
             ))}
+            {errors.products && (
+              <p className="text-red-500 text-sm">{errors.products}</p>
+            )}
           </div>
           {/* Percentage of loan portfolio according to products */}
           {industry === "Inclusive Finance" && (
-            <DynamicDoubleInputForm
-              label="Percentage of loan portfolio according to products"
-              firstPlaceholder="Individual Loan"
-              secondPlaceholder="20%"
-              onChange={values => setPercentageOfLoanPortfolioValues(values)}
-            />
+            <div className="flex flex-col col-span-2 ">
+              {" "}
+              <DynamicDoubleInputForm
+                label="Percentage of loan portfolio according to products"
+                firstPlaceholder="Individual Loan"
+                secondPlaceholder="20%"
+                onChange={values => setPercentageOfLoanPortfolioValues(values)}
+                error={errors.percentageOfLoanPortfolioValues}
+              />
+              {/* {errors.percentageOfLoanPortfolioValues && (
+                <p className="text-red-500 text-sm">
+                  {errors.percentageOfLoanPortfolioValues}
+                </p>
+              )} */}
+            </div>
           )}
           {/* Names of current creditors and investment currency */}
-          <DynamicDoubleInputForm
-            label="Names of current creditors and investment currency"
-            firstPlaceholder="Investor name"
-            secondPlaceholder="Currency (USD,EUR,e.t.c.)"
-            onChange={values => setCreditorValues(values)}
-          />
+          <div className="flex flex-col col-span-2 ">
+            <DynamicDoubleInputForm
+              label="Names of current creditors and investment currency"
+              firstPlaceholder="Investor name"
+              secondPlaceholder="Currency (USD,EUR,e.t.c.)"
+              onChange={values => setCreditorValues(values)}
+              error={errors.creditorValues}
+            />
+            {/* {errors.creditorValues && (
+              <p className="text-red-500 text-sm">{errors.creditorValues}</p>
+            )} */}
+          </div>
+
           {/* Percentages of rural and urban extension of organization and coverage financing need input */}
           {industry === "Inclusive Finance" && (
             <div className="flex flex-col space-y-2 md:w-1/2 md:col-span-2">
@@ -286,9 +383,18 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange}) => {
                 name="percentageOfRuralAndUrbanExtension"
                 value={localData.percentageOfRuralAndUrbanExtension || ""}
                 onChange={handleInputChange}
-                className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+                className={`border-2 ${
+                  errors.percentageOfRuralAndUrbanExtension
+                    ? "border-red-500"
+                    : "border-[#D9D9D9]"
+                } py-4 px-6 rounded-xl w-full mb-4`}
                 placeholder="$10,000"
               />
+              {errors.percentageOfRuralAndUrbanExtension && (
+                <p className="text-red-500 text-sm">
+                  {errors.percentageOfRuralAndUrbanExtension}
+                </p>
+              )}
             </div>
           )}
         </div>
