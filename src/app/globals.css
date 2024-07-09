@@ -32,14 +32,14 @@ body {
 
 .home-sarl {
   background-image: url(/assets/svg/home/home-sarl.svg);
-  background-size: cover;
+  background-size: contain;
   background-position: top;
   height: 100vh;
 }
 
 .map-nigeria {
   background-image: url(/assets/svg/home/fragginvest-nigeria-map.svg);
-  background-size: cover;
+  background-size: contain;
   background-position: top;
   height: 600px;
   margin-top: 80px;
@@ -47,7 +47,7 @@ body {
 
 .map-germany {
   background-image: url(/assets/svg/home/fragginvest-germany-map.svg.svg);
-  background-size: cover;
+  background-size: contain;
   background-position: top;
   height: 600px;
   margin-top: 80px;
@@ -55,7 +55,7 @@ body {
 
 .map-sarl {
   background-image: url(/assets/svg/home/fragginvest-sarl-map.svg);
-  background-size: cover;
+  background-size: contain;
   background-position: top;
   height: 600px;
   margin-top: 80px;
