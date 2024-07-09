@@ -188,3 +188,10 @@ body {
     border-bottom-right-radius: 20px;
   }
 }
+
+.sustainable-goals {
+  background-image: url(/assets/webp/sustainable-goals.webp);
+  background-size: cover;
+  height: 640px;
+  background-position: right; 
+}

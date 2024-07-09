@@ -1,13 +1,9 @@
 import Button from '@/components/Button'
 import BecomeanInvestor from '@/pageSections/BecomeanInvestor'
 import { BeginYourInvestment } from '@/pageSections/BeginYourInvestment'
-import ConnectionSection from '@/pageSections/ConnectionSection'
-import FraggInvestmentManagement from '@/pageSections/FraggInvestment'
 import Group from '@/pageSections/Group'
 import GroupContact from '@/pageSections/GroupContact'
-import GrowWithFragg from '@/pageSections/GrowWithFragg'
 import HeroSectionTwo from '@/pageSections/HeroSectionTwo'
-import PriorityStrategy from '@/pageSections/PriorityStrategy'
 import WhatWeOffer from '@/pageSections/WhatWeOffer'
 
 import Image from "next/image";
