@@ -48,7 +48,7 @@ const GssBond = () => {
   return (
     <div>
       <SubpageHero
-        backgroundImageUrl={`bg-[url('../../public/assets/png/gssBondHeroImg.png')]`}
+        backgroundImageUrl={`bg-[url('/assets/png/gssBondHeroImg.png')]`}
         breadcrumb="GSS BOND"
         pageTitle="Promoting sustainable <br /> and impact finance"
       />

@@ -136,7 +136,7 @@ const Services = () => {
   return (
     <div>
       <SubpageHero
-        backgroundImageUrl={`bg-[url('../../public/assets/png/1.png')]`}
+        backgroundImageUrl={`bg-[url('/assets/png/1.png')]`}
         breadcrumb="Our Services"
         pageTitle="Solutions Crafted for <br /> Your Success"
       />
