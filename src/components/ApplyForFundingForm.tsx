@@ -1,5 +1,5 @@
 "use client";
-import React, {useState, useCallback} from "react";
+import React, {useState, useEffect} from "react";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
@@ -201,15 +201,12 @@ const ApplyForFundingForm = () => {
     setCurrentStep(prev => Math.max(prev - 1, 1));
   };
 
-  const handleChange = useCallback(
-    (step: string, data: {[key: string]: any}) => {
-      setFormData(prev => ({
-        ...prev,
-        [step]: data,
-      }));
-    },
-    []
-  );
+  const handleChange = (step: string, data: {[key: string]: any}) => {
+    setFormData(prev => ({
+      ...prev,
+      [step]: data,
+    }));
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
