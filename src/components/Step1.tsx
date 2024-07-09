@@ -5,9 +5,10 @@ import {useState, useEffect} from "react";
 interface Step1Props {
   formData: {[key: string]: any};
   handleChange: (step: string, data: {[key: string]: any}) => void;
+  errors: {[key: string]: string};
 }
 
-const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
+const Step1: React.FC<Step1Props> = ({formData, handleChange, errors}) => {
   const [localData, setLocalData] = useState(formData);
 
   useEffect(() => {
@@ -18,7 +19,6 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const {name, value} = e.target;
-
     setLocalData(prev => ({
       ...prev,
       [name]: value,
@@ -50,9 +50,14 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
               name="fullName"
               value={localData.fullName || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.fullName ? "border-red-500" : "border-[#D9D9D9]"
+              }  py-4 px-6 rounded-xl w-full`}
               placeholder="Full Name"
             />
+            {errors.fullName && (
+              <p className="text-red-500 text-sm">{errors.fullName}</p>
+            )}
           </div>
           {/* role in organisation input */}
           <div className="flex flex-col space-y-2">
@@ -62,9 +67,14 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
               name="role"
               value={localData.role || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.role ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
               placeholder="Role in Organization"
             />
+            {errors.role && (
+              <p className="text-red-500 text-sm">{errors.role}</p>
+            )}
           </div>
           {/* email input */}
           <div className="flex flex-col space-y-2">
@@ -74,9 +84,14 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
               name="email"
               value={localData.email || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.email ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
               placeholder="Email"
             />
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email}</p>
+            )}
           </div>
           {/* phone number input */}
           <div className="flex flex-col space-y-2">
@@ -86,9 +101,14 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
               name="phoneNumber"
               value={localData.phoneNumber || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.phoneNumber ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
               placeholder="Phone Number"
             />
+            {errors.phoneNumber && (
+              <p className="text-red-500 text-sm">{errors.phoneNumber}</p>
+            )}
           </div>
           {/* linkedin link input */}
           <div className="flex flex-col space-y-2">
@@ -98,9 +118,14 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
               name="linkedinProfile"
               value={localData.linkedinProfile || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.linkedinProfile ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
               placeholder="LinkedIn Profile Link"
             />
+            {errors.linkedinProfile && (
+              <p className="text-red-500 text-sm">{errors.linkedinProfile}</p>
+            )}
           </div>
           {/* How did you learn about FRAGG input */}
           <div className="flex flex-col space-y-2">
@@ -111,7 +136,11 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
               name="howDidYouLearnAboutFragg"
               value={localData.howDidYouLearnAboutFragg || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.howDidYouLearnAboutFragg
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
             >
               <option value="" disabled hidden>
                 Select an option
@@ -128,22 +157,14 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange}) => {
               <option value="Online Seminar">Online Seminar</option>
               <option value="Others">Others</option>
             </select>
+            {errors.howDidYouLearnAboutFragg && (
+              <p className="text-red-500 text-sm">
+                {errors.howDidYouLearnAboutFragg}
+              </p>
+            )}
           </div>
-          {/* company website input */}
-          {/* <div className="flex flex-col space-y-2">
-            <label htmlFor="website">Company Website</label>
-            <input
-              type="url"
-              name="website"
-              value={localData.website || ""}
-              onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
-              placeholder="Company Website"
-            />
-          </div> */}
         </div>
       </div>
-
       {/* Add more fields as needed */}
     </div>
   );

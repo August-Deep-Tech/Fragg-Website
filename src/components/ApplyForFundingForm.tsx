@@ -6,10 +6,24 @@ import Step3 from "./Step3";
 import Step4 from "./Step4";
 import Step5 from "./Step5";
 
+interface Owner {
+  fullName: string;
+  countryLocated: string;
+  email: string;
+  highestLevelOfEducation: string;
+  percentageOwned: string;
+  yearsInTheOrganization: string;
+  [key: string]: any; // For any additional fields
+}
+
 interface FormData {
   step1: {[key: string]: any};
   step2: {[key: string]: any};
-  step3: {[key: string]: any};
+  step3: {
+    owners: Owner[];
+    numOwners: number;
+    [key: string]: any;
+  };
   step4: {[key: string]: any};
   step5: {
     investmentAmountYouNeed: string;
@@ -22,12 +36,68 @@ interface FormData {
   };
 }
 
+type RequiredFields = {
+  step1: string[];
+  step2: string[];
+  step3: {ownerFields: string[]};
+  step4: string[];
+  step5: string[];
+};
+
+const requiredFields: RequiredFields = {
+  step1: [
+    "fullName",
+    "role",
+    "email",
+    "phoneNumber",
+    "linkedinProfile",
+    "howDidYouLearnAboutFragg",
+  ],
+  step2: [
+    "organizationName",
+    "dateOfIncorporation",
+    "companyAddress",
+    "companyTelephone",
+    "organizationStructure",
+    "numberOfBranches",
+    "headquartersLocation",
+    "companyProfileLink",
+  ],
+  step3: {
+    ownerFields: [
+      "fullName",
+      "countryLocated",
+      "email",
+      "highestLevelOfEducation",
+      "percentageOwned",
+      "yearsInTheOrganization",
+    ],
+  },
+  step4: [
+    "industry",
+    "numberOfEmployees",
+    "numberOfClients",
+    "financingType",
+    "geographicCoverageOfServices",
+  ],
+  step5: [
+    "investmentAmountYouNeed",
+    "whenIsTheInvestmentNeeded",
+    "expectedMaturityOfTheInvestment",
+    "desiredInterestRate",
+    "hasTheInstitutionUndergoneARatingExercise",
+  ],
+};
+
 const ApplyForFundingForm = () => {
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({
     step1: {},
     step2: {},
-    step3: {},
+    step3: {
+      owners: [], // Initialize with one empty owner
+      numOwners: 0,
+    },
     step4: {},
     step5: {
       investmentAmountYouNeed: "",
@@ -39,14 +109,51 @@ const ApplyForFundingForm = () => {
     },
   });
 
-  useEffect(() => {
-    // console.log("Current step updated to", currentStep);
-  }, [currentStep]);
+  const [errors, setErrors] = useState<{[key: string]: string}>({});
+
+  // useEffect(() => {
+  //   // console.log("Current step updated to", currentStep);
+  // }, [currentStep]);
+
+  const validateStep = (step: number) => {
+    const stepData = formData[`step${step}` as keyof FormData];
+    const stepRequiredFields =
+      requiredFields[`step${step}` as keyof typeof requiredFields];
+    const newErrors: {[key: string]: string} = {};
+
+    if (step === 3 && "owners" in stepData) {
+      // Validate owners
+      const ownerFields = (stepRequiredFields as {ownerFields: string[]})
+        .ownerFields;
+      (stepData.owners as Owner[]).forEach((owner: Owner, index: number) => {
+        ownerFields.forEach(field => {
+          if (
+            !owner[field as keyof Owner] ||
+            (owner[field as keyof Owner] as string).trim() === ""
+          ) {
+            newErrors[`owners.${index}.${field}`] = "This field is required";
+          }
+        });
+      });
+    } else if (Array.isArray(stepRequiredFields)) {
+      // Existing validation for other steps
+      stepRequiredFields.forEach((field: string) => {
+        if (!stepData[field] || stepData[field].trim() === "") {
+          newErrors[field] = "This field is required";
+        }
+      });
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const nextStep = () => {
-    // console.log("before", currentStep);
-    setCurrentStep(prev => Math.min(prev + 1, 5));
-    // console.log("after", currentStep);
+    if (validateStep(currentStep)) {
+      setCurrentStep(prev => Math.min(prev + 1, 5));
+      console.log(formData);
+    }
+    console.log(formData);
   };
 
   const prevStep = () => {
@@ -62,11 +169,13 @@ const ApplyForFundingForm = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (currentStep === 5) {
-      // Handle form submission here
-      console.log("Form submitted", formData);
-    } else {
-      nextStep();
+    if (validateStep(currentStep)) {
+      if (currentStep === 5) {
+        // Handle form submission here
+        console.log("Form submitted", formData);
+      } else {
+        nextStep();
+      }
     }
   };
 
@@ -74,13 +183,25 @@ const ApplyForFundingForm = () => {
     <div className="container mx-auto p-4">
       <form onSubmit={handleSubmit}>
         {currentStep === 1 && (
-          <Step1 formData={formData.step1} handleChange={handleChange} />
+          <Step1
+            formData={formData.step1}
+            handleChange={handleChange}
+            errors={errors}
+          />
         )}
         {currentStep === 2 && (
-          <Step2 formData={formData.step2} handleChange={handleChange} />
+          <Step2
+            formData={formData.step2}
+            handleChange={handleChange}
+            errors={errors}
+          />
         )}
         {currentStep === 3 && (
-          <Step3 formData={formData.step3} handleChange={handleChange} />
+          <Step3
+            formData={formData.step3}
+            handleChange={handleChange}
+            errors={errors}
+          />
         )}
         {currentStep === 4 && (
           <Step4 formData={formData.step4} handleChange={handleChange} />

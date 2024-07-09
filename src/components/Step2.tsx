@@ -5,9 +5,10 @@ import {useState, useEffect} from "react";
 interface Step2Props {
   formData: {[key: string]: any};
   handleChange: (step: string, data: {[key: string]: any}) => void;
+  errors: {[key: string]: string};
 }
 
-const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
+const Step2: React.FC<Step2Props> = ({formData, handleChange, errors}) => {
   const [localData, setLocalData] = useState(formData);
 
   useEffect(() => {
@@ -30,7 +31,7 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
         src="/assets/png/applyFunding/step2Tracker.png" // Placeholder image path
         height={40}
         width={1043}
-        alt={"Thank you"}
+        alt={"Step 2 Tracker"}
       />
       <div className="py-10">
         <p className="text-redish-20 mb-2">Step 2/5</p>
@@ -49,9 +50,14 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               name="organizationName"
               value={localData.organizationName || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.organizationName ? "border-red-500" : "border-[#D9D9D9]"
+              }  py-4 px-6 rounded-xl w-full`}
               placeholder="John Doe Ltd."
             />
+            {errors.organizationName && (
+              <p className="text-red-500 text-sm">{errors.organizationName}</p>
+            )}
           </div>
           {/* Date of Incorporation input */}
           <div className="flex flex-col space-y-2">
@@ -61,8 +67,17 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               name="dateOfIncorporation"
               value={localData.dateOfIncorporation || ""}
               onChange={handleInputChange}
-              className="border-2 text-[#D9D9D9] border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.dateOfIncorporation
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              }  py-4 px-6 rounded-xl w-full`}
             />
+            {errors.dateOfIncorporation && (
+              <p className="text-red-500 text-sm">
+                {errors.dateOfIncorporation}
+              </p>
+            )}
           </div>
           {/* company address input */}
           <div className="flex flex-col space-y-2">
@@ -72,9 +87,14 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               name="companyAddress"
               value={localData.companyAddress || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.companyAddress ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
               placeholder="456 Unity Avenue, Victoria Island, Lagos, Nigeria"
             />
+            {errors.companyAddress && (
+              <p className="text-red-500 text-sm">{errors.companyAddress}</p>
+            )}
           </div>
           {/* company telephone input */}
           <div className="flex flex-col space-y-2">
@@ -84,9 +104,14 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               name="companyTelephone"
               value={localData.companyTelephone || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.companyTelephone ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
               placeholder="+23480999988472"
             />
+            {errors.companyTelephone && (
+              <p className="text-red-500 text-sm">{errors.companyTelephone}</p>
+            )}
           </div>
           {/* Structure / legal status of organization input */}
           <div className="flex flex-col space-y-2">
@@ -97,7 +122,11 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               name="organizationStructure"
               value={localData.organizationStructure || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.organizationStructure
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
             >
               <option value="" disabled hidden>
                 Select your organizations structure
@@ -119,6 +148,11 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               </option>
               <option value="Others">Others</option>
             </select>
+            {errors.organizationStructure && (
+              <p className="text-red-500 text-sm">
+                {errors.organizationStructure}
+              </p>
+            )}
           </div>
           {/*Number of branches input */}
           <div className="flex flex-col space-y-2">
@@ -130,9 +164,14 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               name="numberOfBranches"
               value={localData.numberOfBranches || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.numberOfBranches ? "border-red-500" : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
               placeholder="2"
             />
+            {errors.numberOfBranches && (
+              <p className="text-red-500 text-sm">{errors.numberOfBranches}</p>
+            )}
           </div>
           {/* Headquarters location input */}
           <div className="flex flex-col space-y-2">
@@ -144,9 +183,18 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
               name="headquartersLocation"
               value={localData.headquartersLocation || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.headquartersLocation
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
               placeholder="City"
             />
+            {errors.headquartersLocation && (
+              <p className="text-red-500 text-sm">
+                {errors.headquartersLocation}
+              </p>
+            )}
           </div>
           {/* Company Profile Link input */}
           <div className="flex flex-col space-y-2">
@@ -156,11 +204,21 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange}) => {
             <input
               type="text"
               name="companyProfileLink"
+              id="companyProfileLink"
               value={localData.companyProfileLink || ""}
               onChange={handleInputChange}
-              className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+              className={`border-2 ${
+                errors.companyProfileLink
+                  ? "border-red-500"
+                  : "border-[#D9D9D9]"
+              } py-4 px-6 rounded-xl w-full`}
               placeholder="Company Profile"
             />
+            {errors.companyProfileLink && (
+              <p className="text-red-500 text-sm">
+                {errors.companyProfileLink}
+              </p>
+            )}
           </div>
         </div>
       </div>

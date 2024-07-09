@@ -2,26 +2,52 @@
 import Image from "next/image";
 import {useState, useEffect, ChangeEvent} from "react";
 
-interface Step3Props {
-  formData: {[key: string]: any};
-  handleChange: (step: string, data: {[key: string]: any}) => void;
+interface Owner {
+  fullName: string;
+  countryLocated: string;
+  email: string;
+  highestLevelOfEducation: string;
+  percentageOwned: string;
+  yearsInTheOrganization: string;
+  // [key: string]: any; // For any additional fields
 }
 
-const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
+interface Step3Props {
+  formData: {
+    owners: Owner[];
+    numOwners: number;
+  };
+  handleChange: (
+    step: string,
+    data: {owners: Owner[]; numOwners: number}
+  ) => void;
+  errors: {[key: string]: string};
+}
+
+const Step3: React.FC<Step3Props> = ({formData, handleChange, errors}) => {
   const [localData, setLocalData] = useState(formData);
-  const [numOwners, setNumOwners] = useState<number>(localData.numOwners || 1);
+  // const [numOwners, setNumOwners] = useState<number>(localData.numOwners || 1);
 
   useEffect(() => {
     handleChange("step3", localData);
   }, [localData]);
+
+  useEffect(() => {
+    // Initialize with one owner if numOwners is not set
+    if (!localData.numOwners) {
+      setLocalData(prevData => ({
+        ...prevData,
+        numOwners: 1,
+        owners: [{}] as Owner[],
+      }));
+    }
+  }, []);
 
   const handleInputChange = (
     index: number,
     e: ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
     const {name, value} = e.target;
-    console.log(value);
-
     setLocalData(prevData => {
       const updatedOwners = [...(prevData.owners || [])];
       updatedOwners[index] = {
@@ -34,17 +60,17 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
 
   const handleDropdownChange = (e: ChangeEvent<HTMLSelectElement>) => {
     const value = parseInt(e.target.value, 10);
-    setNumOwners(value);
+    // setNumOwners(value);
     setLocalData(prevData => {
-      const updatedOwners = prevData.owners || [];
+      let updatedOwners = [...prevData.owners];
       if (value > updatedOwners.length) {
         for (let i = updatedOwners.length; i < value; i++) {
-          updatedOwners.push({});
+          updatedOwners.push({} as Owner);
         }
       } else {
-        updatedOwners.splice(value);
+        updatedOwners = updatedOwners.slice(0, value);
       }
-      return {...prevData, owners: updatedOwners, numOwners: value};
+      return {owners: updatedOwners, numOwners: value};
     });
   };
 
@@ -69,18 +95,23 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
           <select
             id="numOwners"
             name="numOwners"
-            value={numOwners}
+            value={localData.numOwners}
             onChange={handleDropdownChange}
-            className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full md:w-5/12"
+            className={`border-2 ${
+              errors.numOwners ? "border-red-500" : "border-[#D9D9D9]"
+            } py-4 px-6 rounded-xl w-full md:w-5/12`}
           >
             {[...Array(7)].map((_, i) => (
-              <option key={i} value={i + 1}>
+              <option key={i + 1} value={i + 1}>
                 {i + 1}
               </option>
             ))}
           </select>
+          {errors.numOwners && (
+            <p className="text-red-500 text-sm">{errors.numOwners}</p>
+          )}
         </div>
-        {Array.from({length: numOwners}, (_, index) => (
+        {localData.owners.map((owner, index) => (
           <div className="mb-20" key={index}>
             <div className="bg-redish-20 w-fit text-white px-4 py-2 rounded-full mb-6">
               {index + 1}
@@ -95,24 +126,44 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
                   type="text"
                   name="fullName"
                   id={`fullName-${index}`}
-                  value={localData.owners?.[index]?.fullName || ""}
+                  value={owner.fullName || ""}
                   onChange={e => handleInputChange(index, e)}
-                  className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full"
+                  className={`border-2 ${
+                    errors[`owners.${index}.fullName`]
+                      ? "border-red-500"
+                      : "border-[#D9D9D9]"
+                  } py-4 px-6 rounded-xl w-full`}
                   placeholder="Full Name"
                 />
+                {errors[`owners.${index}.fullName`] && (
+                  <p className="text-red-500 text-sm">
+                    {errors[`owners.${index}.fullName`]}
+                  </p>
+                )}
               </div>
               {/* country located input */}
               <div className="flex flex-col space-y-2">
-                <label htmlFor={`countryLocated`}>Country Located</label>
+                <label htmlFor={`countryLocated-${index}`}>
+                  Country Located
+                </label>
                 <input
                   type="text"
                   name="countryLocated"
-                  id={`countryLocated`}
-                  value={localData.owners?.[index]?.countryLocated || ""}
+                  id={`countryLocated-${index}`}
+                  value={owner.countryLocated || ""}
                   onChange={e => handleInputChange(index, e)}
-                  className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full"
+                  className={`border-2 ${
+                    errors[`owners.${index}.countryLocated`]
+                      ? "border-red-500"
+                      : "border-[#D9D9D9]"
+                  } py-4 px-6 rounded-xl w-full`}
                   placeholder="Country Located"
                 />
+                {errors[`owners.${index}.countryLocated`] && (
+                  <p className="text-red-500 text-sm">
+                    {errors[`owners.${index}.countryLocated`]}
+                  </p>
+                )}
               </div>
               {/* email input */}
               <div className="flex flex-col space-y-2">
@@ -123,11 +174,20 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
                   type="email"
                   name="email"
                   id={`email-${index}`}
-                  value={localData.owners?.[index]?.email || ""}
+                  value={owner.email || ""}
                   onChange={e => handleInputChange(index, e)}
-                  className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full"
+                  className={`border-2 ${
+                    errors[`owners.${index}.email`]
+                      ? "border-red-500"
+                      : "border-[#D9D9D9]"
+                  } py-4 px-6 rounded-xl w-full`}
                   placeholder="Email"
                 />
+                {errors[`owners.${index}.email`] && (
+                  <p className="text-red-500 text-sm">
+                    {errors[`owners.${index}.email`]}
+                  </p>
+                )}
               </div>
               {/* highest level of education input */}
               <div className="flex flex-col space-y-2">
@@ -137,11 +197,13 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
                 <select
                   name="highestLevelOfEducation"
                   id={`highestLevelOfEducation-${index}`}
-                  value={
-                    localData.owners?.[index]?.highestLevelOfEducation || ""
-                  }
+                  value={owner.highestLevelOfEducation || ""}
                   onChange={e => handleInputChange(index, e)}
-                  className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full mb-4"
+                  className={`border-2 ${
+                    errors[`owners.${index}.highestLevelOfEducation`]
+                      ? "border-red-500"
+                      : "border-[#D9D9D9]"
+                  } py-4 px-6 rounded-xl w-full mb-4`}
                 >
                   <option value="" disabled hidden>
                     Choose highest level of education
@@ -156,8 +218,13 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
                   <option value="Doctorate (PhD)">Doctorate (PhD)</option>
                   <option value="Others">Others</option>
                 </select>
+                {errors[`owners.${index}.highestLevelOfEducation`] && (
+                  <p className="text-red-500 text-sm">
+                    {errors[`owners.${index}.highestLevelOfEducation`]}
+                  </p>
+                )}
               </div>
-              {/* percentage input */}
+              {/* percentage owned input */}
               <div className="flex flex-col space-y-2">
                 <label htmlFor={`percentageOwned-${index}`}>
                   Percentage owned
@@ -166,11 +233,20 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
                   type="text"
                   name="percentageOwned"
                   id={`percentageOwned-${index}`}
-                  value={localData.owners?.[index]?.percentageOwned || ""}
+                  value={owner.percentageOwned || ""}
                   onChange={e => handleInputChange(index, e)}
-                  className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full"
+                  className={`border-2 ${
+                    errors[`owners.${index}.percentageOwned`]
+                      ? "border-red-500"
+                      : "border-[#D9D9D9]"
+                  } py-4 px-6 rounded-xl w-full`}
                   placeholder="20%"
                 />
+                {errors[`owners.${index}.percentageOwned`] && (
+                  <p className="text-red-500 text-sm">
+                    {errors[`owners.${index}.percentageOwned`]}
+                  </p>
+                )}
               </div>
               {/* years in the organization input */}
               <div className="flex flex-col space-y-2">
@@ -181,13 +257,20 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange}) => {
                   type="number"
                   name="yearsInTheOrganization"
                   id={`yearsInTheOrganization-${index}`}
-                  value={
-                    localData.owners?.[index]?.yearsInTheOrganization || ""
-                  }
+                  value={owner.yearsInTheOrganization || ""}
                   onChange={e => handleInputChange(index, e)}
-                  className="border-2 border-[#D9D9D9] py-4 px-6 rounded-xl w-full"
+                  className={`border-2 ${
+                    errors[`owners.${index}.yearsInTheOrganization`]
+                      ? "border-red-500"
+                      : "border-[#D9D9D9]"
+                  } py-4 px-6 rounded-xl w-full`}
                   placeholder="2"
                 />
+                {errors[`owners.${index}.yearsInTheOrganization`] && (
+                  <p className="text-red-500 text-sm">
+                    {errors[`owners.${index}.yearsInTheOrganization`]}
+                  </p>
+                )}
               </div>
             </div>
           </div>
