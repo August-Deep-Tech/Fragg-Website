@@ -36,7 +36,7 @@ const Landing = () => {
       <GrowWithFragg />
       <Group text="Our global team is a diverse blend of talent, united in our pursuit of excellence,
                     spanning continents, and bringing a wealth of perspectives and expertise to every endeavor."/>
-      <GroupContact image="map-nigeria" />
+      <GroupContact />
       <BecomeanInvestor />
     </div>
   );

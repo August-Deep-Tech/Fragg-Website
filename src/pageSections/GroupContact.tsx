@@ -1,12 +1,23 @@
-import { redHatDisplay } from '@/styles/font'
+"use client"
 
-interface IProps {
-  image: string;
-}
+import usePathCheck from "@/hooks/usePathCheck";
+import Image from 'next/image';
 
-const GroupContact = ({ image }: IProps) => {
+const GroupContact = () => {
+  const {isFraggNigeria, isFraggGmbh, isFraggSarl} = usePathCheck();
+  let logoSrc = "";
+  if (isFraggNigeria) {
+    logoSrc = "/assets/svg/home/fragginvest-nigeria-map.svg";
+  }
+  if (isFraggGmbh) {
+    logoSrc = "/assets/svg/home/fragginvest-germany-map.svg";
+  }
+  if (isFraggSarl) {
+    logoSrc = "/assets/svg/home/fragginvest-sarl-map.svg";
+  }
+
   return (
-    <div className={`${redHatDisplay.className} py-[60px] sm:py-[120px]`}>
+    <div className={`py-[60px] sm:py-[120px]`}>
       <div className="pt-[40px]">
         <h1 className="text-[30px] sm:text-[48px] leading-[57px] text-black font-[600] text-center pb-[10px] sm:pb-[24px]">
           FRAGG Group Contact
@@ -17,9 +28,14 @@ const GroupContact = ({ image }: IProps) => {
         </p>
       </div>
 
-      <div className={`${image}`}>
-
-      </div>
+      <div className="flex justify-center mt-20">
+          <Image
+            src={logoSrc}
+            width={1280}
+            height={567}
+            alt="map of the world"
+          />
+        </div>
     </div>
   )
 }

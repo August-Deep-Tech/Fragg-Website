@@ -42,11 +42,11 @@ body {
   background-size: contain;
   background-position: top;
   height: 600px;
-  margin-top: 80px;
+  margin-top: 80
 }
 
 .map-germany {
-  background-image: url(/assets/svg/home/fragginvest-germany-map.svg.svg);
+  background-image: url(/assets/svg/home/fragginvest-germany-map.svg);
   background-size: contain;
   background-position: top;
   height: 600px;

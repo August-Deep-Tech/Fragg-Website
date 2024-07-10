@@ -1,9 +1,310 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import usePathCheck from "@/hooks/usePathCheck";
+import { usePathname } from "next/navigation";
 
-import {bebasNeue, redHatDisplay} from "@/styles/font";
+import { bebasNeue, redHatDisplay } from "@/styles/font";
+import { Key } from "react";
 
 const Footer = () => {
+  const { isFraggNigeria, isFraggGmbh, isFraggSarl } = usePathCheck();
+  let logoSrc = "";
+  let logoHref = "";
+  let footerCategory: any[] = []
+  if (isFraggNigeria) {
+    logoSrc = "/assets/fragginvest-logo.svg";
+    logoHref = "/fragg-nigeria";
+    footerCategory = [
+      {
+        categoryName: "GET IN TOUCH",
+        children: [
+          {
+            text: "Facebook",
+            linkTo: "#",
+            ext: true,
+            isLink: true,
+          },
+          {
+            text: "Linkedln",
+            linkTo: "#",
+            ext: true,
+            isLink: true,
+          },
+          {
+            text: "X",
+            linkTo: "#",
+            ext: true,
+            isLink: true,
+          },
+        ],
+      },
+      {
+        categoryName: "EXPLORE",
+        children: [
+          {
+            text: "About Us",
+            linkTo: `${logoHref}/about`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Our Services",
+            linkTo: `${logoHref}/services`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Impact and Sustainability",
+            linkTo: `${logoHref}/impact-and-sustainability`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Advisory",
+            linkTo: `${logoHref}/advisory`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "FRAGG Group",
+            linkTo: `${logoHref}/fragg-group`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Contact Us",
+            linkTo: `${logoHref}/contact`,
+            ext: false,
+            isLink: true,
+          },
+        ],
+      },
+      {
+        categoryName: "FIND US",
+        children: [
+          {
+            text: "FRAGG Investment Management, Nigeria",
+            textTwo:
+              "45b, Oluwaleimu Street, Off Allen Avenue, Ikeja, Lagos.",
+            linkTo: "",
+            ext: true,
+            isLink: false,
+          },
+          {
+            text: "FRAGG-Invest GmbH, Germany",
+            textTwo:
+              "HRB 9048 -Amtsgericht Düren Landstraße 37, D-52445 Titz, Germany",
+            linkTo: "",
+            ext: true,
+            isLink: false,
+          },
+          {
+            text: "FRAGG-Invest GP Sàrl, Luxembourg",
+            textTwo:
+              "2C, Parc D’Activités-BP027 L-8308 Capellen Grand-Duchy of Luxembourg",
+            linkTo: "#",
+            ext: true,
+            isLink: false,
+          },
+        ],
+      },
+    ]
+  }
+  if (isFraggGmbh) {
+    logoSrc = "/assets/fragginvest-logo-gmbh.svg";
+    logoHref = "/fragg-gmbh";
+    footerCategory = [
+      {
+        categoryName: "GET IN TOUCH",
+        children: [
+          {
+            text: "Facebook",
+            linkTo: "#",
+            ext: true,
+            isLink: true,
+          },
+          {
+            text: "Linkedln",
+            linkTo: "#",
+            ext: true,
+            isLink: true,
+          },
+          {
+            text: "X",
+            linkTo: "#",
+            ext: true,
+            isLink: true,
+          },
+        ],
+      },
+      {
+        categoryName: "EXPLORE",
+        children: [
+          {
+            text: "About Us",
+            linkTo: `${logoHref}/about`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Our Services",
+            linkTo: `${logoHref}/services`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Impact and Sustainability",
+            linkTo: `${logoHref}/impact-and-sustainability`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Advisory",
+            linkTo: `${logoHref}/advisory`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "FRAGG Group",
+            linkTo: `${logoHref}/fragg-group`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Contact Us",
+            linkTo: `${logoHref}/contact`,
+            ext: false,
+            isLink: true,
+          },
+        ],
+      },
+      {
+        categoryName: "FIND US",
+        children: [
+          {
+            text: "FRAGG Investment Management, Nigeria",
+            textTwo:
+              "45b, Oluwaleimu Street, Off Allen Avenue, Ikeja, Lagos.",
+            linkTo: "",
+            ext: true,
+            isLink: false,
+          },
+          {
+            text: "FRAGG-Invest GmbH, Germany",
+            textTwo:
+              "HRB 9048 -Amtsgericht Düren Landstraße 37, D-52445 Titz, Germany",
+            linkTo: "",
+            ext: true,
+            isLink: false,
+          },
+          {
+            text: "FRAGG-Invest GP Sàrl, Luxembourg",
+            textTwo:
+              "2C, Parc D’Activités-BP027 L-8308 Capellen Grand-Duchy of Luxembourg",
+            linkTo: "#",
+            ext: true,
+            isLink: false,
+          },
+        ],
+      },
+    ]
+  }
+  if (isFraggSarl) {
+    logoSrc = "/assets/fragginvest-logo-sarl.svg";
+    logoHref = "/fragg-sarl";
+    footerCategory = [
+      {
+        categoryName: "GET IN TOUCH",
+        children: [
+          {
+            text: "Facebook",
+            linkTo: "#",
+            ext: true,
+            isLink: true,
+          },
+          {
+            text: "Linkedln",
+            linkTo: "#",
+            ext: true,
+            isLink: true,
+          },
+          {
+            text: "X",
+            linkTo: "#",
+            ext: true,
+            isLink: true,
+          },
+        ],
+      },
+      {
+        categoryName: "EXPLORE",
+        children: [
+          {
+            text: "About Us",
+            linkTo: `${logoHref}/about`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Our Services",
+            linkTo: `${logoHref}/services`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Funds",
+            linkTo: `${logoHref}/funds`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "FRAGG Group",
+            linkTo: `${logoHref}/fragg-group`,
+            ext: false,
+            isLink: true,
+          },
+          {
+            text: "Contact Us",
+            linkTo: `${logoHref}/contact`,
+            ext: false,
+            isLink: true,
+          },
+        ],
+      },
+      {
+        categoryName: "FIND US",
+        children: [
+          {
+            text: "FRAGG Investment Management, Nigeria",
+            textTwo:
+              "45b, Oluwaleimu Street, Off Allen Avenue, Ikeja, Lagos.",
+            linkTo: "",
+            ext: true,
+            isLink: false,
+          },
+          {
+            text: "FRAGG-Invest GmbH, Germany",
+            textTwo:
+              "HRB 9048 -Amtsgericht Düren Landstraße 37, D-52445 Titz, Germany",
+            linkTo: "",
+            ext: true,
+            isLink: false,
+          },
+          {
+            text: "FRAGG-Invest GP Sàrl, Luxembourg",
+            textTwo:
+              "2C, Parc D’Activités-BP027 L-8308 Capellen Grand-Duchy of Luxembourg",
+            linkTo: "#",
+            ext: true,
+            isLink: false,
+          },
+        ],
+      },
+    ]
+  }
+
   return (
     <footer className="border-t-8 border-redish-20">
       <div className="p-[20px] sm:p-[40px] xl:p-[80px] flex flex-col gap-[64px]">
@@ -12,7 +313,7 @@ const Footer = () => {
             className={`relative h-[49px] lg:h-[48px] w-[117px] lg:w-[202px]`}
           >
             <Image
-              src="/assets/fragginvest-logo.svg"
+              src={logoSrc}
               fill
               alt={"Banner preview"}
             />
@@ -32,101 +333,7 @@ const Footer = () => {
         <div
           className={` flex flex-wrap flex-row gap-[28px] gap-y-[35px] md:flex-nowrap sm:flex justify-between lg:mt-0`}
         >
-          {[
-            {
-              categoryName: "GET IN TOUCH",
-              children: [
-                {
-                  text: "Facebook",
-                  linkTo: "#",
-                  ext: true,
-                  isLink: true,
-                },
-                {
-                  text: "Linkedln",
-                  linkTo: "#",
-                  ext: true,
-                  isLink: true,
-                },
-                {
-                  text: "X",
-                  linkTo: "#",
-                  ext: true,
-                  isLink: true,
-                },
-              ],
-            },
-            {
-              categoryName: "EXPLORE",
-              children: [
-                {
-                  text: "About Us",
-                  linkTo: "#",
-                  ext: false,
-                  isLink: true,
-                },
-                {
-                  text: "Our Services",
-                  linkTo: "#",
-                  ext: false,
-                  isLink: true,
-                },
-                {
-                  text: "Impact and Sustainability",
-                  linkTo: "#",
-                  ext: false,
-                  isLink: true,
-                },
-                {
-                  text: "Advisory",
-                  linkTo: "#",
-                  ext: false,
-                  isLink: true,
-                },
-                {
-                  text: "FRAGG Group",
-                  linkTo: "/fragg-nigeria/fragg-group",
-                  ext: false,
-                  isLink: true,
-                },
-                {
-                  text: "Contact Us",
-                  linkTo: "/fragg-nigeria/contact",
-                  ext: false,
-                  isLink: true,
-                },
-              ],
-            },
-            {
-              categoryName: "FIND US",
-              children: [
-                {
-                  text: "FRAGG Investment Management, Nigeria",
-                  textTwo:
-                    "45b, Oluwaleimu Street, Off Allen Avenue, Ikeja, Lagos.",
-                  linkTo: "",
-                  ext: true,
-                  isLink: false,
-                },
-                {
-                  text: "FRAGG-Invest GmbH, Germany",
-                  textTwo:
-                    "HRB 9048 -Amtsgericht Düren Landstraße 37, D-52445 Titz, Germany",
-                  linkTo: "",
-                  ext: true,
-                  isLink: false,
-                },
-                {
-                  text: "FRAGG-Invest GP Sàrl, Luxembourg",
-                  textTwo:
-                    "2C, Parc D’Activités-BP027 L-8308 Capellen Grand-Duchy of Luxembourg",
-                  linkTo: "#",
-                  ext: true,
-                  isLink: false,
-                },
-              ],
-            },
-          ].map(e => {
+          {footerCategory.map(e => {
             return (
               <section
                 key={e.categoryName}
@@ -144,7 +351,7 @@ const Footer = () => {
                     {e.categoryName}
                     {"]"}
                   </span>
-                  {e.children.map((item: any, idx) => {
+                  {e.children.map((item: any, idx: Key | null | undefined) => {
                     return (
                       <li
                         key={idx}
@@ -187,11 +394,18 @@ const Footer = () => {
 
         <div className="">
           <p className="border border-t-[#9C0000A3] border-opacity-65 w-[100%]"></p>
-          <h1
-            className={`${bebasNeue.className} text-[24px] md:text-[32px] leading-[48px] text-greyish-10 pt-[33px]`}
-          >
-            © 2024 FRAGG
-          </h1>
+          <div className="flex justify-between">
+            <h1
+              className={`${bebasNeue.className} text-[24px] md:text-[32px] leading-[48px] text-greyish-10 pt-[33px]`}
+            >
+              © 2024 FRAGG
+            </h1>
+            <h1
+              className={`${bebasNeue.className} text-[24px] md:text-[32px] leading-[48px] text-redish-20 pt-[33px]`}
+            >
+              Privacy Policy
+            </h1>
+          </div>
         </div>
       </div>
     </footer>

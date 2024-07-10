@@ -17,7 +17,7 @@ const ConnectionSection = ({ image }: IProps) => {
         </p>
         <div className='flex justify-center mt-[63px]'>
           <div
-            className={`relative scale-[3] h-[49px] lg:h-[400px] w-[117px] lg:scale-[1] lg:w-[900px]`}
+            className={`relative scale-[3] h-[49px] lg:h-[100px] w-[117px] lg:scale-[1] lg:w-[900px]`}
           >
             <Image
               src={image}
