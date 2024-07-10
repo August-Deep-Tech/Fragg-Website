@@ -14,7 +14,7 @@ const Landing = () => {
   return (
     <div>
       <HeroSection bgImage={"home-nigeria"} />
-      <ConnectionSection />
+      <ConnectionSection image={"/assets/svg/home/connection-fragg-nigeria.svg"} />
       <FraggInvestmentManagement Data={[
         {
           title: "FRAGG Investment Management, Nigeria",
