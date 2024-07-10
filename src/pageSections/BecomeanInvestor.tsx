@@ -126,8 +126,8 @@ const BecomeanInvestor = () => {
           <div
             className={`${
               plan === "Investors"
-                ? "left-3 w-[130px]"
-                : "left-[150px] w-[110px]"
+                ? "left-3 w-[135px]"
+                : "left-[165px] w-[110px]"
             } transition-all duration-500 absolute top-[.65rem] h-[40px]  rounded-full bg-redish-20 shadow-md`}
           ></div>
           <button
@@ -351,7 +351,7 @@ const BecomeanInvestor = () => {
                     value={clientInfo.name}
                     className="sm:w-[452px]"
                     onChange={e =>
-                      handleInvestorInfoChange("name", e.target.value)
+                      handleClientInfoChange("name", e.target.value)
                     }
                   />
                 </div>
@@ -369,7 +369,7 @@ const BecomeanInvestor = () => {
                     value={clientInfo.email}
                     className="w-[100%] sm:w-[452px]"
                     onChange={e =>
-                      handleInvestorInfoChange("email", e.target.value)
+                      handleClientInfoChange("email", e.target.value)
                     }
                   />
                 </div>
@@ -387,7 +387,7 @@ const BecomeanInvestor = () => {
                     value={clientInfo.phone_number}
                     className="w-[100%] sm:w-[452px]"
                     onChange={e =>
-                      handleInvestorInfoChange("phone_number", e.target.value)
+                      handleClientInfoChange("phone_number", e.target.value)
                     }
                   />
                 </div>
@@ -407,7 +407,7 @@ const BecomeanInvestor = () => {
                     value={clientInfo.role}
                     className="w-[100%] sm:w-[452px] bg-transparent"
                     onChange={e =>
-                      handleInvestorInfoChange("role", e.target.value)
+                      handleClientInfoChange("role", e.target.value)
                     }
                   />
                 </div>
@@ -425,7 +425,7 @@ const BecomeanInvestor = () => {
                     value={clientInfo.companyWebsite}
                     className="w-[100%] sm:w-[452px] bg-transparent"
                     onChange={e =>
-                      handleInvestorInfoChange("companyWebsite", e.target.value)
+                      handleClientInfoChange("companyWebsite", e.target.value)
                     }
                   />
                 </div>
@@ -440,10 +440,10 @@ const BecomeanInvestor = () => {
                   <FormInput
                     label="Company Street Address"
                     placeholder="Street name, City, State , Country"
-                    value={clientInfo.role}
+                    value={clientInfo.companyAddress}
                     className="w-[100%] sm:w-[452px] bg-transparent"
                     onChange={e =>
-                      handleInvestorInfoChange("role", e.target.value)
+                      handleClientInfoChange("companyAddress", e.target.value)
                     }
                   />
                 </div>
