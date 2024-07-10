@@ -86,7 +86,7 @@ const Landing = () => {
       </div>
 
       <Group text="Join the network of FRAGG Group, which includes FRAGG Investment Management in Nigeria, FRAGG Invest-GmbH in Germany, and FRAGG-Invest SÀRL in Luxembourg, providing customized investment solutions across borders." />
-      <GroupContact image="map-sarl" />
+      <GroupContact />
       <BecomeanInvestor />
       <BeginYourInvestment />
     </div>

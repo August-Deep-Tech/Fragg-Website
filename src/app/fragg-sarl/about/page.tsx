@@ -146,7 +146,7 @@ const About = () => {
         </div>
       </div>
 
-      <GroupContact image="map-sarl" />
+      <GroupContact />
       <BeginYourInvestment />
 
     </div>
