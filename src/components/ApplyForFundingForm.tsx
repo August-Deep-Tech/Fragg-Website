@@ -1,5 +1,6 @@
 "use client";
 import React, {useState, useEffect} from "react";
+import {useRouter} from "next/navigation";
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
@@ -94,7 +95,11 @@ const requiredFields: RequiredFields = {
 };
 
 const ApplyForFundingForm = () => {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const [formData, setFormData] = useState<FormData>({
     step1: {},
     step2: {},
@@ -207,10 +212,11 @@ const ApplyForFundingForm = () => {
     if (validateStep(currentStep)) {
       if (currentStep === 5) {
         // Handle form submission here
-        console.log("Form submitted", formData);
+        // console.log("Form submitted", formData);
+        setIsSubmitting(true);
         try {
           const response = await fetch(
-            "https://fragg-apply-form-api.onrender.com/funding-form",
+            "https://fragg-forms-api.onrender.com/funding-form",
             {
               method: "POST",
               headers: {
@@ -223,14 +229,21 @@ const ApplyForFundingForm = () => {
           if (response.ok) {
             console.log("Form submitted successfully");
             // You can add code here to show a success message to the user
+            setSuccessMessage("Form Submitted Successfully");
             // or redirect them to a thank you page
           } else {
             console.error("Form submission failed");
             // You can add code here to show an error message to the user
+            setErrorMessage("An error occurred. Please try again.");
           }
         } catch (error) {
           console.error("Error:", error);
           // You can add code here to show an error message to the user
+          setErrorMessage("An error occurred. Please try again.");
+        } finally {
+          setIsSubmitting(false);
+          // Clear the success message after 3 seconds
+          router.push("/fragg-nigeria");
         }
       } else {
         nextStep();
@@ -276,8 +289,19 @@ const ApplyForFundingForm = () => {
             errors={errors}
           />
         )}
+        {/* display error and success messages */}
+        <div className="flex justify-end gap-3 mt-0">
+          {errorMessage !== "" && (
+            <div className="font-bold text-white text-xs">{errorMessage}</div>
+          )}
+          {successMessage !== "" && (
+            <div className="font-bold text-green-500 mb-3 text-xs">
+              {successMessage}
+            </div>
+          )}
+        </div>
 
-        <div className="flex justify-end gap-3 mt-2">
+        <div className="flex justify-end gap-3 mt-1">
           {currentStep < 5 && (
             <button
               type="button"
@@ -293,7 +317,7 @@ const ApplyForFundingForm = () => {
               onClick={handleSubmit}
               className="bg-redish-20 text-white py-4 px-5 rounded-full"
             >
-              Submit Application
+              {isSubmitting ? "Submitting..." : "Submit Application"}
             </button>
           )}
           {currentStep > 1 && (

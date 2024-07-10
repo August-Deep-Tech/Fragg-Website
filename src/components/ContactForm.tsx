@@ -30,13 +30,16 @@ const ContactForm: React.FC<ContactFormProps> = ({onSubmitSuccess}) => {
     setError(""); // Clear previous errors
 
     try {
-      const response = await fetch("http://localhost:3000/contact-form", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://fragg-forms-api.onrender.com/contact-form",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       // const result = await response.json();
       if (response.ok) {

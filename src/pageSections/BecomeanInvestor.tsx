@@ -35,6 +35,7 @@ const BecomeanInvestor = () => {
   const [plan, setPlan] = useState("Investors");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
   const [investorInfo, setInvestorInfo] = useState({
     name: "",
     email: "",
@@ -82,7 +83,7 @@ const BecomeanInvestor = () => {
     // handle submit for investor form
     try {
       const response = await fetch(
-        "http://localhost:3000/submit-investor-info",
+        "https://fragg-forms-api.onrender.com/submit-investor-info",
         {
           method: "POST",
           headers: {
@@ -92,9 +93,10 @@ const BecomeanInvestor = () => {
         }
       );
 
-      const result = await response.json();
-      if (result.result === "success") {
+      // const result = await response.json();
+      if (response.ok) {
         // alert("Form submitted successfully!");
+        setSuccessMessage("Form Submitted Successfully");
         setInvestorInfo({
           name: "",
           email: "",
@@ -110,8 +112,13 @@ const BecomeanInvestor = () => {
       setErrorMessage("An error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
+      // Clear the success message after 3 seconds
+      setTimeout(() => {
+        setSuccessMessage("");
+      }, 3000);
     }
   };
+
   return (
     <div className={`${redHatDisplay.className} py-[60px] lg:py-[120px]`}>
       <div className="flex justify-center">
@@ -307,6 +314,17 @@ const BecomeanInvestor = () => {
                     <p className="text-white font-[600]"> Secure return</p>
                   </div>
                 </div>
+                {/* <div>{successMessage}</div> */}
+                {errorMessage !== "" && (
+                  <div className="font-bold text-white text-xs">
+                    {errorMessage}
+                  </div>
+                )}
+                {successMessage !== "" && (
+                  <div className="font-bold text-green-500 mb-3 text-xs">
+                    {successMessage}
+                  </div>
+                )}
                 <Button
                   onClick={handleSubmit}
                   label={isSubmitting ? "Submitting..." : "Begin Consulation"}
