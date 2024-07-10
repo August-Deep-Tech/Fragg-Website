@@ -1,7 +1,11 @@
 import { redHatDisplay } from '@/styles/font';
-import React from 'react';
+import Image from "next/image";
 
-const ConnectionSection = () => {
+interface IProps {
+  image: string;
+}
+
+const ConnectionSection = ({ image }: IProps) => {
   return (
     <div className={`bg-[#010100] text-white py-[93px] -translate-y-1 ${redHatDisplay.className}`}>
       <div className="text-center mb-8">
@@ -11,6 +15,17 @@ const ConnectionSection = () => {
         <p className="text-2xl font-semibold">
           poised for expansion
         </p>
+        <div className='flex justify-center mt-[63px]'>
+          <div
+            className={`relative scale-[3] h-[49px] lg:h-[100px] w-[117px] lg:scale-[1] lg:w-[900px]`}
+          >
+            <Image
+              src={image}
+              fill
+              alt={"Banner preview"}
+            />
+          </div>
+        </div>
       </div>
     </div>
   );

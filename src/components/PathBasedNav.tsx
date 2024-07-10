@@ -35,7 +35,7 @@ const PathBasedNav: React.FC = () => {
           Our Services
         </Link>
         <Link
-          href={`${basePath}//impact-and-sustainability`}
+          href={`${basePath}/impact-and-sustainability`}
           className="text-greyish-10 hover:text-black"
         >
           Impact and Sustainability

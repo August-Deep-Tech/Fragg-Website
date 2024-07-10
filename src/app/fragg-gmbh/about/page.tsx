@@ -406,7 +406,7 @@ const About = () => {
           </div>
         </div>
       </div>
-      <GroupContact image="map-germany" />
+      <GroupContact />
       <BeginYourInvestment />
 
     </div>

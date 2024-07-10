@@ -21,7 +21,7 @@ const props: LinkCardProps[] = [
   {
     backgroundUrl: 'bg-[url("/assets/png/advisory/acceleratorPrograms.png")]',
     title: "Aceelerator Programs",
-    linkHref: "/",
+    linkHref: "/fragg-nigeria/advisory/accelerator-program",
   },
 ];
 
