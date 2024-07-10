@@ -1,6 +1,7 @@
 "use client";
 
 import {useState} from "react";
+import {useRouter} from "next/navigation";
 import {FaUser, FaPhone, FaLocationDot} from "react-icons/fa6";
 import {IoMail} from "react-icons/io5";
 import {TfiMoney} from "react-icons/tfi";
@@ -29,9 +30,11 @@ const investmentRangeOptions = [
 ];
 
 const BecomeanInvestor = () => {
+  const router = useRouter();
   const {countries, setCurrentCountry, currentCountry} = useCountry();
   const [plan, setPlan] = useState("Investors");
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [investorInfo, setInvestorInfo] = useState({
     name: "",
     email: "",
@@ -63,17 +66,51 @@ const BecomeanInvestor = () => {
     }));
   };
 
-  const handleSubmit = (
+  const handleSubmitForClient = (
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    router.push("/fragg-nigeria/apply-for-funding");
+  };
+
+  const handleSubmit = async (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate an async operation
-    setTimeout(() => {
+    // handle submit for investor form
+    try {
+      const response = await fetch(
+        "http://localhost:3000/submit-investor-info",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(investorInfo),
+        }
+      );
+
+      const result = await response.json();
+      if (result.result === "success") {
+        // alert("Form submitted successfully!");
+        setInvestorInfo({
+          name: "",
+          email: "",
+          phone_number: "",
+          instrumentType: "",
+          investmentRange: "",
+        });
+      } else {
+        setErrorMessage("An error occurred. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      setErrorMessage("An error occurred. Please try again.");
+    } finally {
       setIsSubmitting(false);
-      alert("Form submitted!");
-    }, 2000);
+    }
   };
   return (
     <div className={`${redHatDisplay.className} py-[60px] lg:py-[120px]`}>
@@ -395,7 +432,7 @@ const BecomeanInvestor = () => {
               </div>
               <div className="pt-[118px]">
                 <Button
-                  onClick={handleSubmit}
+                  onClick={handleSubmitForClient}
                   label={
                     isSubmitting ? "Submitting..." : "Continue Application"
                   }

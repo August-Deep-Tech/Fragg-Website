@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
 import usePathCheck from "@/hooks/usePathCheck";
-import Image from 'next/image';
+import Image from "next/image";
 
 const GroupContact = () => {
   const {isFraggNigeria, isFraggGmbh, isFraggSarl} = usePathCheck();
@@ -23,21 +23,17 @@ const GroupContact = () => {
           FRAGG Group Contact
         </h1>
         <p className="text-greyish-10 mx-auto text-center w-[90%] sm:w-[70%] xl:w-[50%] text-base">
-          Our global team is a diverse blend of talent, united in our pursuit of excellence,
-          spanning continents, and bringing a wealth of perspectives and expertise to every endeavor.
+          Our global team is a diverse blend of talent, united in our pursuit of
+          excellence, spanning continents, and bringing a wealth of perspectives
+          and expertise to every endeavor.
         </p>
       </div>
 
       <div className="flex justify-center mt-20">
-          <Image
-            src={logoSrc}
-            width={1280}
-            height={567}
-            alt="map of the world"
-          />
-        </div>
+        <Image src={logoSrc} width={1280} height={567} alt="map of the world" />
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default GroupContact
+export default GroupContact;
