@@ -115,10 +115,6 @@ const ApplyForFundingForm = () => {
 
   const [errors, setErrors] = useState<{[key: string]: string}>({});
 
-  // useEffect(() => {
-  //   // console.log("Current step updated to", currentStep);
-  // }, [currentStep]);
-
   const validateStep = (step: number) => {
     const stepData = formData[`step${step}` as keyof FormData];
     const stepRequiredFields =
@@ -192,9 +188,7 @@ const ApplyForFundingForm = () => {
   const nextStep = () => {
     if (validateStep(currentStep)) {
       setCurrentStep(prev => Math.min(prev + 1, 5));
-      console.log(formData);
     }
-    // console.log(formData);
   };
 
   const prevStep = () => {
@@ -208,12 +202,36 @@ const ApplyForFundingForm = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (validateStep(currentStep)) {
       if (currentStep === 5) {
         // Handle form submission here
         console.log("Form submitted", formData);
+        try {
+          const response = await fetch(
+            "https://fragg-apply-form-api.onrender.com/funding-form",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            }
+          );
+
+          if (response.ok) {
+            console.log("Form submitted successfully");
+            // You can add code here to show a success message to the user
+            // or redirect them to a thank you page
+          } else {
+            console.error("Form submission failed");
+            // You can add code here to show an error message to the user
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          // You can add code here to show an error message to the user
+        }
       } else {
         nextStep();
       }
