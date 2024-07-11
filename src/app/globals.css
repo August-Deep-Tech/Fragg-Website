@@ -27,6 +27,14 @@ body {
   height: 100vh;
 }
 
+.home-germany {
+  background-image: url(/assets/webp/home-germany.webp);
+  background-size: cover;
+  background-position: top;
+  height: 100vh;
+}
+
+
 .home-map {
   background-image: url(/assets/jpg/MapOverlay.jpg);
   background-size: cover;
@@ -36,10 +44,21 @@ body {
 
 .home-sarl {
   background-image: url(/assets/svg/home/home-sarl.svg);
-  background-size: contain;
+  background-size: cover;
   background-position: top;
   height: 100vh;
 }
+
+@media (max-width: 900px) {
+  .home-germany {
+    background-image: none;
+  }
+
+  .home-sarl {
+    background-image: none;
+  }
+}
+
 
 .map-nigeria {
   background-image: url(/assets/svg/home/fragginvest-nigeria-map.svg);
@@ -125,6 +144,14 @@ body {
   background-position: right;
 }
 
+
+.learnMore {
+  background-image: url(/assets/webp/investment-banking-solutions.webp);
+  background-size: cover;
+  height: 640px;
+  background-position: right;
+}
+
 .courtGmbh {
   background-image: url(/assets/webp/court-gmbh.webp);
   background-size: cover;
@@ -163,6 +190,15 @@ body {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
   }
+}
+.homegmbhOne {
+  background-image: url(/assets/webp/homesarlOne.webp);
+  background-size: cover;
+}
+
+.homegmbhTwo {
+  background-image: url(/assets/webp/homesarlTwo.webp);
+  background-size: cover;
 }
 
 .homesarlOne {
