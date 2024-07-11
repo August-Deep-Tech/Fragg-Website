@@ -42,6 +42,7 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange, errors}) => {
         owners: [{}] as Owner[],
       }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleInputChange = (
