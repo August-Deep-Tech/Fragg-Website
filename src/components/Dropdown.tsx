@@ -9,6 +9,7 @@ interface DropdownProps {
   className?: string;
   label?: string;
   required?: boolean;
+  defaultValue?: string; // Add defaultValue prop
 }
 
 const Dropdown: React.FC<DropdownProps> = ({
@@ -20,6 +21,7 @@ const Dropdown: React.FC<DropdownProps> = ({
   className,
   label,
   required = false,
+  defaultValue = '', // Default to an empty string if not provided
 }) => {
   return (
     <div className="flex flex-col">
@@ -36,8 +38,13 @@ const Dropdown: React.FC<DropdownProps> = ({
         className={`border border-[#D9D9D9] rounded-md pl-[20px] py-[12px] ${className} `}
         required={required}
       >
+        {defaultValue && (
+          <option value="" disabled hidden>
+            {defaultValue}
+          </option>
+        )}
         {options.map((option) => (
-          <option key={option.value} value={option.value} className=''>
+          <option key={option.value} value={option.value}>
             {option.label}
           </option>
         ))}

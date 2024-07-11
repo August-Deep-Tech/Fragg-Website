@@ -29,9 +29,11 @@ const GroupContact = () => {
         </p>
       </div>
 
-      <div className="flex justify-center mt-20">
-        <Image src={logoSrc} width={1280} height={567} alt="map of the world" />
+  <div>
+  <div className="flex justify-center mt-20 home-map">
+        <Image src={logoSrc} width={1280} height={567} alt="map of the world" className="scale-[2] sm:scale-[1]"/>
       </div>
+  </div>
     </div>
   );
 };

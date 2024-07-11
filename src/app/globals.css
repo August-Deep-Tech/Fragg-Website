@@ -12,6 +12,10 @@
   overscroll-behavior: none; */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Red Hat Display", sans-serif;
 }
@@ -23,8 +27,8 @@ body {
   height: 100vh;
 }
 
-.home-germany {
-  background-image: url(/assets/webp/home-germany.webp);
+.home-map {
+  background-image: url(/assets/jpg/MapOverlay.jpg);
   background-size: cover;
   background-position: top;
   height: 100vh;

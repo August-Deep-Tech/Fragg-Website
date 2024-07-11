@@ -174,7 +174,7 @@ const Footer = () => {
           },
           {
             text: "Contact Us",
-            linkTo: `${logoHref}/contact`,
+            linkTo: `fragg-nigeria/contact`,
             ext: false,
             isLink: true,
           },
@@ -267,7 +267,7 @@ const Footer = () => {
           },
           {
             text: "Contact Us",
-            linkTo: `${logoHref}/contact`,
+            linkTo: `fragg-nigeria/contact`,
             ext: false,
             isLink: true,
           },
