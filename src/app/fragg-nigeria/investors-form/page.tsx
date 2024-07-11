@@ -1,6 +1,7 @@
 "use client";
 
 import {useState} from "react";
+import {useRouter} from "next/navigation";
 import {FaUser, FaPhone, FaLocationDot} from "react-icons/fa6";
 import {IoMail} from "react-icons/io5";
 import {TfiMoney} from "react-icons/tfi";
@@ -12,6 +13,7 @@ import Dropdown from "@/components/Dropdown";
 import Button from "@/components/Button";
 
 const instrumentOptions = [
+  {value: "", label: "Select an instrument"},
   {value: "GSS Bonds", label: "GSS Bonds"},
   {value: "Debt Funding", label: "Debt Funding"},
   {value: "Equity Funding", label: "Equity Funding"},
@@ -19,6 +21,7 @@ const instrumentOptions = [
 ];
 
 const investmentRangeOptions = [
+  {value: "", label: "Select an investment range"},
   {value: "Below $100,000", label: "Below $100,000"},
   {value: "$100,000 - $1,000,000", label: "$100,000 - $1,000,000"},
   {value: "$1,000,000 - $5,000,000", label: "$1,000,000 - $5,000,000"},
@@ -26,6 +29,7 @@ const investmentRangeOptions = [
 ];
 
 const InvestorsForm = () => {
+  const router = useRouter();
   const [errorMessage, setErrorMessage] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,10 +48,35 @@ const InvestorsForm = () => {
     }));
   };
 
+  const validateForm = () => {
+    const {name, email, phone_number, instrumentType, investmentRange} =
+      investorInfo;
+    if (
+      !name ||
+      !email ||
+      !phone_number ||
+      !instrumentType ||
+      !investmentRange
+    ) {
+      setErrorMessage("Please fill out all fields.");
+      return false;
+    }
+    setErrorMessage("");
+    return true;
+  };
+
   const handleSubmit = async (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.preventDefault();
+
+    if (!validateForm()) {
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 3000);
+      return;
+    }
+
     setIsSubmitting(true);
 
     // handle submit for investor form
@@ -74,6 +103,7 @@ const InvestorsForm = () => {
           instrumentType: "",
           investmentRange: "",
         });
+        router.push("/fragg-nigeria");
       } else {
         setErrorMessage("An error occurred. Please try again.");
       }
@@ -175,6 +205,7 @@ const InvestorsForm = () => {
                 id="example-dropdown"
                 name=""
                 className="sm:w-[452px] text-greyish-10 bg-transparent"
+                required={true}
               />
             </div>
           </div>
@@ -195,6 +226,7 @@ const InvestorsForm = () => {
                 id="example-dropdown"
                 name=""
                 className="sm:w-[452px] text-greyish-10 bg-transparent"
+                required={true}
               />
             </div>
           </div>
@@ -224,7 +256,9 @@ const InvestorsForm = () => {
             </div>
             {/* <div>{successMessage}</div> */}
             {errorMessage !== "" && (
-              <div className="font-bold text-white text-xs">{errorMessage}</div>
+              <div className="font-bold text-red-200 text-xs">
+                {errorMessage}
+              </div>
             )}
             {successMessage !== "" && (
               <div className="font-bold text-green-500 mb-3 text-xs">
