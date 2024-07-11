@@ -1,37 +1,37 @@
 "use client";
 
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import { FaUser, FaPhone, FaLocationDot } from "react-icons/fa6";
-import { IoMail } from "react-icons/io5";
-import { TfiMoney } from "react-icons/tfi";
-import { IoIosCheckmark } from "react-icons/io";
-import { TbWorld } from "react-icons/tb";
+import {useState} from "react";
+import {useRouter} from "next/navigation";
+import {FaUser, FaPhone, FaLocationDot} from "react-icons/fa6";
+import {IoMail} from "react-icons/io5";
+import {TfiMoney} from "react-icons/tfi";
+import {IoIosCheckmark} from "react-icons/io";
+import {TbWorld} from "react-icons/tb";
 
 import FormInput from "@/components/FormInput";
-import { redHatDisplay } from "@/styles/font";
+import {redHatDisplay} from "@/styles/font";
 import Dropdown from "@/components/Dropdown";
 import Button from "@/components/Button";
-import { useCountry } from "@/hooks/useCountry";
+import {useCountry} from "@/hooks/useCountry";
 import DropdownMenu from "@/components/CountryDropdown";
 
 const instrumentOptions = [
-  { value: "GSS Bonds", label: "GSS Bonds" },
-  { value: "Debt Funding", label: "Debt Funding" },
-  { value: "Equity Funding", label: "Equity Funding" },
-  { value: "Syndicated Finance", label: "Syndicated Finance" },
+  {value: "GSS Bonds", label: "GSS Bonds"},
+  {value: "Debt Funding", label: "Debt Funding"},
+  {value: "Equity Funding", label: "Equity Funding"},
+  {value: "Syndicated Finance", label: "Syndicated Finance"},
 ];
 
 const investmentRangeOptions = [
-  { value: "Below $100,000", label: "Below $100,000" },
-  { value: "$100,000 - $1,000,000", label: "$100,000 - $1,000,000" },
-  { value: "$1,000,000 - $5,000,000", label: "$1,000,000 - $5,000,000" },
-  { value: "Above $5,000,000", label: "Above $5,000,000" },
+  {value: "Below $100,000", label: "Below $100,000"},
+  {value: "$100,000 - $1,000,000", label: "$100,000 - $1,000,000"},
+  {value: "$1,000,000 - $5,000,000", label: "$1,000,000 - $5,000,000"},
+  {value: "Above $5,000,000", label: "Above $5,000,000"},
 ];
 
 const BecomeanInvestor = () => {
   const router = useRouter();
-  const { countries, setCurrentCountry, currentCountry } = useCountry();
+  const {countries, setCurrentCountry, currentCountry} = useCountry();
   const [plan, setPlan] = useState("Investors");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -73,7 +73,6 @@ const BecomeanInvestor = () => {
     }));
   };
 
-
   const handleClientInfoChange = (key: any, value: any) => {
     setClientInfo(prevEvent => ({
       ...prevEvent,
@@ -81,7 +80,12 @@ const BecomeanInvestor = () => {
     }));
   };
 
-  const allowSubmission = investorInfo.name.length < 1 || investorInfo.email.length < 1 || investorInfo.phone_number.length < 1 || investorInfo.instrumentType.length < 1 || investorInfo.investmentRange.length < 1
+  const allowSubmission =
+    investorInfo.name.length < 1 ||
+    investorInfo.email.length < 1 ||
+    investorInfo.phone_number.length < 1 ||
+    investorInfo.instrumentType.length < 1 ||
+    investorInfo.investmentRange.length < 1;
 
   const handleSubmitForClient = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
@@ -97,23 +101,22 @@ const BecomeanInvestor = () => {
 
     if (allowSubmission) {
       if (investorInfo.name.length < 1) {
-        handleInvestorInfoErrorChange("name", true)
+        handleInvestorInfoErrorChange("name", true);
       }
       if (investorInfo.email.length < 1) {
-        handleInvestorInfoErrorChange("email", true)
+        handleInvestorInfoErrorChange("email", true);
       }
       if (investorInfo.phone_number.length < 1) {
-        handleInvestorInfoErrorChange("phone_number", true)
-
+        handleInvestorInfoErrorChange("phone_number", true);
       }
       if (investorInfo.instrumentType.length < 1) {
-        handleInvestorInfoErrorChange("instrumentType", true)
-
+        handleInvestorInfoErrorChange("instrumentType", true);
       }
       if (investorInfo.investmentRange.length < 1) {
-        handleInvestorInfoErrorChange("investmentRange", true)
+        handleInvestorInfoErrorChange("investmentRange", true);
       }
-      return
+      setErrorMessage("Please fill all fields");
+      return;
     }
     setIsSubmitting(true);
 
@@ -157,22 +160,27 @@ const BecomeanInvestor = () => {
   };
 
   return (
-    <div className={`${redHatDisplay.className} py-[60px] lg:py-[120px]`} id="investor">
+    <div
+      className={`${redHatDisplay.className} py-[60px] lg:py-[120px]`}
+      id="investor"
+    >
       <div className="flex justify-center">
         <div className="relative transition-all flex gap-1 mx-auto w-fit p-[12px] rounded-full bg-[#FAF5F5]">
           <div
-            className={`${plan === "Investors"
-              ? "left-3 w-[135px]"
-              : "left-[165px] w-[110px]"
-              } transition-all duration-500 absolute top-[.65rem] h-[40px]  rounded-full bg-redish-20 shadow-md`}
+            className={`${
+              plan === "Investors"
+                ? "left-3 w-[135px]"
+                : "left-[165px] w-[110px]"
+            } transition-all duration-500 absolute top-[.65rem] h-[40px]  rounded-full bg-redish-20 shadow-md`}
           ></div>
           <button
             onClick={() => setPlan("Investors")}
             className={`
-          ${plan === "Investors"
-                ? "text-white"
-                : "text-greyish-10 bg-[#99999914] shadow-sm"
-              }
+          ${
+            plan === "Investors"
+              ? "text-white"
+              : "text-greyish-10 bg-[#99999914] shadow-sm"
+          }
           z-[1] capitalize text-base hover:border-2 border-2 border-transparent py-1 px-5  rounded-full`}
           >
             For Investors
@@ -180,10 +188,11 @@ const BecomeanInvestor = () => {
           <button
             onClick={() => setPlan("Clients")}
             className={`
-          ${plan === "Clients"
-                ? "text-white"
-                : "text-greyish-10 bg-[#99999914] shadow-sm"
-              }
+          ${
+            plan === "Clients"
+              ? "text-white"
+              : "text-greyish-10 bg-[#99999914] shadow-sm"
+          }
           z-[1] capitalize text-base hover:border-2 border-2 border-transparent py-1 px-5 rounded-full`}
           >
             For Clients
@@ -229,12 +238,13 @@ const BecomeanInvestor = () => {
                     label="Your Name"
                     placeholder="John Doe"
                     value={investorInfo.name}
-                    className={`${investorInfoError.name && 'border-red-500'} w-[100%] sm:w-[452px]`}
+                    className={`${
+                      investorInfoError.name && "border-red-500"
+                    } w-[100%] sm:w-[452px]`}
                     onChange={e => {
-                      handleInvestorInfoChange("name", e.target.value)
-                      handleInvestorInfoErrorChange("name", false)
-                    }
-                  }
+                      handleInvestorInfoChange("name", e.target.value);
+                      handleInvestorInfoErrorChange("name", false);
+                    }}
                   />
                 </div>
               </div>
@@ -249,12 +259,13 @@ const BecomeanInvestor = () => {
                     label="Your Email"
                     placeholder="johndoe@mail.com"
                     value={investorInfo.email}
-                    className={`${investorInfoError.email && 'border-red-500'} w-[100%] sm:w-[452px]`}
+                    className={`${
+                      investorInfoError.email && "border-red-500"
+                    } w-[100%] sm:w-[452px]`}
                     onChange={e => {
-                      handleInvestorInfoChange("email", e.target.value)
-                      handleInvestorInfoErrorChange("email", false)
-                    }
-                    }
+                      handleInvestorInfoChange("email", e.target.value);
+                      handleInvestorInfoErrorChange("email", false);
+                    }}
                   />
                 </div>
               </div>
@@ -276,12 +287,13 @@ const BecomeanInvestor = () => {
                     label="Your Phone"
                     placeholder="812 345 6789"
                     value={investorInfo.phone_number}
-                    className={`${investorInfoError.phone_number && 'border-red-500'} w-[100%] sm:w-[452px]`}
+                    className={`${
+                      investorInfoError.phone_number && "border-red-500"
+                    } w-[100%] sm:w-[452px]`}
                     onChange={e => {
-                      handleInvestorInfoChange("phone_number", e.target.value)
-                      handleInvestorInfoErrorChange("phone_number", false)
-                    }
-                  }
+                      handleInvestorInfoChange("phone_number", e.target.value);
+                      handleInvestorInfoErrorChange("phone_number", false);
+                    }}
                   />
                 </div>
               </div>
@@ -299,14 +311,18 @@ const BecomeanInvestor = () => {
                     options={instrumentOptions}
                     value={investorInfo.instrumentType}
                     onChange={e => {
-                      handleInvestorInfoChange("instrumentType", e.target.value)
-                      handleInvestorInfoErrorChange("instrumentType", false)
-                    }
-                    }
+                      handleInvestorInfoChange(
+                        "instrumentType",
+                        e.target.value
+                      );
+                      handleInvestorInfoErrorChange("instrumentType", false);
+                    }}
                     defaultValue="Please select an option"
                     id="example-dropdown"
                     name=""
-                    className={`${investorInfoError.instrumentType && 'border-red-500'} text-greyish-10 bg-transparent w-[100%] sm:w-[452px]`}
+                    className={`${
+                      investorInfoError.instrumentType && "border-red-500"
+                    } text-greyish-10 bg-transparent w-[100%] sm:w-[452px]`}
                   />
                 </div>
               </div>
@@ -325,17 +341,15 @@ const BecomeanInvestor = () => {
                       handleInvestorInfoChange(
                         "investmentRange",
                         e.target.value
-                      )
-                      handleInvestorInfoErrorChange(
-                        "investmentRange",
-                        false
-                      )
-                    }
-                  }
+                      );
+                      handleInvestorInfoErrorChange("investmentRange", false);
+                    }}
                     defaultValue="Please select an option"
                     id="example-dropdown"
                     name=""
-                    className={`${investorInfoError.investmentRange && 'border-red-500'} text-greyish-10 bg-transparent w-[100%] sm:w-[452px]`}
+                    className={`${
+                      investorInfoError.investmentRange && "border-red-500"
+                    } text-greyish-10 bg-transparent w-[100%] sm:w-[452px]`}
                   />
                 </div>
               </div>
@@ -365,7 +379,7 @@ const BecomeanInvestor = () => {
                 </div>
                 {/* <div>{successMessage}</div> */}
                 {errorMessage !== "" && (
-                  <div className="font-bold text-white text-xs">
+                  <div className="font-bold text-red-200 text-xs">
                     {errorMessage}
                   </div>
                 )}
