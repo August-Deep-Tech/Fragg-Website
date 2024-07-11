@@ -67,7 +67,7 @@ const Landing = () => {
       </div>
       <WhatWeOffer />
 
-      <div className='relative aboutInvestments flex justify-start items-center pl-[20px] sm:pl-[80px]'>
+      <div className='relative learnMore flex justify-start items-center pl-[20px] sm:pl-[80px]'>
         <div>
           <h1 className='text-[36px] lg:text-[48px] leading-[64px] lg:leading-[80px] font-[700] text-white'>
             <span className='text-[#999999A3]'> The </span> FRAGG Impact Fund  <span className='text-[#999999A3]'>is driven </span><br />
@@ -77,7 +77,7 @@ const Landing = () => {
               and technical assistance to viable </span><br />
             multi-sector SMEs in West Africa. <br />
           </h1>
-          <Link href="/fragg-sarl">
+          <Link href="/fragg-sarl/funds/investment-banking-solutions">
             <Button
               label={"Learn More"}
               className="bg-white py-[16px] text-[18px] px-[55px] rounded-[28px] text-black font-semibold w-fit mt-[40px]"

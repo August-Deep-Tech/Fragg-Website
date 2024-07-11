@@ -1,9 +1,23 @@
+"use client"
+
 import Button from '@/components/Button';
+import usePathCheck from '@/hooks/usePathCheck';
 import { redHatDisplay } from '@/styles/font'
 import Image from "next/image";
 import Link from 'next/link';
 
 const GrowWithFragg = () => {
+    const {isFraggNigeria, isFraggGmbh, isFraggSarl} = usePathCheck();
+    let logoHref = "";
+    if (isFraggNigeria) {
+      logoHref = "/fragg-nigeria";
+    }
+    if (isFraggGmbh) {
+      logoHref = "/fragg-gmbh";
+    }
+    if (isFraggSarl) {
+      logoHref = "/fragg-sarl";
+    }
     return (
         <div className={`${redHatDisplay.className} px-[20px] xl:px-[100px] py-[60px] lg:py-[120px]`}>
             <div className='flex flex-col-reverse gap-[20px] sm:flex-row items-center'>
@@ -15,7 +29,7 @@ const GrowWithFragg = () => {
                     </h1>
                     <p className='border-b-[5px] border-redish-20 w-[64px]'></p>
                     <p className='font-[600] pt-[28px] text-[#757575]'>A program tailored for you to <span className='text-redish-20'>impact millions</span> of lives <br/> by <span className='text-redish-20'>investing in one</span> ground-breaking idea.</p>
-                    <Link href="fragg-nigeria/services">
+                    <Link href={`${logoHref}/advisory/accelerator-program`}>
                     <Button
                         label={"Join Now"}
                         type="submit"

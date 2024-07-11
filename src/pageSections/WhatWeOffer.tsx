@@ -1,10 +1,24 @@
+"use client"
+
 import Button from "@/components/Button";
 import { redHatDisplay } from "@/styles/font";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import usePathCheck from "@/hooks/usePathCheck";
 
 const WhatWeOffer = () => {
+    const {isFraggNigeria, isFraggGmbh, isFraggSarl} = usePathCheck();
+    let logoHref = "";
+    if (isFraggNigeria) {
+      logoHref = "/fragg-nigeria";
+    }
+    if (isFraggGmbh) {
+      logoHref = "/fragg-gmbh";
+    }
+    if (isFraggSarl) {
+      logoHref = "/fragg-sarl";
+    }
     return (
         <div className={`${redHatDisplay.className} pt-[350px] pb-[60px] lg:py-[120px]`}>
             <div className="pt-[40px]">
@@ -83,7 +97,7 @@ const WhatWeOffer = () => {
             </div>
 
             <div className="flex justify-center">
-                <Link href="fragg-nigeria/services">
+                <Link href={`${logoHref}/services`}>
                     <Button
                         label={"View All Services"}
                         type="submit"

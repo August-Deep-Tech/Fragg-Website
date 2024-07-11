@@ -1,4 +1,5 @@
 import BecomeanInvestor from '@/pageSections/BecomeanInvestor'
+import { BeginYourInvestment } from '@/pageSections/BeginYourInvestment'
 import ConnectionSection from '@/pageSections/ConnectionSection'
 import FraggInvestmentManagement from '@/pageSections/FraggInvestment'
 import Group from '@/pageSections/Group'
@@ -90,6 +91,7 @@ const Landing = () => {
       <Group text="Join the network of FRAGG Group, which includes FRAGG Investment Management in Nigeria, FRAGG Invest-GmbH in Germany, and FRAGG-Invest SÀRL in Luxembourg, providing customized investment solutions across borders." />
       <GroupContact/>
       <BecomeanInvestor />
+      <BeginYourInvestment />
     </div>
   )
 }
