@@ -53,7 +53,7 @@ const GssBond = () => {
         pageTitle="Promoting sustainable <br /> and impact finance"
       />
 
-      <div className="container mx-auto px-4 md:px-0 py-20">
+      <div className="container mx-auto px-4 2xl:px-0 py-20">
         <h2 className="text-5xl text-greyish-30 font-semibold mb-5">
           FRAGG-Invest Green
         </h2>
@@ -86,7 +86,7 @@ const GssBond = () => {
       </div>
       {/* gss bonds give investors ....  */}
       <div className="bg-[url('/assets/png/gssImage.png')] bg-cover">
-        <div className="container mx-auto px-4 md:px-0 py-28">
+        <div className="container mx-auto px-4 2xl:px-0 py-28">
           <h3 className="text-4xl md:text-5xl font-semibold text-greyish-10">
             <span className="text-white">GSS bonds</span> give investors the{" "}
             <br />
@@ -106,7 +106,7 @@ const GssBond = () => {
       </div>
 
       {/* investing in your future  */}
-      <div className="container mx-auto px-4 md:px-0 py-20">
+      <div className="container mx-auto px-4 2xl:px-0 py-20">
         <h2 className="text-4xl md:text-5xl font-semibold text-center mb-6">
           Investing in our future
         </h2>
@@ -118,7 +118,7 @@ const GssBond = () => {
           sustainable values.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 md:w-[66.938rem] mx-auto gap-x-6 gap-y-10 md:gap-y-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 xl:w-[66.938rem] mx-auto gap-x-6 gap-y-10 md:gap-y-0">
           {cardProps.map((card, index) => (
             <GssBondsOfferCards
               key={index}

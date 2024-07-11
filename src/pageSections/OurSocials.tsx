@@ -10,23 +10,23 @@ interface SocialIconCircleProps {
 const socialMediaLinks: SocialIconCircleProps[] = [
   {
     src: "/assets/svg/facebook.svg",
-    href: "facebook.com",
+    href: "https://www.facebook.com/people/FRAGG-Investment-Management-Limited/100063701136300/?ref=br_rs",
     name: "facebook",
   },
   {
     src: "/assets/svg/twitter.svg",
-    href: "x.com",
+    href: "https://twitter.com/fragginvest",
     name: "twitter",
   },
   {
     src: "/assets/svg/linkedin.svg",
-    href: "linkedin.com",
+    href: "https://www.linkedin.com/company/fragg-investment-management-limited/",
     name: "linkedin",
   },
 ];
 
 const SocialIconCircle: FC<SocialIconCircleProps> = ({src, href, name}) => (
-  <a href={href}>
+  <a href={href} target="_blank">
     <div className="w-16 h-16 bg-redish-20 rounded-full flex items-center justify-center">
       <Image
         src={src}
@@ -40,8 +40,8 @@ const SocialIconCircle: FC<SocialIconCircleProps> = ({src, href, name}) => (
 
 const OurSocials = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-x-20">
-      <div className="flex items-center space-x-3 mb-5 md:mb-0">
+    <div className="flex flex-col lg:flex-row gap-x-20">
+      <div className="flex items-center space-x-3 mb-5 lg:mb-0">
         <h2 className="text-4xl md:text-5xl text-greyish-30 font-semibold text-nowrap">
           Our Socials
         </h2>

@@ -59,7 +59,7 @@ const Services = () => {
         breadcrumb="Our Services"
         pageTitle="Elevating Financial <br /> Futures"
       />
-      <div className="container mx-auto px-4 md:px-0 py-20">
+      <div className="container mx-auto px-4 2xl:px-0 py-20">
         <h2 className="text-5xl text-greyish-30 font-semibold mb-5">
           Propelling financial advancement through{" "}
           <br className="hidden md:block" /> expert fund mangement

@@ -15,7 +15,7 @@ const ImpactFund = () => {
       />
 
       {/* impacting lives ... */}
-      <div className="container mx-auto px-4 md:px-0 py-20">
+      <div className="container mx-auto px-4 2xl:px-0 py-20">
         <h2 className="text-5xl text-greyish-30 font-semibold mb-5">
           Impacting lives...
         </h2>
@@ -65,7 +65,7 @@ const ImpactFund = () => {
 
       {/* the fragg mpact fund is driven...  */}
       <div className="bg-[url('/assets/png/impactFundImage.png')] bg-cover">
-        <div className="container mx-auto px-4 md:px-0 py-28">
+        <div className="container mx-auto px-4 2xl:px-0 py-28">
           <h3 className="text-4xl md:text-5xl font-semibold text-greyish-10">
             The <span className="text-white">FRAGG Impact Fund</span> is driven{" "}
             <br /> by the need to{" "}
@@ -117,7 +117,7 @@ const ImpactFund = () => {
       <OurGeographicFocus />
 
       {/* our growth lifecycle */}
-      <div className="container mx-auto px-4 md:px-0 py-28 text-center flex flex-col items-center">
+      <div className="container mx-auto px-4 2xl:px-0 py-28 text-center flex flex-col items-center">
         <h3 className="text-4xl md:text-5xl font-semibold mb-6">
           Our Growth Lifecycle
         </h3>
@@ -136,7 +136,7 @@ const ImpactFund = () => {
       </div>
 
       {/* our growth lifecycle */}
-      <div className="container mx-auto px-4 md:px-0 py-28 text-center flex flex-col items-center">
+      <div className="container mx-auto px-4 2xl:px-0 py-28 text-center flex flex-col items-center">
         <h3 className="text-4xl md:text-5xl font-semibold mb-6">
           Our Return Expectations
         </h3>
@@ -156,7 +156,7 @@ const ImpactFund = () => {
       </div>
 
       {/* legacy of success */}
-      <div className="container mx-auto px-4 md:px-0 py-28  flex flex-col items-center">
+      <div className="container mx-auto px-4 2xl:px-0 py-28  flex flex-col items-center">
         <h3 className="text-4xl md:text-5xl font-semibold mb-6 text-center">
           A Legacy of Success
         </h3>

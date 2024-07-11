@@ -17,10 +17,7 @@ const LinkCardFunds: React.FC<LinkCardFundsProps> = ({
       className={`relative group flex items-end bg-cover bg-center ${backgroundUrl} h-full w-full`}
     >
       <div className="z-10 hidden transition-all group-hover:flex bg-black opacity-50 absolute h-full w-full items-center justify-center">
-        <Link
-          href={linkHref}
-          className="bg-white rounded-full px-[14px] py-[17px]"
-        >
+        <div className="bg-white rounded-full px-[14px] py-[17px]">
           <svg
             width="49"
             height="42"
@@ -33,7 +30,7 @@ const LinkCardFunds: React.FC<LinkCardFundsProps> = ({
               fill="black"
             />
           </svg>
-        </Link>
+        </div>
       </div>
       {/* acton button and text */}
 

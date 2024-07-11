@@ -1,8 +1,8 @@
-import Button from '@/components/Button';
-import { SubpageHero } from '@/components/SubpageHero'
-import { BeginYourInvestment } from '@/pageSections/BeginYourInvestment';
-import GroupContact from '@/pageSections/GroupContact';
-import { ArrowRight } from 'lucide-react';
+import Button from "@/components/Button";
+import {SubpageHero} from "@/components/SubpageHero";
+import {BeginYourInvestment} from "@/pageSections/BeginYourInvestment";
+import GroupContact from "@/pageSections/GroupContact";
+import {ArrowRight} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 interface companyCardProps {
@@ -46,7 +46,6 @@ const teamMembers: companyCardProps[] = [
       "Olugbenga Musa, an esteemed Investment Manager at FRAGG Investment Management Ltd, brings to the table over 12 years of rich experience in investment banking and advisory services. Olugbenga's proficiency in strategy development, fi...",
     pageLink: "/fragg-nigeria/full-team-list/olugbenga",
   },
-
 ];
 const About = () => {
   return (
@@ -57,66 +56,87 @@ const About = () => {
         pageTitle="Your dependable wealth <br /> and funds partner"
       />
 
-      <div className='px-[20px] py-[60px] sm:py-[112px] xl:px-[64px]'>
+      <div className="px-[20px] py-[60px] sm:py-[112px] xl:px-[64px]">
         <div className="pb-[40px]">
           <h1 className="text-[30px] sm:text-[48px] leading-[57px] text-black font-[600] pb-[10px] sm:pb-[24px]">
-          FRAGG-Invest GP Sàrl
+            FRAGG-Invest GP Sàrl
           </h1>
           <p className="text-greyish-10 w-[100%] text-base">
-          FRAGG-Invest GP Sàrl is incorporated in Luxembourg as a General Partner for managing FRAGG-Invest’s funds and is also registered with the CSSF in Luxembourg as an Alternative Investment Fund Manager (AIFM). The company targeting investments in the impact and green domains. FRAGG-Invest GP Sàrl performs the following responsibilities: the identification of investment opportunities, due diligence (financial, non-financial, and legal), Monitoring of investment, and management of the relationship with the investors and investee companies. 
+            FRAGG-Invest GP Sàrl is incorporated in Luxembourg as a General
+            Partner for managing FRAGG-Invest’s funds and is also registered
+            with the CSSF in Luxembourg as an Alternative Investment Fund
+            Manager (AIFM). The company targeting investments in the impact and
+            green domains. FRAGG-Invest GP Sàrl performs the following
+            responsibilities: the identification of investment opportunities,
+            due diligence (financial, non-financial, and legal), Monitoring of
+            investment, and management of the relationship with the investors
+            and investee companies. 
           </p>
           <p className="text-greyish-10 w-[100%] text-base py-[24px]">
-          With over 100 years of combined team experience concerning Fund Management, Private Equity, Fund Mobilization, SME debt & equity investments, deal origination, portfolio management and exit, and implementation of Business Development Services for SME projects,  FRAGG-Invest  GP  Sàrl has an experienced local and international team with deep knowledge of the market, culture, language, socio-political, regulatory environment, and the entire impact eco-system in the focal regions while maintaining a strong external affiliation with the international stakeholders in the impact ecosystem.
+            With over 100 years of combined team experience concerning Fund
+            Management, Private Equity, Fund Mobilization, SME debt & equity
+            investments, deal origination, portfolio management and exit, and
+            implementation of Business Development Services for SME projects, 
+            FRAGG-Invest  GP  Sàrl has an experienced local and international
+            team with deep knowledge of the market, culture, language,
+            socio-political, regulatory environment, and the entire impact
+            eco-system in the focal regions while maintaining a strong external
+            affiliation with the international stakeholders in the impact
+            ecosystem.
           </p>
           <p className="text-greyish-10 w-[100%] text-base">
-          FRAGG-Invest GP Sàrl currently manages the FRAGG Green and Impact Fund.
+            FRAGG-Invest GP Sàrl currently manages the FRAGG Green and Impact
+            Fund.
           </p>
         </div>
-        <div className='flex flex-col lg:flex-row gap-[0px] mt-[20px]'>
+        <div className="flex flex-col lg:flex-row gap-[0px] mt-[20px]">
           {[
             {
               bg: "investAboutOne",
               bgImage: "/assets/svg/home/global-search.svg",
               text: "Geographical Focus",
-              subText: "FRAGG strategically focuses on Europe, Africa, and Latin America, harnessing regional strengths to drive sustainable growth and impactful investments across diverse economic landscapes and cultural contexts.",
+              subText:
+                "FRAGG strategically focuses on Europe, Africa, and Latin America, harnessing regional strengths to drive sustainable growth and impactful investments across diverse economic landscapes and cultural contexts.",
             },
             {
               bg: "investAboutTwo",
               bgImage: "/assets/svg/home/graph.svg",
               text: "Sector",
-              subText: "Finance (Financial Institutions, FinTech & Payment Systems), Healthcare, Affordable Housing, Climate Finance (Clean Energy & Environmental Projects), Agriculture, Education.",
+              subText:
+                "Finance (Financial Institutions, FinTech & Payment Systems), Healthcare, Affordable Housing, Climate Finance (Clean Energy & Environmental Projects), Agriculture, Education.",
             },
             {
               bg: "investAboutThree",
               bgImage: "/assets/svg/home/cartesian.svg",
               text: "Instrument",
-              subText: "Debt (Venture & Subordinated), Mezzanine & Equity - tailored to the needs and capacities of the investee. We actively engage as investors, providing strategic guidance and resources for long-term success.",
+              subText:
+                "Debt (Venture & Subordinated), Mezzanine & Equity - tailored to the needs and capacities of the investee. We actively engage as investors, providing strategic guidance and resources for long-term success.",
             },
           ].map((e, id) => {
             return (
               <div className={`w-[100%]`} key={id}>
-                <div className={`${e.bg} h-[220px] w-[100%] flex flex-col px-[18px] pt-[44px]`}>
-                  <div className='flex gap-[10px]'>
-                    <div
-                      className={`relative w-[30px] h-[30px]`}
-                    >
-                      <Image
-                        src={e.bgImage}
-                        fill
-                        alt={"Image preview"}
-                      />
+                <div
+                  className={`${e.bg} h-[220px] w-[100%] flex flex-col px-[18px] pt-[44px]`}
+                >
+                  <div className="flex gap-[10px]">
+                    <div className={`relative w-[30px] h-[30px]`}>
+                      <Image src={e.bgImage} fill alt={"Image preview"} />
                     </div>
-                    <h1 className='text-white text-[20px] xl:text-[24px] font-[600]'>{e.text}</h1>
+                    <h1 className="text-white text-[20px] xl:text-[24px] font-[600]">
+                      {e.text}
+                    </h1>
                   </div>
-                  <p className='text-white text-sm xl:text-base pt-[16px]'>{e.subText}</p>
+                  <p className="text-white text-sm xl:text-base pt-[16px]">
+                    {e.subText}
+                  </p>
                 </div>
               </div>
-            )
+            );
           })}
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-0 text-center py-20">
+      <div className="container mx-auto px-4 2xl:px-0 text-center py-20">
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">Our team</h2>
         <p className="text-greyish-10 mb-16">
           Dedicated professionals committed to guiding you towards financial
@@ -142,18 +162,18 @@ const About = () => {
               type="submit"
               iconRight={<ArrowRight />}
               className="bg-redish-20 py-[16px] text-[18px] px-[24px] rounded-[28px] text-white font-semibold w-fit"
-            /></Link>
+            />
+          </Link>
         </div>
       </div>
 
       <GroupContact />
       <BeginYourInvestment />
-
     </div>
-  )
-}
+  );
+};
 
-export default About
+export default About;
 
 const CompanyCard: React.FC<companyCardProps> = ({
   imageSrc,
@@ -162,7 +182,7 @@ const CompanyCard: React.FC<companyCardProps> = ({
   description,
   pageLink,
 }) => (
-  <div className="flex items-center">
+  <div className="flex flex-col xl:flex-row gap-y-5 xl:gap-y-0 xl:items-center">
     {/* image */}
     <div className="flex-1">
       <Image
@@ -178,7 +198,7 @@ const CompanyCard: React.FC<companyCardProps> = ({
       <p className="text-greyish-10 mb-4">{position}</p>
       <p
         className="text-greyish-10 mb-4"
-        dangerouslySetInnerHTML={{ __html: description }}
+        dangerouslySetInnerHTML={{__html: description}}
       ></p>
       <Link
         href={pageLink}

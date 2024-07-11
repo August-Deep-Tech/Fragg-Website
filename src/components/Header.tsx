@@ -63,8 +63,9 @@ export const Header = () => {
         {/* nav links */}
         <PathBasedNav />
         {/* action button  */}
-        <div className="hidden md:block">
-          <button
+        <div className="hidden xl:block">
+          <Link
+            href="/fragg-nigeria/investors-form"
             className={`${
               isHomePage
                 ? "bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-redish-20"
@@ -72,10 +73,10 @@ export const Header = () => {
             } `}
           >
             Start Investing
-          </button>
+          </Link>
         </div>
         {/* hamburger icon */}
-        <div className="md:hidden">
+        <div className="xl:hidden">
           <button
             className={`${
               isHomePage ? "text-white" : "text-greyish-10"

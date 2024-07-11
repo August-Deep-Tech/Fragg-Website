@@ -3,7 +3,7 @@ import React from "react";
 
 const ApplyForFunding = () => {
   return (
-    <div className="container mx-auto px-4 md:px-0 py-20">
+    <div className="container mx-auto px-4 2xl:px-0 py-20">
       <h2 className="text-greyish-30 text-4xl md:text-5xl font-semibold mb-6">
         Apply for funding
       </h2>

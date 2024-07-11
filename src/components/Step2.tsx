@@ -99,7 +99,9 @@ const Step2: React.FC<Step2Props> = ({formData, handleChange, errors}) => {
           </div>
           {/* company telephone input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="companyTelephone">Company Telephone</label>
+            <label htmlFor="companyTelephone">
+              Organization&apos;s Phone (with country code e.g. +352, +234, +49)
+            </label>
             <input
               type="text"
               name="companyTelephone"

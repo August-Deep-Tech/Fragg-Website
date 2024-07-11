@@ -39,7 +39,7 @@ const TechnicalAssistance = () => {
         breadcrumb="VALUE ADDED AERVICES"
         pageTitle="We offer added value to <br />ensure your success"
       />
-      <div className="container mx-auto px-4 md:px-0 py-28">
+      <div className="container mx-auto px-4 2xl:px-0 py-28">
         <h2 className="text-4xl md:text-5xl font-semibold mb-6">
           Comprehensive Client Support
         </h2>
@@ -54,7 +54,7 @@ const TechnicalAssistance = () => {
         </p>
       </div>
       <div className="bg-[url('/assets/png/technicalAssistanceImg.png')] bg-cover">
-        <div className="container mx-auto px-4 md:px-0 py-28">
+        <div className="container mx-auto px-4 2xl:px-0 py-28">
           <h3 className="text-4xl md:text-5xl text-white">
             We offer value added strategic advice <br /> to our clients by
             providing Business <br /> Development Services, Technical <br />{" "}
@@ -62,7 +62,7 @@ const TechnicalAssistance = () => {
           </h3>
         </div>
       </div>
-      <div className="container mx-auto px-4 md:px-0 py-20">
+      <div className="container mx-auto px-4 2xl:px-0 py-20">
         <h3 className="text-4xl md:text-5xl mb-16 font-semibold">
           Our Strategic and Technical Advisory <br /> services include
         </h3>

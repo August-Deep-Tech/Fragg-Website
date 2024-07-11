@@ -14,7 +14,7 @@ const PathBasedNav: React.FC = () => {
       <nav
         className={`${
           isHomePage && "*:text-white"
-        } hidden md:flex items-center space-x-16`}
+        } hidden xl:flex items-center space-x-16`}
       >
         <Link
           href={`${basePath}/about`}
@@ -52,7 +52,7 @@ const PathBasedNav: React.FC = () => {
 
   if (isFraggSarl) {
     return (
-      <nav className="hidden md:flex items-center space-x-16">
+      <nav className="hidden xl:flex items-center space-x-16">
         <Link
           href="/fragg-sarl/about"
           className="text-greyish-10 hover:text-black"

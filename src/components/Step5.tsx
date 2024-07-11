@@ -61,10 +61,10 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange, errors}) => {
           {/* investment amount you need input */}
           <div className="flex flex-col space-y-2">
             <label htmlFor="investmentAmountYouNeed">
-              Investment Amount you need
+              Investment Amount you need ($)
             </label>
             <input
-              type="text"
+              type="number"
               name="investmentAmountYouNeed"
               value={localData.investmentAmountYouNeed || ""}
               onChange={handleInputChange}
@@ -73,7 +73,7 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange, errors}) => {
                   ? "border-red-500"
                   : "border-[#D9D9D9]"
               } py-4 px-6 rounded-xl w-full mb-4`}
-              placeholder="$10,000"
+              placeholder="10,000"
             />
             {errors.investmentAmountYouNeed && (
               <p className="text-red-500 text-sm">
@@ -129,10 +129,10 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange, errors}) => {
           {/* desired interest rate input */}
           <div className="flex flex-col space-y-2">
             <label htmlFor="desiredInterestRate">
-              If it is a loan, what is the desired interest rate?
+              If it is a loan, what is the desired interest rate? (%)
             </label>
             <input
-              type="text"
+              type="number"
               name="desiredInterestRate"
               value={localData.desiredInterestRate || ""}
               onChange={handleInputChange}
@@ -141,7 +141,7 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange, errors}) => {
                   ? "border-red-500"
                   : "border-[#D9D9D9]"
               } py-4 px-6 rounded-xl w-full mb-4`}
-              placeholder="10%"
+              placeholder="10"
             />
             {errors.desiredInterestRate && (
               <p className="text-red-500 text-sm">
@@ -177,7 +177,7 @@ const Step5: React.FC<Step5Props> = ({formData, handleChange, errors}) => {
           {/* If so, when and which agency input */}
           <div className="flex flex-col space-y-2">
             <label htmlFor="ifSoWhenAndWhichAgency">
-              If so, when and which agency?
+              If so, when and which agency? (If No, type NIL)
             </label>
             <input
               type="text"

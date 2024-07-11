@@ -199,9 +199,9 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange, errors}) => {
           {/* loan portfolio size input */}
           {industry === "Inclusive Finance" && (
             <div className="flex flex-col space-y-2">
-              <label htmlFor="loanPortfolioSize">Loan portfolio size</label>
+              <label htmlFor="loanPortfolioSize">Loan portfolio size ($)</label>
               <input
-                type="text"
+                type="number"
                 name="loanPortfolioSize"
                 value={localData.loanPortfolioSize || ""}
                 onChange={handleInputChange}
@@ -210,7 +210,7 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange, errors}) => {
                     ? "border-red-500"
                     : "border-[#D9D9D9]"
                 } py-4 px-6 rounded-xl w-full mb-4`}
-                placeholder="$10,000"
+                placeholder="10,000"
               />
               {errors.loanPortfolioSize && (
                 <p className="text-red-500 text-sm">
@@ -223,10 +223,10 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange, errors}) => {
           {industry === "Inclusive Finance" && (
             <div className="flex flex-col space-y-2">
               <label htmlFor="averageLoanAmountPerClient">
-                Average loan amount per client
+                Average loan amount per client ($)
               </label>
               <input
-                type="text"
+                type="number"
                 name="averageLoanAmountPerClient"
                 value={localData.averageLoanAmountPerClient || ""}
                 onChange={handleInputChange}
@@ -235,7 +235,7 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange, errors}) => {
                     ? "border-red-500"
                     : "border-[#D9D9D9]"
                 } py-4 px-6 rounded-xl w-full mb-4`}
-                placeholder="$10,000"
+                placeholder="10,000"
               />
               {errors.averageLoanAmountPerClient && (
                 <p className="text-red-500 text-sm">
@@ -377,10 +377,10 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange, errors}) => {
             <div className="flex flex-col space-y-2 md:w-1/2 md:col-span-2">
               <label htmlFor="percentageOfRuralAndUrbanExtension">
                 Percentages of rural and urban extension of organization and
-                coverage financing need (amount)
+                coverage financing need (amount in $)
               </label>
               <input
-                type="text"
+                type="number"
                 name="percentageOfRuralAndUrbanExtension"
                 value={localData.percentageOfRuralAndUrbanExtension || ""}
                 onChange={handleInputChange}
@@ -389,7 +389,7 @@ const Step4: React.FC<Step4Props> = ({formData, handleChange, errors}) => {
                     ? "border-red-500"
                     : "border-[#D9D9D9]"
                 } py-4 px-6 rounded-xl w-full mb-4`}
-                placeholder="$10,000"
+                placeholder="10,000"
               />
               {errors.percentageOfRuralAndUrbanExtension && (
                 <p className="text-red-500 text-sm">

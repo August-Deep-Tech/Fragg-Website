@@ -32,7 +32,7 @@ const Funds = () => {
   return (
     <div>
       {/* advisory link */}
-      <div className="h-[53.125rem] flex flex-col md:flex-row justify-between">
+      <div className="h-[53.125rem] flex flex-col lg:flex-row justify-between">
         {linkCards.map((linkCard, index) => (
           <LinkCardFunds
             key={index}
@@ -43,16 +43,18 @@ const Funds = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 md:px-0 py-[7.5rem]">
+      <div className="container mx-auto px-4 2xl:px-0 py-[7.5rem]">
         {/* icon  */}
-        <div className={`relative h-10 w-10 mb-3`}>
-          <Image
-            // "/assets/services-svg/chart-arrow-up.svg"
-            src={"/assets/svg/services/money-bag.svg"}
-            fill
-            alt={"Banner preview"}
-          />
-        </div>
+
+        <Image
+          // "/assets/services-svg/chart-arrow-up.svg"
+          src={"/assets/svg/services/money-bag.svg"}
+          width={40}
+          height={40}
+          alt={"Banner preview"}
+          className="mb-3"
+        />
+
         {/* title */}
         <h3 className="font-semibold mb-5 text-4xl md:text-5xl">Funds</h3>
         {/* description  */}

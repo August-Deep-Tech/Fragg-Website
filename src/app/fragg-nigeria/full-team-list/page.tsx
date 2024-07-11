@@ -77,7 +77,7 @@ const CompanyCard: React.FC<companyCardProps> = ({
   description,
   pageLink,
 }) => (
-  <div className="flex items-center">
+  <div className="flex flex-col xl:flex-row gap-y-5 xl:gap-y-0 xl:items-center">
     {/* image */}
     <div className="flex-1">
       <Image
@@ -121,7 +121,7 @@ const FullTeamList = () => {
         breadcrumb="Our Team"
         pageTitle="A global team of <br />committed professionals"
       />
-      <div className="container mx-auto px-4 md:px-0 text-center py-20">
+      <div className="container mx-auto px-4 2xl:px-0 text-center py-20">
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">Our team</h2>
         <p className="text-greyish-10 mb-16">
           Dedicated professionals committed to guiding you towards financial
