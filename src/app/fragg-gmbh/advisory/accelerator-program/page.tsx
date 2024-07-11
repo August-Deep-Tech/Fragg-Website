@@ -89,7 +89,7 @@ const Accelerator = () => {
                 </div>
             </div>
 
-            <div className={`py-[60px] lg:py-[120px]`}>
+            <div className={`pt-[350px] sm:py-[60px] lg:py-[120px]`}>
                 <div className="pt-[40px]">
                     <h1 className="text-[30px] sm:text-[48px] leading-[57px] text-black font-[600] text-center pb-[10px] sm:pb-[24px]">
                         Target Impact Sectors
@@ -193,8 +193,8 @@ const Accelerator = () => {
                 </div>
             </div>
 
-            <div className='relative accelerator-cta flex justify-start items-center pl-[20px] lg:pl-[80px]'>
-                <h1 className='text-[36px] lg:text-[48px] leading-[56px] lg:leading-[64px] font-[600] text-white'>
+            <div className='relative accelerator-cta flex justify-start items-center pl-[20px] lg:pl-[80px] mb-[60px]'>
+            <h1 className="text-[24px] leading-[40px] sm:text-[40px] lg:text-[48px] sm:leading-[50px] lg:leading-[60px] font-[600] text-white">
                     FRAGG Investment Incubation/Accelerator Hub is <br />
                     committed to empowering start-ups and driving <br />
                     innovation. We are proud of our achievements and <br />

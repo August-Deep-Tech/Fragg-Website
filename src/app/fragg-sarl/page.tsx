@@ -45,7 +45,7 @@ const Landing = () => {
           ].map((e, id) => {
             return (
               <div className={`w-[100%] `} key={id}>
-                <div className={`${e.bg} h-[200px] sm:h-[400px] w-[100%] flex flex-col justify-end it px-[18px] pb-[40px]`}>
+                <div className={`${e.bg} h-[400px] w-[100%] flex flex-col justify-end it px-[18px] pb-[40px]`}>
                   <div className='flex gap-[10px]'>
                     <div
                       className={`relative w-[30px] h-[30px]`}
@@ -69,7 +69,7 @@ const Landing = () => {
 
       <div className='relative learnMore flex justify-start items-center pl-[20px] sm:pl-[80px]'>
         <div>
-          <h1 className='text-[36px] lg:text-[48px] leading-[64px] lg:leading-[80px] font-[700] text-white'>
+          <h1 className='text-[24px] sm:text-[36px] lg:text-[48px] leading-[40px] sm:leading-[64px] lg:leading-[80px] font-[700] text-white'>
             <span className='text-[#999999A3]'> The </span> FRAGG Impact Fund  <span className='text-[#999999A3]'>is driven </span><br />
             <span className='text-[#999999A3]'>  by the need to </span> promote <br />
             sustainable and impact finance <br />

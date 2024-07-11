@@ -305,7 +305,7 @@ const About = () => {
       </div>
 
       <div className="relative courtGmbh flex justify-start items-center pl-[20px] sm:pl-[80px]">
-        <h1 className="text-[52px] lg:text-[48px] leading-[64px] lg:leading-[60px] font-[600] text-white">
+        <h1 className="text-[24px] leading-[40px] sm:text-[52px] lg:text-[48px] sm:leading-[64px] lg:leading-[60px] font-[600] text-white">
           FRAGG-INVEST GmbH is incorporated <br />
           in Germany under the High Court of <br />
           Dueren (HRB 9048)  and registered <br />
