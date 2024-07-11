@@ -149,7 +149,13 @@ body {
   background-image: url(/assets/webp/investment-banking-solutions.webp);
   background-size: cover;
   height: 640px;
-  background-position: right;
+  background-position: left;
+}
+
+@media (max-width: 768px) {
+  .learnMore {
+    background-position: left;
+  }
 }
 
 .courtGmbh {
