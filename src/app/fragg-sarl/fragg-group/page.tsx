@@ -28,7 +28,7 @@ const props: LinkCardProps[] = [
 const FraggGroup = () => {
   return (
     <div>
-      <div className="container mx-auto text-center  py-10">
+      <div className="container mx-auto px-4 2xl:px-0 text-center  py-10">
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">FRAGG Group</h2>
         <p className="text-greyish-10">
           Join the network of FRAGG Group, which includes FRAGG Investment
@@ -38,7 +38,7 @@ const FraggGroup = () => {
         </p>
       </div>
 
-      <div className="h-[85dvh] flex flex-col md:flex-row justify-between">
+      <div className="h-[53.125rem] flex flex-col lg:flex-row justify-between">
         {props.map((prop, index) => (
           <LinkCard
             key={index}

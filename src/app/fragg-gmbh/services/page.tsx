@@ -140,7 +140,7 @@ const ServicesGMBH = () => {
         breadcrumb="Our Services"
         pageTitle="Tailored Solutions for <br /> Your Needs"
       />
-      <div className="container mx-auto px-4 md:px-0 py-20">
+      <div className="container mx-auto px-4 2xl:px-0 py-20">
         <h2 className="text-5xl text-greyish-30 font-semibold mb-5">
           Driving Financial Growth
         </h2>

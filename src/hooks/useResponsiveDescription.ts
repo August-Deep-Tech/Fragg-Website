@@ -11,7 +11,7 @@ const useResponsiveDescription = (description: string): string => {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth < 768) {
+      if (window.innerWidth < 1280) {
         setModifiedDescription(removeBrTags(description));
       } else {
         setModifiedDescription(description);

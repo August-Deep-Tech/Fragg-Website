@@ -17,7 +17,7 @@ const ContactUs = () => {
 
   return (
     <div>
-      <div className="container mx-auto px-4 md:px-0">
+      <div className="container mx-auto px-4 2xl:px-0">
         {/* contact form */}
         {submitted ? ( // Render thank you message here
           <div className="flex flex-col md:flex-row items-center gap-x-20 py-10 md:py-24">
@@ -67,9 +67,9 @@ const ContactUs = () => {
             </div>
           </div>
         ) : (
-          <div className="flex flex-col md:flex-row gap-x-20 py-10 md:py-24 ">
+          <div className="flex flex-col lg:flex-row gap-x-20 py-10 md:py-24 ">
             {/* image */}
-            <div className=" mb-7 md:mb-0">
+            <div className=" mb-7 lg:mb-0">
               <Image
                 src="/assets/png/contact/contactFormImage.png"
                 height={651}

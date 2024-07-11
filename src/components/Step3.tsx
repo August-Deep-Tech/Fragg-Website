@@ -42,6 +42,7 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange, errors}) => {
         owners: [{}] as Owner[],
       }));
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleInputChange = (
@@ -228,10 +229,10 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange, errors}) => {
               {/* percentage owned input */}
               <div className="flex flex-col space-y-2">
                 <label htmlFor={`percentageOwned-${index}`}>
-                  Percentage owned
+                  Percentage owned (%)
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   name="percentageOwned"
                   id={`percentageOwned-${index}`}
                   value={owner.percentageOwned || ""}
@@ -241,7 +242,7 @@ const Step3: React.FC<Step3Props> = ({formData, handleChange, errors}) => {
                       ? "border-red-500"
                       : "border-[#D9D9D9]"
                   } py-4 px-6 rounded-xl w-full`}
-                  placeholder="20%"
+                  placeholder="20"
                 />
                 {errors[`owners.${index}.percentageOwned`] && (
                   <p className="text-red-500 text-sm">

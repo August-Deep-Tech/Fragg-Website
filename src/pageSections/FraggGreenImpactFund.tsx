@@ -70,14 +70,15 @@ const StrategyItem: React.FC<strategyItemProps> = ({
   return (
     <div className="flex flex-col items-center">
       {/* icon  */}
-      <div className={`relative h-10 w-10 mb-3`}>
-        <Image
-          // "/assets/services-svg/chart-arrow-up.svg"
-          src={icon}
-          fill
-          alt={"Banner preview"}
-        />
-      </div>
+
+      <Image
+        // "/assets/services-svg/chart-arrow-up.svg"
+        src={icon}
+        height={40}
+        width={40}
+        alt={"Banner preview"}
+      />
+
       <h2 className="text-xl font-bold mb-4">{title}</h2>
       <p
         className="text-greyish-10"
@@ -89,7 +90,7 @@ const StrategyItem: React.FC<strategyItemProps> = ({
 
 const FraggGreenImpactFund = () => {
   return (
-    <div className="container mx-auto px-4 md:px-0 text-center py-32">
+    <div className="container mx-auto px-4 2xl:px-0 text-center py-32">
       <h2 className="text-4xl md:text-5xl font-semibold mb-7">
         FRAGG-INVEST GREEN <br /> and IMPACT FUND SCSp
       </h2>
@@ -101,7 +102,7 @@ const FraggGreenImpactFund = () => {
         exclusion, poverty, and gender inequality through innovative technology{" "}
         solutions, with a particular emphasis on the following areas:
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-x-8 gap-y-16 w-10/12 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16 w-10/12 mx-auto">
         {strategyItemsArr.map((item, index) => (
           <StrategyItem
             key={index}
@@ -111,13 +112,6 @@ const FraggGreenImpactFund = () => {
           />
         ))}
       </div>
-      <table>
-        <tbody>
-          <tr>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
     </div>
   );
 };

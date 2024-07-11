@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Gregor = () => {
   return (
-    <div className="container mx-auto px-4 md:px-0 py-20 flex gap-8">
+    <div className="container mx-auto px-4 2xl:px-0 py-20 flex gap-8">
       {/* image and email */}
       <div>
         <div className="w-full">

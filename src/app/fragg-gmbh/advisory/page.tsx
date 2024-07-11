@@ -40,7 +40,7 @@ const Advisory = () => {
   return (
     <div>
       {/* advisory link */}
-      <div className="h-[53.125rem] flex flex-col md:flex-row justify-between">
+      <div className="h-[53.125rem] flex flex-col lg:flex-row justify-between">
         {linkCards.map((linkCard, index) => (
           <LinkCard
             key={index}
@@ -51,7 +51,7 @@ const Advisory = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 md:px-0 py-20">
+      <div className="container mx-auto px-4 2xl:px-0 py-20">
         {/* icon  */}
         <div className={`relative h-10 w-10 mb-3`}>
           <Image

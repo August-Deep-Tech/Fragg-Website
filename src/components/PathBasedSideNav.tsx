@@ -48,9 +48,13 @@ const PathBasedSideNav: React.FC<PathBasedSideNavProps> = ({toggleMenu}) => {
         >
           Advisory
         </Link>
-        <button className="bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10">
+        <Link
+          href="/fragg-nigeria/investors-form"
+          className="bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10"
+          onClick={toggleMenu}
+        >
           Start Investing
-        </button>
+        </Link>
       </nav>
     );
   }
@@ -87,9 +91,13 @@ const PathBasedSideNav: React.FC<PathBasedSideNavProps> = ({toggleMenu}) => {
           Funds
         </Link>
 
-        <button className="bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10">
+        <Link
+          href="/fragg-nigeria/investors-form"
+          className="bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10"
+          onClick={toggleMenu}
+        >
           Start Investing
-        </button>
+        </Link>
       </nav>
     );
   }

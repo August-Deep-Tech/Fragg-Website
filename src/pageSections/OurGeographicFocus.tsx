@@ -3,8 +3,8 @@ import React from "react";
 const OurGeographicFocus = () => {
   return (
     <div className="bg-[url('/assets/png/geographicFocus.png')] bg-cover text-white">
-      <div className="container mx-auto px-4 md:px-0 py-28 flex flex-col items-center text-center">
-        <div className="flex flex-col gap-y-6 md:w-[52.5rem]">
+      <div className="container mx-auto px-4 2xl:px-0 py-28 flex flex-col items-center text-center">
+        <div className="flex flex-col gap-y-6 lg:w-[52.5rem]">
           {" "}
           <h3 className="text-4xl md:text-5xl font-semibold">
             Our Geographic Focus

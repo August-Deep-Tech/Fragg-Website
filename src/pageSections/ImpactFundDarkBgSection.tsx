@@ -18,7 +18,7 @@ const ImpactFundDarkBgSection: React.FC<ImpactFundDarkBgSectionProps> = ({
 
   return (
     <div className="bg-[#0A0A0A] text-white">
-      <div className="container mx-auto px-4 md:px-0 py-20 grid grid-cols-1 md:grid-cols-2 gap-y-20">
+      <div className="container mx-auto px-4 2xl:px-0 py-20 grid grid-cols-1 md:grid-cols-2 gap-y-20">
         {/* title  */}
         <div>
           <h2

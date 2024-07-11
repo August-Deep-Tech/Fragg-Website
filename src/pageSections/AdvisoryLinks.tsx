@@ -27,7 +27,7 @@ const props: LinkCardProps[] = [
 
 const AdvisoryLinks = () => {
   return (
-    <div className="h-[88dvh] flex flex-col md:flex-row justify-between">
+    <div className="h-[53.125rem] flex flex-col lg:flex-row justify-between">
       {props.map((prop, index) => (
         <LinkCard
           key={index}

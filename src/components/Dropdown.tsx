@@ -1,7 +1,7 @@
-import React from 'react';
+import React from "react";
 
 interface DropdownProps {
-  options: { value: string; label: string }[];
+  options: {value: string; label: string}[];
   value: string;
   onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void;
   id?: string;
@@ -43,8 +43,13 @@ const Dropdown: React.FC<DropdownProps> = ({
             {defaultValue}
           </option>
         )}
-        {options.map((option) => (
-          <option key={option.value} value={option.value}>
+        {options.map((option, index) => (
+          <option
+            key={index}
+            value={option.value}
+            className={option.value === "" ? "hidden" : ""}
+            disabled={option.value === ""}
+          >
             {option.label}
           </option>
         ))}

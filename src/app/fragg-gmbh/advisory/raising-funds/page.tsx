@@ -12,7 +12,7 @@ const RaisingFunds = () => {
         pageTitle="FRAGG helps you boost <br /> your capital faster"
       />
 
-      <div className="container mx-auto px-4 md:px-0 py-28">
+      <div className="container mx-auto px-4 2xl:px-0 py-28">
         <h2 className="text-4xl md:text-5xl font-semibold mb-6">
           Looking to Raise Capital?
         </h2>
@@ -34,7 +34,7 @@ const RaisingFunds = () => {
       </div>
 
       <div className="bg-[url('/assets/png/raisingFundsImg.png')] bg-cover">
-        <div className="container mx-auto px-4 md:px-0 py-28">
+        <div className="container mx-auto px-4 2xl:px-0 py-28">
           <h3 className="text-4xl md:text-5xl text-white">
             FRAGG provides Fund Mobilization/ <br /> Capital Raising services to
             SMEs and <br /> projects in the impact and climate <br /> sectors.
@@ -42,7 +42,7 @@ const RaisingFunds = () => {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 md:px-0 py-28">
+      <div className="container mx-auto px-4 2xl:px-0 py-28">
         <h2 className="text-4xl md:text-5xl font-semibold mb-6">
           FRAGG works on a success-fee basis and will <br /> not charge any
           upfront payments.

@@ -58,7 +58,7 @@ const ContactEmailInfo = () => {
         Send us an email and our team of experts will send you all the details
         you need to get started.{" "}
       </p>
-      <div className="flex gap-y-6 md:gap-y-0 flex-col md:flex-row justify-between">
+      <div className="flex gap-y-6 lg:gap-y-0 flex-col lg:flex-row justify-between">
         {emails.map((email, index) => (
           <EmailCardDisplay
             key={index}

@@ -96,7 +96,9 @@ const Step1: React.FC<Step1Props> = ({formData, handleChange, errors}) => {
           </div>
           {/* phone number input */}
           <div className="flex flex-col space-y-2">
-            <label htmlFor="phoneNumber">Your Phone</label>
+            <label htmlFor="phoneNumber">
+              Your Phone (with country code e.g. +352, +234, +49)
+            </label>
             <input
               type="tel"
               name="phoneNumber"
