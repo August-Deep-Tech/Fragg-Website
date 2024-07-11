@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,7 +21,12 @@ body {
 }
 
 .home-nigeria {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(/assets/webp/home-nigeria.webp);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.1),
+      rgba(0, 0, 0, 1)
+    ),
+    url(/assets/webp/home-nigeria.webp);
   background-size: cover;
   background-position: top;
   height: 100vh;
@@ -34,11 +39,11 @@ body {
   height: 100vh;
 }
 
-
 .home-map {
   background-image: url(/assets/jpg/MapOverlay.jpg);
   background-size: cover;
   background-position: top;
+  /* opacity: ; */
   height: 100vh;
 }
 
@@ -59,13 +64,12 @@ body {
   }
 }
 
-
 .map-nigeria {
   background-image: url(/assets/svg/home/fragginvest-nigeria-map.svg);
   background-size: contain;
   background-position: top;
   height: 600px;
-  margin-top: 80
+  margin-top: 80;
 }
 
 .map-germany {
@@ -143,7 +147,6 @@ body {
   height: 640px;
   background-position: right;
 }
-
 
 .learnMore {
   background-image: url(/assets/webp/investment-banking-solutions.webp);
@@ -233,12 +236,12 @@ body {
   background-image: url(/assets/webp/sustainable-goals.webp);
   background-size: cover;
   height: 640px;
-  background-position: right; 
+  background-position: right;
 }
 
 .accelerator-cta {
   background-image: url(/assets/webp/accelerator-cta.webp);
   background-size: cover;
   height: 640px;
-  background-position: right; 
+  background-position: right;
 }
