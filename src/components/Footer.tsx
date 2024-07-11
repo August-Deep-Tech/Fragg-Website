@@ -121,19 +121,19 @@ const Footer = () => {
         children: [
           {
             text: "Facebook",
-            linkTo: "#",
+            linkTo: "https://www.facebook.com/people/FRAGG-Investment-Management-Limited/100063701136300/?ref=br_rs",
             ext: true,
             isLink: true,
           },
           {
             text: "Linkedln",
-            linkTo: "#",
+            linkTo: "https://www.linkedin.com/company/fragg-investment-management-limited/",
             ext: true,
             isLink: true,
           },
           {
             text: "X",
-            linkTo: "#",
+            linkTo: "https://twitter.com/fragginvest",
             ext: true,
             isLink: true,
           },
