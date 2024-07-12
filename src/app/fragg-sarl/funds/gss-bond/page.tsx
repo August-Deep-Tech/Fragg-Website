@@ -20,13 +20,13 @@ const cardProps: GssBondsOfferCardsProps[] = [
     icon: "/assets/svg/funds/social.svg",
     title: "Social Bond",
     description:
-      "Green bonds serve as a source of funding for initiatives aiming to have a good impact on the environment. Renewable energy, energy efficiency, clean transportation, green buildings, wastewater management, and climate change adaptation are among project types that are eligible for the issue of green bonds.",
+      "Social bonds are used to finance or refinance projects with social aspects whose purpose is to address a common problem and help those most vulnerable. Examples of project categories eligible for social bonds include: food security and sustainable food systems, socioeconomic advancement, affordable housing, access to essential services, and affordable basic infrastructure.",
   },
   {
     icon: "/assets/svg/funds/sustainable.svg",
     title: "Sustainable Bond",
     description:
-      "Green bonds serve as a source of funding for initiatives aiming to have a good impact on the environment. Renewable energy, energy efficiency, clean transportation, green buildings, wastewater management, and climate change adaptation are among project types that are eligible for the issue of green bonds.",
+      "Sustainability bonds are obligations whose revenues are used only to fund or refinance projects that combine environmental protection and social responsibility. Examples of project categories that are often eligible for sustainability bonds include those in the green and social bonds categories, offering a larger range of potential prospects.",
   },
 ];
 

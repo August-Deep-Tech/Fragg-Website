@@ -18,12 +18,12 @@ const services: Service[] = [
     description:
       " FRAGG Investment provides advisory services to investors,financial intermediaries, and SMEs in sectors such as Health, Energy & Climate, Agriculture, Education, and Affordable Housing. The firm offers expertise in impact investment strategy, project development, and financial structuring.",
   },
-  {
-    icon: "/assets/svg/services/money-bag.svg",
-    title: "Fund Mobilization",
-    description:
-      "FRAGG Investment facilitates fund mobilization and finance linkage services for commercial banks, microfinance banks, impact-related projects, and SMEs. The firm assists in raising capital from diversified sources to support sustainable development initiatives.",
-  },
+  // {
+  //   icon: "/assets/svg/services/money-bag.svg",
+  //   title: "Fund Mobilization",
+  //   description:
+  //     "FRAGG Investment facilitates fund mobilization and finance linkage services for commercial banks, microfinance banks, impact-related projects, and SMEs. The firm assists in raising capital from diversified sources to support sustainable development initiatives.",
+  // },
   {
     icon: "/assets/svg/services/setting.svg",
     title: "Project Management",
@@ -101,7 +101,7 @@ const services: Service[] = [
     icon: "/assets/svg/services/donate-coin.svg",
     title: "Capital Raising and Business Development Services",
     description:
-      "FRAGG Investment assists startups, SMEs, and impact projects with capital raising and business development activities, including:",
+      "FRAGG Investment facilitates fund mobilization and finance linkage services for commercial banks, microfinance banks, impact-related projects, and SMEs. The firm assists in raising capital from diversified sources to support sustainable development initiatives.",
     list: [
       {
         title: "Fundraising Strategy",

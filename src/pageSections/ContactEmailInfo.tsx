@@ -11,22 +11,22 @@ const emails = [
   {
     src: "/assets/svg/mail.svg",
     title: "General Enquiry",
-    email: "info@FRAGGinvest.com",
+    email: "info@fragginvest.com",
   },
   {
     src: "/assets/svg/mail.svg",
     title: "SME Funding",
-    email: "smefinance@FRAGGinvest.com",
+    email: "smefinance@fragginvest.com",
   },
   {
     src: "/assets/svg/mail.svg",
     title: "Investors",
-    email: "invest@FRAGGinvest.com",
+    email: "invest@fragginvest.com",
   },
   {
     src: "/assets/svg/mail.svg",
     title: "Accelerator Programme",
-    email: "accelerator@FRAGGinvest.com",
+    email: "accelerator@fragginvest.com",
   },
 ];
 

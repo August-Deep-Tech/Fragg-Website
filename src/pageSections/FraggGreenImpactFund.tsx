@@ -48,7 +48,7 @@ const strategyItemsArr: strategyItemProps[] = [
   },
   {
     icon: "/assets/svg/funds/delivery.svg",
-    title: "Mobility and Logistics",
+    title: "E-Mobility and Logistics",
     description:
       "Supporting innovative transportation and <br/> logistics solutions that improve mobility, <br/> connectivity, and access to markets, goods, <br/> and services, particularly in underserved and <br/> remote areas.",
   },
@@ -57,6 +57,12 @@ const strategyItemsArr: strategyItemProps[] = [
     title: "SME Solutions",
     description:
       "Investing in technologies and services that <br/> support the growth and resilience of small and <br/> medium-sized enterprises (SMEs), including <br/> access to finance, digitalization, and market <br/> linkages.",
+  },
+  {
+    icon: "/assets/svg/funds/hierarchy.svg",
+    title: "Deep-Tech Startups",
+    description:
+      "Support for Deep-Tech Startups through <br/> Incubator Programs, Mentorship, Networking, <br/> and Advisory Services, addressing unique <br/> needs from early-stage funding to strategic <br/> growth and exit.",
   },
 ];
 

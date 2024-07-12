@@ -3,16 +3,16 @@
 import Link from "next/link";
 import Image from "next/image";
 import usePathCheck from "@/hooks/usePathCheck";
-import { usePathname } from "next/navigation";
+import {usePathname} from "next/navigation";
 
-import { bebasNeue, redHatDisplay } from "@/styles/font";
-import { Key } from "react";
+import {bebasNeue, redHatDisplay} from "@/styles/font";
+import {Key} from "react";
 
 const Footer = () => {
-  const { isFraggNigeria, isFraggGmbh, isFraggSarl } = usePathCheck();
+  const {isFraggNigeria, isFraggGmbh, isFraggSarl} = usePathCheck();
   let logoSrc = "";
   let logoHref = "";
-  let footerCategory: any[] = []
+  let footerCategory: any[] = [];
   if (isFraggNigeria) {
     logoSrc = "/assets/fragginvest-logo.svg";
     logoHref = "/fragg-nigeria";
@@ -22,13 +22,15 @@ const Footer = () => {
         children: [
           {
             text: "Facebook",
-            linkTo: "https://www.facebook.com/people/FRAGG-Investment-Management-Limited/100063701136300/?ref=br_rs",
+            linkTo:
+              "https://www.facebook.com/people/FRAGG-Investment-Management-Limited/100063701136300/?ref=br_rs",
             ext: true,
             isLink: true,
           },
           {
             text: "Linkedln",
-            linkTo: "https://www.linkedin.com/company/fragg-investment-management-limited/",
+            linkTo:
+              "https://www.linkedin.com/company/fragg-investment-management-limited/",
             ext: true,
             isLink: true,
           },
@@ -86,8 +88,7 @@ const Footer = () => {
         children: [
           {
             text: "FRAGG Investment Management, Nigeria",
-            textTwo:
-              "45b, Oluwaleimu Street, Off Allen Avenue, Ikeja, Lagos.",
+            textTwo: "45b, Oluwaleimu Street, Off Allen Avenue, Ikeja, Lagos.",
             linkTo: "",
             ext: true,
             isLink: false,
@@ -110,7 +111,7 @@ const Footer = () => {
           },
         ],
       },
-    ]
+    ];
   }
   if (isFraggGmbh) {
     logoSrc = "/assets/fragginvest-logo-gmbh.svg";
@@ -121,13 +122,15 @@ const Footer = () => {
         children: [
           {
             text: "Facebook",
-            linkTo: "https://www.facebook.com/people/FRAGG-Investment-Management-Limited/100063701136300/?ref=br_rs",
+            linkTo:
+              "https://www.facebook.com/people/FRAGG-Investment-Management-Limited/100063701136300/?ref=br_rs",
             ext: true,
             isLink: true,
           },
           {
             text: "Linkedln",
-            linkTo: "https://www.linkedin.com/company/fragg-investment-management-limited/",
+            linkTo:
+              "https://www.linkedin.com/company/fragg-investment-management-limited/",
             ext: true,
             isLink: true,
           },
@@ -174,7 +177,7 @@ const Footer = () => {
           },
           {
             text: "Contact Us",
-            linkTo: `fragg-nigeria/contact`,
+            linkTo: `/fragg-nigeria/contact`,
             ext: false,
             isLink: true,
           },
@@ -185,8 +188,7 @@ const Footer = () => {
         children: [
           {
             text: "FRAGG Investment Management, Nigeria",
-            textTwo:
-              "45b, Oluwaleimu Street, Off Allen Avenue, Ikeja, Lagos.",
+            textTwo: "45b, Oluwaleimu Street, Off Allen Avenue, Ikeja, Lagos.",
             linkTo: "",
             ext: true,
             isLink: false,
@@ -209,7 +211,7 @@ const Footer = () => {
           },
         ],
       },
-    ]
+    ];
   }
   if (isFraggSarl) {
     logoSrc = "/assets/fragginvest-logo-sarl.svg";
@@ -220,13 +222,15 @@ const Footer = () => {
         children: [
           {
             text: "Facebook",
-            linkTo: "https://www.facebook.com/people/FRAGG-Investment-Management-Limited/100063701136300/?ref=br_rs",
+            linkTo:
+              "https://www.facebook.com/people/FRAGG-Investment-Management-Limited/100063701136300/?ref=br_rs",
             ext: true,
             isLink: true,
           },
           {
             text: "Linkedln",
-            linkTo: "https://www.linkedin.com/company/fragg-investment-management-limited/",
+            linkTo:
+              "https://www.linkedin.com/company/fragg-investment-management-limited/",
             ext: true,
             isLink: true,
           },
@@ -267,7 +271,7 @@ const Footer = () => {
           },
           {
             text: "Contact Us",
-            linkTo: `fragg-nigeria/contact`,
+            linkTo: `/fragg-nigeria/contact`,
             ext: false,
             isLink: true,
           },
@@ -278,8 +282,7 @@ const Footer = () => {
         children: [
           {
             text: "FRAGG Investment Management, Nigeria",
-            textTwo:
-              "45b, Oluwaleimu Street, Off Allen Avenue, Ikeja, Lagos.",
+            textTwo: "45b, Oluwaleimu Street, Off Allen Avenue, Ikeja, Lagos.",
             linkTo: "",
             ext: true,
             isLink: false,
@@ -302,7 +305,7 @@ const Footer = () => {
           },
         ],
       },
-    ]
+    ];
   }
 
   return (
@@ -312,11 +315,7 @@ const Footer = () => {
           <div
             className={`relative h-[49px] lg:h-[48px] w-[117px] lg:w-[202px]`}
           >
-            <Image
-              src={logoSrc}
-              fill
-              alt={"Banner preview"}
-            />
+            <Image src={logoSrc} fill alt={"Banner preview"} />
           </div>
           <div>
             <div
