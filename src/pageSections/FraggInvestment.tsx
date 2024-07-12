@@ -33,7 +33,7 @@ const FraggInvestmentManagement = ({ Data }: Iinvestment) => {
                 </p>
             </div>
             {Data.length === 3 ? <div className="">
-                <section className="h-[450px] text-white bg-[url('/assets/svg/home/investOne.svg')] px-[24px] py-[40px] flex items-end">
+                <section className="h-[450px] text-white bg-[url('/assets/svg/home/investOne.svg')] bg-no-repeat bg-cover px-[24px] py-[40px] flex items-end">
                     <div>
                         <Image src="/assets/fragginvest-logo-small-white.svg" width={30} height={30} alt="" />
                         <h2 className="text-2xl font-semibold mb-4 pt-[20px]">{Data[0].title}</h2>
@@ -43,7 +43,7 @@ const FraggInvestmentManagement = ({ Data }: Iinvestment) => {
                     </div>
                 </section>
                 <div className="flex flex-col md:flex-row justify-between h-[450px]">
-                    <section className={`md:w-1/2  px-[24px] py-[40px] flex items-end ${isFraggGmbh ?  "homegmbhOne" : "bg-[url('/assets/svg/home/investTwo.svg')]"} text-white`}>
+                    <section className={`md:w-1/2  px-[24px] py-[40px] flex items-end ${isFraggGmbh ?  "homegmbhOne" : "bg-[url('/assets/svg/home/investTwo.svg')] bg-no-repeat bg-cover"} text-white`}>
                         <div>
                             {isFraggGmbh ? <Image src="/assets/svg/home/combo-shape.svg" width={30} height={30} alt="" /> : <Earth />}
                             <h3 className="text-xl font-semibold mb-4 pt-[20px]">{Data[1].title}</h3>
@@ -52,7 +52,7 @@ const FraggInvestmentManagement = ({ Data }: Iinvestment) => {
                             </p>
                         </div>
                     </section>
-                    <section className={`md:w-1/2 px-[24px] py-[40px] flex items-end ${isFraggGmbh ?  "homegmbhTwo" : "bg-[url('/assets/svg/home/investThree.svg')]"} text-white`}>
+                    <section className={`md:w-1/2 px-[24px] py-[40px] flex items-end ${isFraggGmbh ?  "homegmbhTwo" : "bg-[url('/assets/svg/home/investThree.svg')] bg-no-repeat bg-cover"} text-white`}>
                         <div>
                             {isFraggGmbh ? <Image src="/assets/svg/home/combo-shape-2.svg" width={30} height={30} alt="" /> : <Earth />}
                             <h3 className="text-xl font-semibold mb-4 pt-[20px]">{Data[2].title}</h3>
