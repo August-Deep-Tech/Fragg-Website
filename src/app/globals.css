@@ -203,11 +203,13 @@ body {
 .homegmbhOne {
   background-image: url(/assets/webp/homesarlOne.webp);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .homegmbhTwo {
   background-image: url(/assets/webp/homesarlTwo.webp);
   background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .homesarlOne {
