@@ -36,7 +36,9 @@ const Landing = () => {
           },
         ]}
       />
-      <WhatWeOffer />
+      <div className="pt-[350px] sm:pt-[50px] lg:pt-0">
+        <WhatWeOffer />
+      </div>
       <PriorityStrategy />
       <OurStats />
       <GrowWithFragg />

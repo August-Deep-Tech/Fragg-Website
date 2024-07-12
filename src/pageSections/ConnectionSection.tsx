@@ -7,7 +7,7 @@ interface IProps {
 
 const ConnectionSection = ({ image }: IProps) => {
   return (
-    <div className={`bg-[#010100] text-white py-[93px] -translate-y-1 ${redHatDisplay.className}`}>
+    <div className={`bg-[#010100] text-white py-[33px] sm:py-[93px] -translate-y-1 ${redHatDisplay.className}`}>
       <div className="text-center mb-8">
         <h1 className="text-2xl font-semibold">
           Fostering connections with ambitious businesses

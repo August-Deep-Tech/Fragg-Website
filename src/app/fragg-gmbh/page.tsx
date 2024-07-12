@@ -14,7 +14,7 @@ import Image from "next/image";
 const Landing = () => {
   return (
     <div>
-      <HeroSectionTwo bg="home-germany"/>
+      <HeroSectionTwo bg="home-germany" />
       <ConnectionSection image={'/assets/svg/home/connection-fragg-gmbh.svg'} />
       <FraggInvestmentManagement
         Data={[
@@ -32,15 +32,17 @@ const Landing = () => {
           },
         ]
         } />
-      <WhatWeOffer />
-      
+      <div className='pt-[450px] sm:pt-0'>
+        <WhatWeOffer />
+      </div>
+
       <div className='px-[20px] py-[60px] sm:py-[112px] xl:px-[64px]'>
         <div className="pb-[40px]">
           <h1 className="text-[30px] sm:text-[48px] leading-[57px] text-black font-[600] pb-[10px] sm:pb-[24px]">
-          Our Approach
+            Our Approach
           </h1>
           <p className="text-greyish-10 w-[100%] text-base">
-          FRAGG-Invest has a strong network and partnerships in fundraising, implementation, and management of numerous impact investment initiatives that address market needs within the Africa and LAC region. As a fund manager, FRAGG-Invest has a proven track record of designing, structuring, launching, implementing, and divesting innovative funds. FRAGG{"'"}s mission is to enable the flow of sustainable financial instruments to emerging and frontier economies by closing the financial needs of financial intermediaries, and SMEs through the facilitation of access to funds from diversified sources. Our vision is to improve people’s skills and capacities through impact investments to achieve more equality, social and financial inclusion, and climate resilience.
+            FRAGG-Invest has a strong network and partnerships in fundraising, implementation, and management of numerous impact investment initiatives that address market needs within the Africa and LAC region. As a fund manager, FRAGG-Invest has a proven track record of designing, structuring, launching, implementing, and divesting innovative funds. FRAGG{"'"}s mission is to enable the flow of sustainable financial instruments to emerging and frontier economies by closing the financial needs of financial intermediaries, and SMEs through the facilitation of access to funds from diversified sources. Our vision is to improve people’s skills and capacities through impact investments to achieve more equality, social and financial inclusion, and climate resilience.
           </p>
         </div>
         <div className='flex flex-col lg:flex-row gap-[0px] mt-[20px]'>
@@ -89,7 +91,7 @@ const Landing = () => {
       <PriorityStrategy />
       <GrowWithFragg />
       <Group text="Join the network of FRAGG Group, which includes FRAGG Investment Management in Nigeria, FRAGG Invest-GmbH in Germany, and FRAGG-Invest SÀRL in Luxembourg, providing customized investment solutions across borders." />
-      <GroupContact/>
+      <GroupContact />
       <BecomeanInvestor />
       <BeginYourInvestment />
     </div>
