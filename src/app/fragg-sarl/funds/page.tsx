@@ -89,13 +89,13 @@ const Funds = () => {
             sustainability-related aspects of FRAGG-Invest and its funds, as
             mandated by the regulation on sustainability-related disclosures in
             the financial services sector (EU/2019/2088) (hereinafter referred
-            to as "SFDR"). The FRAGG-Invest Green and Impact Fund aligns with
-            SFDR requirements, specifically under Article 9. As proponents of
-            impact investing, FRAGG-Invest pursues sustainable investments and
-            adheres transparently to SFDR disclosure obligations. Our focus lies
-            in investing in financially sustainable enterprises that address
-            socio-economic challenges while mitigating adverse effects on people
-            and the environment.
+            to as &quot;SFDR&quot;). The FRAGG-Invest Green and Impact Fund
+            aligns with SFDR requirements, specifically under Article 9. As
+            proponents of impact investing, FRAGG-Invest pursues sustainable
+            investments and adheres transparently to SFDR disclosure
+            obligations. Our focus lies in investing in financially sustainable
+            enterprises that address socio-economic challenges while mitigating
+            adverse effects on people and the environment.
           </p>
           {/* Sustainability Risks Integration (Article 3 SFDR) */}
           <div className="pt-6 ">
