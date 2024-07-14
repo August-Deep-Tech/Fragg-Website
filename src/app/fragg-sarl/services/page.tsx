@@ -55,7 +55,7 @@ const Services = () => {
   return (
     <div>
       <SubpageHero
-        backgroundImageUrl={`bg-[url('/assets/png/servicesHeroSarl.png')]`}
+        backgroundImageUrl={`bg-[url('/assets/webp/servicesHeroSarl.webp')]`}
         breadcrumb="Our Services"
         pageTitle="Elevating Financial <br /> Futures"
       />

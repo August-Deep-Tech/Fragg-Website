@@ -51,7 +51,7 @@ const About = () => {
   return (
     <div>
       <SubpageHero
-        backgroundImageUrl={`bg-[url('/assets/webp/about.webp')]`}
+        backgroundImageUrl={`bg-[url('/assets/svg/about/about-nigeria.svg')]`}
         breadcrumb="FRAGG-INVEST GmbH"
         pageTitle="Your trusted Investment <br /> Partner"
       />

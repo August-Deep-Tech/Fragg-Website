@@ -71,7 +71,7 @@ const ContactUs = () => {
             {/* image */}
             <div className=" mb-7 lg:mb-0">
               <Image
-                src="/assets/png/contact/contactFormImage.png"
+                src="/assets/svg/contactFormImage.svg"
                 height={651}
                 width={616}
                 alt={"Banner preview"}

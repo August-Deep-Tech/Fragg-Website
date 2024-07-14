@@ -77,6 +77,78 @@ const Funds = () => {
           Check out what kind of solution fits your needs.
         </p>
 
+        {/* sustainability related disclosures section */}
+        <div className="py-48">
+          <h3 className="font-semibold mb-5 text-4xl md:text-5xl">
+            Sustainability-related Disclosures
+          </h3>
+          <p>
+            FRAGG-Invest is dedicated to leveraging capital for the betterment
+            of both people and the environment. This declaration offers
+            investors and stakeholders insight into the impact and
+            sustainability-related aspects of FRAGG-Invest and its funds, as
+            mandated by the regulation on sustainability-related disclosures in
+            the financial services sector (EU/2019/2088) (hereinafter referred
+            to as "SFDR"). The FRAGG-Invest Green and Impact Fund aligns with
+            SFDR requirements, specifically under Article 9. As proponents of
+            impact investing, FRAGG-Invest pursues sustainable investments and
+            adheres transparently to SFDR disclosure obligations. Our focus lies
+            in investing in financially sustainable enterprises that address
+            socio-economic challenges while mitigating adverse effects on people
+            and the environment.
+          </p>
+          {/* Sustainability Risks Integration (Article 3 SFDR) */}
+          <div className="pt-6 ">
+            {" "}
+            <h4 className="text-redish-20 font-semibold">
+              Sustainability Risks Integration (Article 3 SFDR)
+            </h4>
+            <p>
+              Sustainability risks are integrated into investment decisions and
+              risk monitoring if they represent a potential or actual material
+              risk or provide an opportunity to implement mitigating measures to
+              minimise these risks. The impact of the materialisation of a
+              sustainability risk can be diverse and varies depending on the
+              risk, region, and asset class. If a sustainability risk occurs in
+              relation to an asset, this usually has a negative impact on its
+              value or leads to a complete loss. For a more comprehensive
+              understanding of how sustainability factors and risks are
+              integrated into the due diligence process, investment
+              decision-making, and post-investment monitoring, please refer to
+              the FRAGG-Invest ESG Policy.
+            </p>
+          </div>
+          {/* Integration of ESG risks in the remuneration policy (Article 5 SFDR) */}
+          <div className="pt-6 ">
+            {" "}
+            <h4 className="text-redish-20 font-semibold">
+              Integration of ESG risks in the remuneration policy (Article 5
+              SFDR)
+            </h4>
+            <p>
+              In accordance with Article 5 of SFDR, FRAGG-Invest is required to
+              outline how its remuneration policy supports the integration of
+              sustainability risks. We achieve this by evaluating employee
+              performance not solely on financial metric but considers several
+              other principles such as effective risk management, interest of
+              our clients, investors and for each other in the organization,
+              following the code of conduct that promotes long-term
+              sustainability and impact objectives.  
+            </p>
+          </div>
+          {/* Article 9 disclosures */}
+          <div className="pt-6 ">
+            {" "}
+            <h4 className="text-redish-20 font-semibold">
+              Article 9 disclosures
+            </h4>
+            <p>
+              Our FRAGG-Invest Green and Impact fund classify under Article 9 of
+              SFDR.
+            </p>
+          </div>
+        </div>
+
         <FraggGreenImpactFund />
 
         <div className="*:text-greyish-10 flex flex-col gap-6">

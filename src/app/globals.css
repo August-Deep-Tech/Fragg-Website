@@ -201,13 +201,13 @@ body {
   }
 }
 .homegmbhOne {
-  background-image: url(/assets/webp/homesarlOne.webp);
+  background-image: url(/assets/webp/homegmbhOne.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .homegmbhTwo {
-  background-image: url(/assets/webp/homesarlTwo.webp);
+  background-image: url(/assets/webp/homegmbhTwo.webp);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -220,7 +220,7 @@ body {
 }
 
 .homesarlTwo {
-  background-image: url(/assets/webp/homesarlTwo.webp);
+  background-image: url(/assets/webp/homegmbhTwo.webp);
   background-size: cover;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
