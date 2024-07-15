@@ -41,7 +41,7 @@ const GrowWithFragg = () => {
                         className={`relative w-[100%] h-[300px] sm:h-[300px] lg:h-[470px]`}
                     >
                         <Image
-                            src="https://s3-alpha-sig.figma.com/img/ffc3/c210/e9b81cabb9e08790e6cf207a1e9f0509?Expires=1721001600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=m0JTD9nrOfiMisDiaW--erRbunrUt1t-por98AJuHb-hv8cIkUSB9UPY7D7ux5lpyCQ378R19ujsVLlYOuQLzvYioWRpZbKKVOE-dCS3pxX4KftMSOkO518oC7e~FIAL1cL37g-vEivvLkEpXJLR6ikju~dX7sWrCvD6Ch8zQAwyEaBn0g6pUsp2o086YLjdFZxocGahxc5lyWvWP~9UbML8Aasru1GwW~U2W-TtmGPxqm5CkudL33Gmo4vwmBo7mVG79jetX2Y-RLag08y2OiQ7QluHckHIbI4GwBzb~ErBVQtSGJ8qocSUZ8~e5G8c~m-xb5IsqEzJTUsCu8iIuw__"
+                            src="/assets/svg/home/growwithfragg.svg"
                             fill
                             alt={"Banner preview"}
                             className='rounded-[24px]'
