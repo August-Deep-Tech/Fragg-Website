@@ -40,7 +40,6 @@ const GroupContact = () => {
               width={1280}
               height={567}
               alt="map of the world"
-              className="scale-[1.5] sm:scale-[1]"
             />
           </div>
         </div>
