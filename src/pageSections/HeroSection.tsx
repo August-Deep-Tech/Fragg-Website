@@ -33,7 +33,7 @@ const HeroSection = ({bgImage}: IProps) => {
                 className="bg-white py-[12px] text-[14px] sm:text-[18px] px-[24px] rounded-[28px] text-black font-semibold w-fit"
               />
             </Link>
-            <Link href="fragg-nigeria/contact">
+            <Link href="/fragg-nigeria/contact">
               <Button
                 label={"Contact Us"}
                 type="submit"
