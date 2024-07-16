@@ -6,6 +6,8 @@ const nextConfig = {
   // },
   // assetPrefix: '/',
   images: {
+    loader: "custom", //added new line
+    loaderFile: './ImageLoader.js', //added new line
     remotePatterns: [
       {
         protocol: 'https',

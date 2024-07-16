@@ -4,6 +4,7 @@ import Button from "@/components/Button";
 import {useRouter} from "next/navigation";
 import Image from "next/image";
 import React from "react";
+import manImage from "../../public/assets/png/beginYourInvestmentMan.png";
 
 export const BeginYourInvestment = () => {
   const router = useRouter();
@@ -34,7 +35,7 @@ export const BeginYourInvestment = () => {
       <div className="flex justify-center">
         <Image
           // "/assets/services-svg/chart-arrow-up.svg"
-          src={"/assets/png/beginYourInvestmentMan.png"}
+          src={manImage}
           width={1000}
           height={1000}
           alt={"Banner preview"}
