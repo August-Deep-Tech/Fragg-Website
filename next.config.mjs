@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  trailingSlash: true, // added line to handle error onn reload of home pages
   // images: {
   //   unoptimized: true,
   // },
