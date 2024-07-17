@@ -18,7 +18,7 @@ const HeroSection = ({bgImage}: IProps) => {
         </h1>
         <div className="flex flex-col-reverse gap-[30px] lg:gap-0 lg:flex-row justify-between pt-[20px]">
           <div className="flex gap-[10px] w-[100%]">
-            <Link href="fragg-nigeria/#investor">
+            <Link href="/fragg-nigeria/#investor">
               <Button
                 label={"Start Investing"}
                 type="submit"
