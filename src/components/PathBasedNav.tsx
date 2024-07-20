@@ -6,10 +6,10 @@ import usePathCheck from "../hooks/usePathCheck";
 const PathBasedNav: React.FC = () => {
   const {isFraggNigeria, isFraggGmbh, isFraggSarl} = usePathCheck();
   const pathname = usePathname();
-  const isHomePage = pathname === "/fragg-nigeria";
+  const isHomePage = pathname === "/fragg-nigeria/";
 
   if (isFraggNigeria || isFraggGmbh) {
-    const basePath = isFraggNigeria ? "/fragg-nigeria" : "/fragg-gmbh";
+    const basePath = isFraggNigeria ? "/fragg-nigeria/" : "/fragg-gmbh/";
     return (
       <nav
         className={`${

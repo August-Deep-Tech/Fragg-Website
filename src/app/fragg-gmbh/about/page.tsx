@@ -88,7 +88,7 @@ const About = () => {
             {
               bg: "investAboutTwo",
               bgImage: "/assets/svg/home/graph.svg",
-              text: "Sector",
+              text: "Sectors",
               subText:
                 "Finance (Financial Institutions, FinTech & Payment Systems), Healthcare, Affordable Housing, Climate Finance (Clean Energy & Environmental Projects), Agriculture, Education.",
             },

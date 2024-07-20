@@ -87,7 +87,7 @@ const GssBond = () => {
       {/* gss bonds give investors ....  */}
       <div className="bg-[url('/assets/png/gssImage.png')] bg-cover">
         <div className="container mx-auto px-4 2xl:px-0 py-28">
-          <h3 className="text-4xl md:text-5xl font-semibold text-greyish-10">
+          <h3 className="text-4xl md:text-5xl font-semibold text-greyish-20">
             <span className="text-white">GSS bonds</span> give investors the{" "}
             <br />
             opportunity to <span className="text-white">

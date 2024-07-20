@@ -12,7 +12,7 @@ export const Header = () => {
   const {isFraggNigeria, isFraggGmbh, isFraggSarl} = usePathCheck();
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const isHomePage = pathname === "/fragg-nigeria";
+  const isHomePage = pathname === "/fragg-nigeria/";
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -22,15 +22,15 @@ export const Header = () => {
   let logoHref = "";
   if (isFraggNigeria) {
     logoSrc = "/assets/fragginvest-logo.svg";
-    logoHref = "/fragg-nigeria";
+    logoHref = "/fragg-nigeria/";
   }
   if (isFraggGmbh) {
     logoSrc = "/assets/fragginvest-logo-gmbh.svg";
-    logoHref = "/fragg-gmbh";
+    logoHref = "/fragg-gmbh/";
   }
   if (isFraggSarl) {
     logoSrc = "/assets/fragginvest-logo-sarl.svg";
-    logoHref = "/fragg-sarl";
+    logoHref = "/fragg-sarl/";
   }
 
   return (
