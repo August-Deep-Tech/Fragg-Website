@@ -259,7 +259,7 @@ const Accelerator = () => {
         </div>
       </div>
 
-      <div className="relative accelerator-cta flex justify-start items-center pl-[20px] lg:pl-[80px] mb-[60px]">
+      <div className="relative accelerator-cta flex justify-start items-center pl-[20px] lg:pl-[80px]">
         <h1 className="text-[24px] leading-[40px] sm:text-[40px] lg:text-[48px] sm:leading-[50px] lg:leading-[60px] font-[600] text-white">
           FRAGG Investment Incubation/Accelerator Hub is <br />
           committed to empowering start-ups and driving <br />

@@ -1,8 +1,12 @@
+"use client";
 import Button from "@/components/Button";
 import {SubpageHero} from "@/components/SubpageHero";
 import {BeginYourInvestment} from "@/pageSections/BeginYourInvestment";
 import GroupContact from "@/pageSections/GroupContact";
 import {ArrowRight} from "lucide-react";
+import {useEffect} from "react";
+import {useSearchParams} from "next/navigation";
+import {usePathname} from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 interface companyCardProps {
@@ -48,6 +52,17 @@ const teamMembers: companyCardProps[] = [
   },
 ];
 const About = () => {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("scrollTo") === "team") {
+      const teamSection = document.getElementById("our-team");
+      if (teamSection) {
+        teamSection.scrollIntoView({behavior: "smooth"});
+      }
+    }
+  }, [searchParams]);
+
   return (
     <div>
       <SubpageHero
@@ -314,7 +329,10 @@ const About = () => {
           Westfalia State of Germany. <br />
         </h1>
       </div>
-      <div className="container mx-auto px-4 md:px-0 text-center py-20">
+      <div
+        id="our-team"
+        className="container mx-auto px-4 md:px-0 text-center py-20"
+      >
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">Our team</h2>
         <p className="text-greyish-10 mb-16">
           Dedicated professionals committed to guiding you towards financial
@@ -490,39 +508,43 @@ const CompanyCard: React.FC<companyCardProps> = ({
   position,
   description,
   pageLink,
-}) => (
-  <div className="flex flex-col xl:flex-row gap-y-5 xl:gap-y-0 xl:items-center">
-    {/* image */}
-    <div className="flex-1">
-      <Image
-        src={imageSrc}
-        height={340}
-        width={280}
-        alt={`${name}'s Potrait`}
-      />
+}) => {
+  const pathname = usePathname();
+  const source = pathname.split("/")[1].replace("fragg-", "");
+  return (
+    <div className="flex flex-col xl:flex-row gap-y-5 xl:gap-y-0 xl:items-center">
+      {/* image */}
+      <div className="flex-1">
+        <Image
+          src={imageSrc}
+          height={340}
+          width={280}
+          alt={`${name}'s Potrait`}
+        />
+      </div>
+      {/* writeup */}
+      <div className="flex-1">
+        <h3 className="font-bold text-xl">{name}</h3>
+        <p className="text-greyish-10 mb-4">{position}</p>
+        <p
+          className="text-greyish-10 mb-4"
+          dangerouslySetInnerHTML={{__html: description}}
+        ></p>
+        <Link
+          href={`${pageLink}?scrollTo=team&source=${source}`}
+          className=" text-redish-20 flex items-center justify-end group px-2"
+        >
+          <p>Read More </p>
+          <span className="inline-block group-hover:translate-x-2 group-hover:transition-all">
+            <Image
+              src="/assets/svg/direction-right.svg"
+              width={16}
+              height={16}
+              alt="right arrow svg"
+            />
+          </span>
+        </Link>
+      </div>
     </div>
-    {/* writeup */}
-    <div className="flex-1">
-      <h3 className="font-bold text-xl">{name}</h3>
-      <p className="text-greyish-10 mb-4">{position}</p>
-      <p
-        className="text-greyish-10 mb-4"
-        dangerouslySetInnerHTML={{__html: description}}
-      ></p>
-      <Link
-        href={pageLink}
-        className=" text-redish-20 flex items-center justify-end group px-2"
-      >
-        <p>Read More </p>
-        <span className="inline-block group-hover:translate-x-2 group-hover:transition-all">
-          <Image
-            src="/assets/svg/direction-right.svg"
-            width={16}
-            height={16}
-            alt="right arrow svg"
-          />
-        </span>
-      </Link>
-    </div>
-  </div>
-);
+  );
+};
