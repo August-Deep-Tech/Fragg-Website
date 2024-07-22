@@ -2,6 +2,9 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true, // added line to handle error onn reload of home pages
+  experimental: {
+    missingSuspenseWithCSRBailout: false,
+  },
   // images: {
   //   unoptimized: true,
   // },
