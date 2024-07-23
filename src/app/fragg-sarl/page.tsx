@@ -90,9 +90,13 @@ const Landing = () => {
       <div className="relative learnMore flex justify-start items-center pl-[20px] sm:pl-[80px]">
         <div>
           <h1 className="text-[24px] sm:text-[36px] lg:text-[48px] leading-[40px] sm:leading-[64px] lg:leading-[80px] font-[700] text-white">
-            <span className="text-[#999999A3]"> The </span> FRAGG Impact Fund{" "}
-            <span className="text-[#999999A3]">is driven </span>
-            <br />
+            <span className="text-[#999999A3]"> The </span> FRAGG Invest Green /
+            Impact Fund{" "}
+            <span className="text-[#999999A3]">
+              {" "}
+              <br />
+              is driven{" "}
+            </span>
             <span className="text-[#999999A3]">
               {" "}
               by the need to{" "}
