@@ -1,8 +1,12 @@
+"use client";
 import Button from "@/components/Button";
 import {SubpageHero} from "@/components/SubpageHero";
 import {BeginYourInvestment} from "@/pageSections/BeginYourInvestment";
 import GroupContact from "@/pageSections/GroupContact";
 import {ArrowRight} from "lucide-react";
+import {useEffect} from "react";
+import {useSearchParams} from "next/navigation";
+import {usePathname} from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 interface companyCardProps {
@@ -48,24 +52,35 @@ const teamMembers: companyCardProps[] = [
   },
 ];
 const About = () => {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("scrollTo") === "team") {
+      const teamSection = document.getElementById("our-team");
+      if (teamSection) {
+        teamSection.scrollIntoView({behavior: "smooth"});
+      }
+    }
+  }, [searchParams]);
+
   return (
     <div>
       <SubpageHero
-        backgroundImageUrl={`bg-[url('/assets/webp/about.webp')]`}
-        breadcrumb="FRAGG Investment Management"
+        backgroundImageUrl={`bg-[url('/assets/svg/about/about-nigeria.svg')]`}
+        breadcrumb="FRAGG-INVEST GmbH"
         pageTitle="Your trusted Investment <br /> Partner"
       />
 
       <div className="px-[20px] py-[60px] sm:py-[112px] xl:px-[64px]">
         <div className="pb-[40px]">
           <h1 className="text-[30px] sm:text-[48px] leading-[57px] text-black font-[600] pb-[10px] sm:pb-[24px]">
-            FRAGG Investment Management
+            FRAGG-INVEST GmbH
           </h1>
           <p className="text-greyish-10 w-[100%] text-base">
-            FRAGG Investment Management has a strong network and partnerships in
+            FRAGG-Invest GmbH has a strong network and partnerships in
             fundraising, implementation, and management of numerous impact
             investment initiatives that address market needs within the Africa
-            and LAC region. As a fund manager, FRAGG Investment has a proven
+            and LAC region. As a fund manager, FRAGG-Invest GmbH has a proven
             track record of designing, structuring, launching, implementing, and
             divesting innovative funds. FRAGG{"'"}s mission is to enable the
             flow of sustainable financial instruments to emerging and frontier
@@ -88,7 +103,7 @@ const About = () => {
             {
               bg: "investAboutTwo",
               bgImage: "/assets/svg/home/graph.svg",
-              text: "Sector",
+              text: "Sectors",
               subText:
                 "Finance (Financial Institutions, FinTech & Payment Systems), Healthcare, Affordable Housing, Climate Finance (Clean Energy & Environmental Projects), Agriculture, Education.",
             },
@@ -243,18 +258,18 @@ const About = () => {
             Our Approach
           </h1>
           <p className="text-greyish-10 w-[100%] text-base">
-            FRAGG-Invest has a strong network and partnerships in fundraising,
-            implementation, and management of numerous impact investment
-            initiatives that address market needs within the Africa and LAC
-            region. As a fund manager, FRAGG-Invest has a proven track record of
-            designing, structuring, launching, implementing, and divesting
-            innovative funds. FRAGG{"'"}s mission is to enable the flow of
-            sustainable financial instruments to emerging and frontier economies
-            by closing the financial needs of financial intermediaries, and SMEs
-            through the facilitation of access to funds from diversified
-            sources. Our vision is to improve people{"'"}s skills and capacities
-            through impact investments to achieve more equality, social and
-            financial inclusion, and climate resilience.
+            FRAGG-Invest GmbH has a strong network and partnerships in
+            fundraising, implementation, and management of numerous impact
+            investment initiatives that address market needs within the Africa
+            and LAC region. As a fund manager, FRAGG-Invest GmbH has a proven
+            track record of designing, structuring, launching, implementing, and
+            divesting innovative funds. FRAGG{"'"}s mission is to enable the
+            flow of sustainable financial instruments to emerging and frontier
+            economies by closing the financial needs of financial
+            intermediaries, and SMEs through the facilitation of access to funds
+            from diversified sources. Our vision is to improve people{"'"}s
+            skills and capacities through impact investments to achieve more
+            equality, social and financial inclusion, and climate resilience.
           </p>
         </div>
         <div className="flex flex-col lg:flex-row gap-[0px] mt-[20px]">
@@ -314,7 +329,10 @@ const About = () => {
           Westfalia State of Germany. <br />
         </h1>
       </div>
-      <div className="container mx-auto px-4 md:px-0 text-center py-20">
+      <div
+        id="our-team"
+        className="container mx-auto px-4 md:px-0 text-center py-20"
+      >
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">Our team</h2>
         <p className="text-greyish-10 mb-16">
           Dedicated professionals committed to guiding you towards financial
@@ -490,39 +508,43 @@ const CompanyCard: React.FC<companyCardProps> = ({
   position,
   description,
   pageLink,
-}) => (
-  <div className="flex flex-col xl:flex-row gap-y-5 xl:gap-y-0 xl:items-center">
-    {/* image */}
-    <div className="flex-1">
-      <Image
-        src={imageSrc}
-        height={340}
-        width={280}
-        alt={`${name}'s Potrait`}
-      />
+}) => {
+  const pathname = usePathname();
+  const source = pathname.split("/")[1].replace("fragg-", "");
+  return (
+    <div className="flex flex-col xl:flex-row gap-y-5 xl:gap-y-0 xl:items-center">
+      {/* image */}
+      <div className="flex-1">
+        <Image
+          src={imageSrc}
+          height={340}
+          width={280}
+          alt={`${name}'s Potrait`}
+        />
+      </div>
+      {/* writeup */}
+      <div className="flex-1">
+        <h3 className="font-bold text-xl">{name}</h3>
+        <p className="text-greyish-10 mb-4">{position}</p>
+        <p
+          className="text-greyish-10 mb-4"
+          dangerouslySetInnerHTML={{__html: description}}
+        ></p>
+        <Link
+          href={`${pageLink}?scrollTo=team&source=${source}`}
+          className=" text-redish-20 flex items-center justify-end group px-2"
+        >
+          <p>Read More </p>
+          <span className="inline-block group-hover:translate-x-2 group-hover:transition-all">
+            <Image
+              src="/assets/svg/direction-right.svg"
+              width={16}
+              height={16}
+              alt="right arrow svg"
+            />
+          </span>
+        </Link>
+      </div>
     </div>
-    {/* writeup */}
-    <div className="flex-1">
-      <h3 className="font-bold text-xl">{name}</h3>
-      <p className="text-greyish-10 mb-4">{position}</p>
-      <p
-        className="text-greyish-10 mb-4"
-        dangerouslySetInnerHTML={{__html: description}}
-      ></p>
-      <Link
-        href={pageLink}
-        className=" text-redish-20 flex items-center justify-end group px-2"
-      >
-        <p>Read More </p>
-        <span className="inline-block group-hover:translate-x-2 group-hover:transition-all">
-          <Image
-            src="/assets/svg/direction-right.svg"
-            width={16}
-            height={16}
-            alt="right arrow svg"
-          />
-        </span>
-      </Link>
-    </div>
-  </div>
-);
+  );
+};

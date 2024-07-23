@@ -284,7 +284,7 @@ const BecomeanInvestor = () => {
                                         />
                                     </div> */}
                   <FormInput
-                    label="Your Phone"
+                    label="Your Phone (with country code e.g. +352, +234, +49)"
                     placeholder="812 345 6789"
                     value={investorInfo.phone_number}
                     className={`${
@@ -322,7 +322,7 @@ const BecomeanInvestor = () => {
                     name=""
                     className={`${
                       investorInfoError.instrumentType && "border-red-500"
-                    } text-greyish-10 bg-transparent w-[100%] sm:w-[452px]`}
+                    } text-greyish-10 font-semibold bg-transparent w-[100%] sm:w-[452px]`}
                   />
                 </div>
               </div>
@@ -349,7 +349,7 @@ const BecomeanInvestor = () => {
                     name=""
                     className={`${
                       investorInfoError.investmentRange && "border-red-500"
-                    } text-greyish-10 bg-transparent w-[100%] sm:w-[452px]`}
+                    } text-greyish-10 font-semibold bg-transparent w-[100%] sm:w-[452px]`}
                   />
                 </div>
               </div>
@@ -445,7 +445,7 @@ const BecomeanInvestor = () => {
                 </div>
                 <div className="w-[100%]">
                   <FormInput
-                    label="Your Phone"
+                    label="Your Phone (with country code e.g. +352, +234, +49)"
                     placeholder="812 345 6789"
                     value={clientInfo.phone_number}
                     className="w-[100%] sm:w-[452px]"

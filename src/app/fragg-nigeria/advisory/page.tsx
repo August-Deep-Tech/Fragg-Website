@@ -13,7 +13,7 @@ interface LinkCardProps {
 const linkCards: LinkCardProps[] = [
   {
     backgroundUrl: 'bg-[url("/assets/png/advisory/raisingFunds.png")]',
-    title: "Raising Funds",
+    title: "Capital Raising / Fund Mobilization",
     linkHref: "/fragg-nigeria/advisory/raising-funds",
   },
   {

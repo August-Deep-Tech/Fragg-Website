@@ -84,7 +84,7 @@ const ImpactFund = () => {
 
       <ImpactFundDarkBgSection
         title="Inclusive Financial Institution <br/> Pipeline Criteria: The Standard"
-        writeup="At FRAGG Investment, we hold our Inclusive Financial Institutions
+        writeup="At FRAGG-INVEST GP Sàrl, we hold our Inclusive Financial Institutions
             pipeline to the highest standards, making sure that each potential
             target aligns with our working criteria. Our targets must embody
             characteristics of accessibility, sustainability, and positive
@@ -102,7 +102,7 @@ const ImpactFund = () => {
 
       <ImpactFundDarkBgSection
         title="Our SME Pipeline Criteria: Striving <br/> for Excellence"
-        writeup="At FRAGG Investment, we hold our SME pipeline to exacting standards, ensuring each potential investment aligns with our proven criteria. Our targets must embody qualities of innovation, sustainability, and growth potential. We meticulously assess each opportunity, seeking ventures poised to make a significant impact in their respective industries. The following criteria must be met to be a target:"
+        writeup="At FRAGG-INVEST GP Sàrl, we hold our SME pipeline to exacting standards, ensuring each potential investment aligns with our proven criteria. Our targets must embody qualities of innovation, sustainability, and growth potential. We meticulously assess each opportunity, seeking ventures poised to make a significant impact in their respective industries. The following criteria must be met to be a target:"
         listItems={[
           "Need significant investment with a high capital cap.",
           "Have operating outreaches covering both rural and urban areas.",
@@ -161,7 +161,7 @@ const ImpactFund = () => {
           A Legacy of Success
         </h3>
         <p className="mb-10 sm:mb-20 text-greyish-10 text-center">
-          FRAGG Investment{"'"}s{" "}
+          FRAGG-INVEST GP Sàrl{"'"}s{" "}
           <span className="text-redish-20"> proven track record </span> speaks
           for itself, leading to a legacy of unparalleled success. Our journey
           is defined by innovation, <br />

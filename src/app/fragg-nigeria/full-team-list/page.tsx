@@ -1,4 +1,8 @@
+"use client";
 import React from "react";
+import {useEffect} from "react";
+import {useSearchParams} from "next/navigation";
+import {usePathname} from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import {SubpageHero} from "@/components/SubpageHero";
@@ -96,7 +100,7 @@ const CompanyCard: React.FC<companyCardProps> = ({
         dangerouslySetInnerHTML={{__html: description}}
       ></p>
       <Link
-        href={pageLink}
+        href={`${pageLink}?source=full-team`}
         className=" text-redish-20 flex items-center justify-end group px-2"
       >
         <p>Read More </p>
@@ -114,6 +118,17 @@ const CompanyCard: React.FC<companyCardProps> = ({
 );
 
 const FullTeamList = () => {
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (searchParams.get("scrollTo") === "team") {
+      const teamSection = document.getElementById("our-team");
+      if (teamSection) {
+        teamSection.scrollIntoView({behavior: "smooth"});
+      }
+    }
+  }, [searchParams]);
+
   return (
     <div>
       <SubpageHero
@@ -121,7 +136,10 @@ const FullTeamList = () => {
         breadcrumb="Our Team"
         pageTitle="A global team of <br />committed professionals"
       />
-      <div className="container mx-auto px-4 2xl:px-0 text-center py-20">
+      <div
+        id="our-team"
+        className="container mx-auto px-4 2xl:px-0 text-center py-20"
+      >
         <h2 className="text-4xl md:text-5xl font-semibold mb-5">Our team</h2>
         <p className="text-greyish-10 mb-16">
           Dedicated professionals committed to guiding you towards financial

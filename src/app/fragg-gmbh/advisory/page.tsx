@@ -13,7 +13,7 @@ interface LinkCardProps {
 const linkCards: LinkCardProps[] = [
   {
     backgroundUrl: 'bg-[url("/assets/png/advisory/raisingFunds.png")]',
-    title: "Raising Funds",
+    title: "Capital Raising / Fund Mobilization",
     linkHref: "/fragg-gmbh/advisory/raising-funds",
   },
   {
@@ -65,16 +65,16 @@ const Advisory = () => {
         <h3 className="font-semibold mb-5 text-4xl md:text-5xl">Advisory</h3>
         {/* description  */}
         <p className="text-greyish-10 mb-5">
-          FRAGG Investment Management provides advisory services to investors,
-          financial intermediaries, and SMEs in sectors such as Health, Energy &
-          Climate, Agriculture, Education, and Affordable Housing. The firm
-          offers expertise in impact investment strategy, project development,
-          and financial structuring.
+          FRAGG-INVEST GmbH provides advisory services to investors, financial
+          intermediaries, and SMEs in sectors such as Health, Energy & Climate,
+          Agriculture, Education, and Affordable Housing. The firm offers
+          expertise in impact investment strategy, project development, and
+          financial structuring.
         </p>
         <p className="text-greyish-10 mb-5">
-          FRAGG Investment Management offers comprehensive investment readiness
-          services to startups and SMEs seeking to attract funding for their
-          ventures. This includes:
+          FRAGG-INVEST GmbH offers comprehensive investment readiness services
+          to startups and SMEs seeking to attract funding for their ventures.
+          This includes:
         </p>
         {/* list */}
         <ul className=" list list-inside text-greyish-10 space-y-4 mb-5">
