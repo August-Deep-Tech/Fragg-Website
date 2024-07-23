@@ -179,10 +179,10 @@ const ImpactStability = () => {
         </div>
 
         <div className="relative sustainable-goals flex justify-start items-center pl-[20px] sm:pl-[80px] mt-[80px]">
-          <h1 className="text-[30px] leading-[48px] sm:text-[52px] lg:text-[48px] sm:leading-[64px] lg:leading-[60px] font-[600] text-white">
+          <h1 className="text-[30px] leading-[48px] sm:text-[52px] lg:text-[48px] sm:leading-[64px] lg:leading-[60px] font-[600] text-black">
             We work with the United Nations to <br />
-            advance <span className="text-[#069EDB]">SDG’s</span>. This means
-            your <br />
+            advance <span className="text-[#069EDB]">SDG&apos;s</span>. This
+            means your <br />
             investments are always put <br />
             into ventures that help humanity. <br />
           </h1>
