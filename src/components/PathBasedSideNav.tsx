@@ -49,11 +49,11 @@ const PathBasedSideNav: React.FC<PathBasedSideNavProps> = ({toggleMenu}) => {
           Advisory
         </Link>
         <Link
-          href="/fragg-nigeria/investors-form"
+          href="/fragg-nigeria/apply-for-funding"
           className="bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10"
           onClick={toggleMenu}
         >
-          Start Investing
+          Apply for Funding
         </Link>
       </nav>
     );
@@ -92,11 +92,11 @@ const PathBasedSideNav: React.FC<PathBasedSideNavProps> = ({toggleMenu}) => {
         </Link>
 
         <Link
-          href="/fragg-nigeria/investors-form"
+          href="/fragg-nigeria/apply-for-funding"
           className="bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10"
           onClick={toggleMenu}
         >
-          Start Investing
+          Apply for Funding
         </Link>
       </nav>
     );

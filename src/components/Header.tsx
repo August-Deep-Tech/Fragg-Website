@@ -65,14 +65,14 @@ export const Header = () => {
         {/* action button  */}
         <div className="hidden xl:block">
           <Link
-            href="/fragg-nigeria/investors-form"
+            href="/fragg-nigeria/apply-for-funding"
             className={`${
               isHomePage
                 ? "bg-transparent border border-white text-white px-6 py-2 rounded-full hover:bg-white hover:text-redish-20"
                 : "bg-redish-20 text-white px-6 py-2 rounded-full hover:bg-redish-10"
             } `}
           >
-            Start Investing
+            Apply for Funding
           </Link>
         </div>
         {/* hamburger icon */}
