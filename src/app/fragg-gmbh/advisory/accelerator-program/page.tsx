@@ -16,14 +16,14 @@ const Accelerator = () => {
             Empowering Start-Ups ... for Growth
           </h1>
           <p className="text-greyish-10 w-[100%] text-base">
-            FRAGG Investment Incubation/Accelerator Hub is an exclusive platform
-            designed to nurture and accelerate the growth of innovative
+            FRAGG-INVEST GmbH Incubation/Accelerator Hub is an exclusive
+            platform designed to nurture and accelerate the growth of innovative
             start-ups. Our mission is to empower entrepreneurs by providing them
             with the resources, mentorship, and access to funding needed to
             succeed.
           </p>
           <p className="text-greyish-10 w-[100%] text-base py-[24px]">
-            FRAGG Investment Incubation/Accelerator Hub is dedicated to
+            FRAGG-INVEST GmbH Incubation/Accelerator Hub is dedicated to
             supporting start-ups through their critical growth phases. We offer
             tailored programs for early-stage and growth-stage companies,
             focusing on providing comprehensive support to help them thrive in a
@@ -48,7 +48,7 @@ const Accelerator = () => {
               market access and expansion support.
             </p>
             <p>
-              FRAGG Investment Incubation/Accelerator Hub is dedicated to
+              FRAGG-INVEST GmbH Incubation/Accelerator Hub is dedicated to
               supporting start-ups through their critical growth phases. We
               offer tailored programs for early-stage and growth-stage
               companies, focusing on providing comprehensive support to help
@@ -134,7 +134,7 @@ const Accelerator = () => {
           </h1>
           <p className="text-greyish-10 mx-auto text-center w-[90%] sm:w-[70%] xl:w-[70%] text-base">
             These sectors represent the focal areas for the accelerator
-            programme sponsored by FRAGG Investment, strategically aimed at
+            programme sponsored by FRAGG-INVEST GmbH, strategically aimed at
             fostering positive societal impact and sustainable economic growth.
           </p>
         </div>
@@ -261,7 +261,7 @@ const Accelerator = () => {
 
       <div className="relative accelerator-cta flex justify-start items-center pl-[20px] lg:pl-[80px]">
         <h1 className="text-[24px] leading-[40px] sm:text-[40px] lg:text-[48px] sm:leading-[50px] lg:leading-[60px] font-[600] text-white">
-          FRAGG Investment Incubation/Accelerator Hub is <br />
+          FRAGG-INVEST GmbH Incubation/Accelerator Hub is <br />
           committed to empowering start-ups and driving <br />
           innovation. We are proud of our achievements and <br />
           look forward to continuing our mission of <br />

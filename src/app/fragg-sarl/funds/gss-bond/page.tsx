@@ -68,8 +68,8 @@ const GssBond = () => {
         </p>
         <p className="text-greyish-10">
           Incorporated in Luxembourg as a special limited partnership fund and
-          managed by FRAGG-INVEST GP as a registered Alternative Investment Fund
-          Manager with the Commission de Surveillance du Secteur Financier
+          managed by FRAGG-INVEST GP Sàrl as a registered Alternative Investment
+          Fund Manager with the Commission de Surveillance du Secteur Financier
           (CSSF), the FRAGG-INVEST GREEN and IMPACT FUND SCSp is committed to
           driving positive change, fostering innovation, and creating lasting
           value for society and the environment.

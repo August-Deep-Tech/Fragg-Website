@@ -26,7 +26,7 @@ const services: Service[] = [
     icon: "/assets/svg/advisory/bar-chart.svg",
     title: "FX Risk Advisory",
     description:
-      "At FRAGG, in view of the volatile economies in which we operate, we consider it imperative for our clients to take actions that will limit future risks on their FX transactions, hence, we assist clients in managing their foreign exchange risk by sourcing for suitable hedging companies to hedge their currencies in the course of transactions, and financial institutions that can provide swapping/back-to-back currency arrangements for FX related transactions. Thus, projects can be financed in local currency.",
+      "At FRAGG-INVEST GmbH, in view of the volatile economies in which we operate, we consider it imperative for our clients to take actions that will limit future risks on their FX transactions, hence, we assist clients in managing their foreign exchange risk by sourcing for suitable hedging companies to hedge their currencies in the course of transactions, and financial institutions that can provide swapping/back-to-back currency arrangements for FX related transactions. Thus, projects can be financed in local currency.",
   },
 ];
 

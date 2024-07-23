@@ -60,7 +60,7 @@ const Funds = () => {
         <h3 className="font-semibold mb-5 text-4xl md:text-5xl">Funds</h3>
         {/* description  */}
         <p className="text-greyish-10 mb-5">
-          At FRAGG Investment, we understand the critical role that funding
+          At FRAGG-INVEST GP Sàrl, we understand the critical role that funding
           plays in driving innovation and fueling growth. Our diverse portfolio
           of investment funds is meticulously curated to support a wide range of
           enterprises, from budding startups to established corporations.
@@ -70,8 +70,8 @@ const Funds = () => {
           practices, we tailor our funding solutions to match the unique needs
           and ambitions of each business. Whether you&apos;re seeking seed
           capital to kickstart your venture or expansion funding to propel your
-          enterprise to new heights, FRAGG Investment is your trusted partner in
-          realizing your financial goals.
+          enterprise to new heights, FRAGG-INVEST GP Sàrl is your trusted
+          partner in realizing your financial goals.
         </p>
 
         <p className="text-redish-20 font-semibold md:text-xl">

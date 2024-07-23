@@ -34,7 +34,7 @@ const services: Service[] = [
     icon: "/assets/svg/services/money-bag.svg",
     title: "Fund Portfolio",
     description:
-      "FRAGG Investment facilitates fund mobilization and finance linkage services for commercial banks, microfinance banks, impact-related projects, and SMEs. The firm assists in raising capital from diversified sources to support sustainable development initiatives.",
+      "FRAGG-INVEST GP Sàrl facilitates fund mobilization and finance linkage services for commercial banks, microfinance banks, impact-related projects, and SMEs. The firm assists in raising capital from diversified sources to support sustainable development initiatives.",
   },
 
   {

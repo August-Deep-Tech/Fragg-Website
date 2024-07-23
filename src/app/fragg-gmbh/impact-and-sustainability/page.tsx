@@ -171,7 +171,7 @@ const ImpactStability = () => {
             Sustainable Development Goals
           </h1>
           <p className="text-greyish-10 mx-auto text-center w-[90%] sm:w-[70%] xl:w-[70%] text-base">
-            At FRAGG Investment, we{"'"}re committed to advancing Sustainable
+            At FRAGG-INVEST GmbH, we{"'"}re committed to advancing Sustainable
             Development Goals in line with UN guidelines. Our mission is to
             drive positive change through responsible investment practices. Join
             us in shaping a brighter, sustainable future for all.
