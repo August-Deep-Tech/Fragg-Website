@@ -1,3 +1,4 @@
+import AcceleratorProgram from '@/components/AcceleratorProgram';
 import { SubpageHero } from '@/components/SubpageHero'
 import { BeginYourInvestment } from '@/pageSections/BeginYourInvestment'
 import Image from "next/image";
@@ -25,7 +26,7 @@ const Accelerator = () => {
             </div>
 
             <div>
-                <section className="h-[400px] text-white bg-[url('/assets/webp/the-model.webp')] bg-cover bg-center px-[24px] py-[40px] flex items-end">
+                <section className="h-fit sm:h-[400px] text-white bg-[url('/assets/webp/the-model.webp')] bg-cover bg-center px-[24px] py-[40px] flex items-end">
                     <div>
                         <h2 className="text-5xl font-semibold">The Model</h2>
                         <p className='py-[24px]'>
@@ -41,7 +42,7 @@ const Accelerator = () => {
                         </p>
                     </div>
                 </section>
-                <div className="flex flex-col md:flex-row justify-between h-[400px]">
+                <div className="flex flex-col md:flex-row justify-between h-fit sm:h-[400px]">
                     <section className={`md:w-1/2  px-[24px] py-[40px] flex items-end bg-[url('/assets/jpg/captial.jpg')] bg-cover bg-center text-white`}>
                         <div>
                             <h3 className="text-xl font-semibold mb-4 pt-[20px]">Access to Capital</h3>
@@ -64,7 +65,7 @@ const Accelerator = () => {
                         </div>
                     </section>
                 </div>
-                <div className="flex flex-col md:flex-row justify-between h-[400px]">
+                <div className="flex flex-col md:flex-row justify-between h-fit sm:h-[400px]">
                     <section className={`md:w-1/2  px-[24px] py-[40px] flex items-end bg-[url('/assets/jpg/Strategic.jpg')] bg-cover bg-center  text-white`}>
                         <div>
                             <h3 className="text-xl font-semibold mb-4 pt-[20px]">Strategic Partnerships</h3>
@@ -88,8 +89,10 @@ const Accelerator = () => {
                     </section>
                 </div>
             </div>
-
-            <div className={`py-[60px] lg:py-[120px]`}>
+            {/* <div className='py-[120px] px-[64px]'>
+                <AcceleratorProgram />
+            </div> */}
+            <div className={`py-[60px] lg:py-[120px] pt-[200px] sm:pt-[100px] lg:pt-[150px]`}>
                 <div className="pt-[40px]">
                     <h1 className="text-[30px] sm:text-[48px] leading-[57px] text-black font-[600] text-center pb-[10px] sm:pb-[24px]">
                         Target Impact Sectors
