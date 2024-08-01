@@ -8,6 +8,7 @@ interface FormInputProps {
   id?: string;
   name?: string;
   className?: string;
+  isRequired?: boolean;
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   required?: boolean;
@@ -24,12 +25,13 @@ const FormInput: React.FC<FormInputProps> = ({
   onChange,
   onKeyPress,
   required = false,
+  isRequired
 }) => {
   return (
     <div className="flex flex-col">
       {label && (
         <label htmlFor={id} className="pb-[10px]">
-          {label}
+          {label} {isRequired && <span className='text-redish-20'>*</span>}
         </label>
       )}
       <input

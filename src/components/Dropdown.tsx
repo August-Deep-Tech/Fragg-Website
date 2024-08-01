@@ -9,6 +9,7 @@ interface DropdownProps {
   className?: string;
   label?: string;
   required?: boolean;
+  isRequired?: boolean;
   defaultValue?: string; // Add defaultValue prop
 }
 
@@ -21,13 +22,14 @@ const Dropdown: React.FC<DropdownProps> = ({
   className,
   label,
   required = false,
+  isRequired,
   defaultValue = '', // Default to an empty string if not provided
 }) => {
   return (
     <div className="flex flex-col">
       {label && (
         <label htmlFor={id} className="pb-[10px]">
-          {label}
+          {label} {isRequired && <span className='text-redish-20'>*</span>}
         </label>
       )}
       <select
