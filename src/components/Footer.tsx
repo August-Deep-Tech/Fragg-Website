@@ -40,12 +40,6 @@ const Footer = () => {
             ext: true,
             isLink: true,
           },
-          {
-            text: "Press Release",
-            linkTo: "https://medium.com/@jubilant_gamboge_locust_73",
-            ext: true,
-            isLink: true,
-          },
         ],
       },
       {
@@ -55,6 +49,12 @@ const Footer = () => {
             text: "About Us",
             linkTo: `${logoHref}/about`,
             ext: false,
+            isLink: true,
+          },
+          {
+            text: "Press Release",
+            linkTo: "https://medium.com/@jubilant_gamboge_locust_73",
+            ext: true,
             isLink: true,
           },
           {
@@ -146,12 +146,6 @@ const Footer = () => {
             ext: true,
             isLink: true,
           },
-          {
-            text: "Press Release",
-            linkTo: "https://medium.com/@jubilant_gamboge_locust_73",
-            ext: true,
-            isLink: true,
-          },
         ],
       },
       {
@@ -161,6 +155,12 @@ const Footer = () => {
             text: "About Us",
             linkTo: `${logoHref}/about`,
             ext: false,
+            isLink: true,
+          },
+          {
+            text: "Press Release",
+            linkTo: "https://medium.com/@jubilant_gamboge_locust_73",
+            ext: true,
             isLink: true,
           },
           {
@@ -252,12 +252,6 @@ const Footer = () => {
             ext: true,
             isLink: true,
           },
-          {
-            text: "Press Release",
-            linkTo: "https://medium.com/@jubilant_gamboge_locust_73",
-            ext: true,
-            isLink: true,
-          },
         ],
       },
       {
@@ -267,6 +261,12 @@ const Footer = () => {
             text: "About Us",
             linkTo: `${logoHref}/about`,
             ext: false,
+            isLink: true,
+          },
+          {
+            text: "Press Release",
+            linkTo: "https://medium.com/@jubilant_gamboge_locust_73",
+            ext: true,
             isLink: true,
           },
           {
