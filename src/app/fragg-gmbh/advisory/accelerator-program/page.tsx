@@ -1,3 +1,4 @@
+import AcceleratorProgram from "@/components/AcceleratorProgram";
 import {SubpageHero} from "@/components/SubpageHero";
 import {BeginYourInvestment} from "@/pageSections/BeginYourInvestment";
 import Image from "next/image";
@@ -126,6 +127,8 @@ const Accelerator = () => {
           </section>
         </div>
       </div>
+
+      <AcceleratorProgram />
 
       <div className={`pt-[350px] sm:py-[60px] lg:py-[120px]`}>
         <div className="pt-[40px]">
