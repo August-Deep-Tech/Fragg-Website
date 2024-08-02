@@ -1,3 +1,4 @@
+import AcceleratorProgram from "@/components/AcceleratorProgram";
 import {SubpageHero} from "@/components/SubpageHero";
 import {BeginYourInvestment} from "@/pageSections/BeginYourInvestment";
 import Image from "next/image";
@@ -122,10 +123,12 @@ const Accelerator = () => {
                 listed on our Investment Platform granting access to our network
                 of funding partners.
               </p>
-            </div>
+            </div>B
           </section>
         </div>
       </div>
+
+      <AcceleratorProgram />
 
       <div className={`py-[60px] lg:py-[120px]`}>
         <div className="pt-[40px]">
