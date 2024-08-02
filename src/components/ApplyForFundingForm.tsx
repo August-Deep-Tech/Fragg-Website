@@ -209,47 +209,47 @@ const ApplyForFundingForm = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData)
-    // if (validateStep(currentStep)) {
-    //   if (currentStep === 5) {
-    //     // Handle form submission here
-    //     // console.log("Form submitted", formData);
-    //     setIsSubmitting(true);
-    //     try {
-    //       const response = await fetch(
-    //         "https://fragg-forms-api.onrender.com/funding-form",
-    //         {
-    //           method: "POST",
-    //           headers: {
-    //             "Content-Type": "application/json",
-    //           },
-    //           body: JSON.stringify(formData),
-    //         }
-    //       );
+    // console.log(formData)
+    if (validateStep(currentStep)) {
+      if (currentStep === 5) {
+        // Handle form submission here
+        // console.log("Form submitted", formData);
+        setIsSubmitting(true);
+        try {
+          const response = await fetch(
+            "https://fragg-forms-api.onrender.com/funding-form",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(formData),
+            }
+          );
 
-    //       if (response.ok) {
-    //         console.log("Form submitted successfully");
-    //         // You can add code here to show a success message to the user
-    //         setSuccessMessage("Form Submitted Successfully");
-    //         // or redirect them to a thank you page
-    //       } else {
-    //         console.error("Form submission failed");
-    //         // You can add code here to show an error message to the user
-    //         setErrorMessage("An error occurred. Please try again.");
-    //       }
-    //     } catch (error) {
-    //       console.error("Error:", error);
-    //       // You can add code here to show an error message to the user
-    //       setErrorMessage("An error occurred. Please try again.");
-    //     } finally {
-    //       setIsSubmitting(false);
-    //       // Clear the success message after 3 seconds
-    //       router.push("/fragg-nigeria");
-    //     }
-    //   } else {
-    //     nextStep();
-    //   }
-    // }
+          if (response.ok) {
+            console.log("Form submitted successfully");
+            // You can add code here to show a success message to the user
+            setSuccessMessage("Form Submitted Successfully");
+            // or redirect them to a thank you page
+          } else {
+            console.error("Form submission failed");
+            // You can add code here to show an error message to the user
+            setErrorMessage("An error occurred. Please try again.");
+          }
+        } catch (error) {
+          console.error("Error:", error);
+          // You can add code here to show an error message to the user
+          setErrorMessage("An error occurred. Please try again.");
+        } finally {
+          setIsSubmitting(false);
+          // Clear the success message after 3 seconds
+          router.push("/fragg-nigeria");
+        }
+      } else {
+        nextStep();
+      }
+    }
   };
 
   return (
