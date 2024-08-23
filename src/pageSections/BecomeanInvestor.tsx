@@ -390,7 +390,7 @@ const BecomeanInvestor = () => {
                 )}
                 <Button
                   onClick={handleSubmit}
-                  label={isSubmitting ? "Submitting..." : "Begin Consulation"}
+                  label={isSubmitting ? "Submitting..." : "Begin Consultation"}
                   type="submit"
                   className="bg-white py-[16px] w-[100%] rounded-3xl text-redish-10 font-semibold text-center"
                   disabled={isSubmitting}
