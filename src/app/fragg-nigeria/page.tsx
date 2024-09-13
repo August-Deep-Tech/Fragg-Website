@@ -42,10 +42,7 @@ const Landing = () => {
       <PriorityStrategy />
       <OurStats />
       <GrowWithFragg />
-      <Group
-        text="Our global team is a diverse blend of talent, united in our pursuit of excellence,
-                    spanning continents, and bringing a wealth of perspectives and expertise to every endeavor."
-      />
+      <Group text="Join the network of FRAGG Group, which includes FRAGG Investment Management in Nigeria, FRAGG Invest-GmbH in Germany, and FRAGG-Invest SÀRL in Luxembourg, providing customized investment solutions across borders." />
       <GroupContact />
       <BecomeanInvestor />
     </div>

@@ -1,50 +1,95 @@
-import React, { useState } from 'react'
-import AcceleratorForm from './Accelerator Form'
+import React, {useState} from "react";
+import AcceleratorForm from "./Accelerator Form";
 
 const AcceleratorProgram = () => {
   return (
     <div>
       <div className="px-[20px] py-[60px] sm:py-[112px] xl:px-[64px]">
         <div>
-          <h1 className='text-[48px] leading-[57px] text-[#18181B]'>Application Process</h1>
-          <p className='text-[#757575] pt-[24px]'>Start-ups with a viable product or service, high-growth potential,
+          <h1 className="text-[48px] leading-[57px] text-[#18181B]">
+            Application Process
+          </h1>
+          <p className="text-[#757575] pt-[24px]">
+            Start-ups with a viable product or service, high-growth potential,
             and a strong and committed team can apply to our programs through an
-            online application, initial screening, and pitch presentation.
-            Call for Application are posted on our website all year round.</p>
+            online application, initial screening, and pitch presentation. Call
+            for Application are posted on our website all year round.
+          </p>
         </div>
-        <div className='pt-[54px]'>
-          <h1 className='text-[48px] leading-[57px] text-[#18181B]'>Application Form</h1>
-          <p className='pt-[24px] sm:pt-[40px] pb-[20px] sm:pb-[40px] text-[24px]'>Instructions</p>
-          <div className='text-[#757575] text-[18px]'>
-            <p className=''>
-              The completed application form will give us as much insight into your
-              company as is necessary to appraise the state of the business at the
-              time of your application, please provide the most up-to-date information.
+        <div className="pt-[54px]">
+          <h1 className="text-[48px] leading-[57px] text-[#18181B]">
+            Application Form
+          </h1>
+          <p className="pt-[24px] sm:pt-[40px] pb-[20px] sm:pb-[40px] text-[24px]">
+            Instructions
+          </p>
+          <div className="text-[#757575] text-[18px]">
+            <p className="">
+              The completed application form will provide us with essential
+              insights into your company, enabling us to assess its current
+              state at the time of your application. Please ensure you provide
+              the most up-to-date information.
             </p>
-            <p className=' pt-[10px]'>
-              Please note that application can be submitted either by filling the form at
-              the bottom of the page or by clicking the <span className='underline'>Apply</span> button which will take you
-              to the same form on the <span className='underline'>F6s platform.</span> Both forms are the same and you can fill
-              one or the other, not both. Application from both platforms are accorded the
-              same status.
+            <p className=" pt-[10px]">
+              Please note that you can only apply by completing the form at the
+              bottom of the page. To submit your application, start by clicking
+              on Step 1 on the form at the bottom of the page and continue
+              filling out the subsequent steps accordingly.
             </p>
             {/* <p className='pt-[10px]'> */}
             <ul className="list-decimal list-item space-y-2 translate-x-5">
-                <li > Read through each question carefully and provide only information that is true and for which you have supporting documentation where applicable</li>
-                <li> Where options are provided, please select the option that best answers the question for your organisation. Where more than one option applies, fill the others in the space provided, if available.</li>
-                <li> The questions provided will provide insight into the eligibility of your company for this programme. Note that further documentation will be required after this stage of your application.</li>
-                <li>  All application must be submitted by 06:00 pm, 31 August 2025. Applications submitted later than this date will not be eligible for review.</li>
-                <li>  The form works offline too so you don’t have to worry about losing data if your internet gets disconnected or you have to leave the form for a moment. Ensure that the browser tab remains open to be on the safer side.</li>
-              </ul>
+              <li>
+                {" "}
+                Carefully read each question and provide accurate information,
+                ensuring you have supporting documentation where applicable.
+              </li>
+              <li>
+                {" "}
+                Where options are provided, select the one that best fits your
+                organization&apos;s situation. If multiple options apply, use
+                the provided space to include additional information.
+              </li>
+              <li>
+                {" "}
+                The questions in this form will help determine your
+                company&apos;s eligibility for this program. Be aware that
+                further documentation will be required after this initial stage.
+              </li>
+              <li>
+                {" "}
+                All applications must be submitted online through our website,
+                where the forms must be completed for review. Failure to do so
+                will automatically invalidate the application.
+              </li>
+              <li>
+                {" "}
+                Applications are accepted and reviewed on a rolling basis.
+              </li>
+              <li>
+                {" "}
+                The form can be completed offline, so you don&apos;t need to
+                worry about losing data if your internet connection is
+                interrupted or you need to pause. However, to be safe, keep the
+                browser tab open while working on the form.
+              </li>
+            </ul>
             {/* </p> */}
-            <p className='pt-[10px]'>Please send all enquiries to  <a href='mailto:accelerator@FRAGGinvest.com'>accelerator@FRAGGinvest.com</a></p>
-
+            <p className="pt-[10px]">
+              Please for any further clarification, you can send an email
+              directly to the address provided for assistance{" "}
+              <a
+                className="underline"
+                href="mailto:accelerator@fragginvest.com "
+              >
+                accelerator@fragginvest.com
+              </a>
+            </p>
           </div>
         </div>
         <AcceleratorForm />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AcceleratorProgram
+export default AcceleratorProgram;
