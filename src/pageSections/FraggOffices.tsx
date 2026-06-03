@@ -20,7 +20,7 @@ const props: CountryCardProps[] = [
   },
   {
     backgroundUrl: 'bg-[url("/assets/png/fraggGroup/fragg-germany.png")]',
-    phoneNumbers: ["+49 2463 7953579", "+49 176 23286609"],
+    phoneNumbers: ["+49 2463 7953579", "+49 176 23286605"],
     location: "Germany",
     addressTitle: "FRAGG-Invest GmbH, Germany",
     addressBody:
@@ -28,7 +28,7 @@ const props: CountryCardProps[] = [
   },
   {
     backgroundUrl: 'bg-[url("/assets/png/fraggGroup/fragg-luxemborg.png")]',
-    phoneNumbers: ["+49 2463 7953579", "+49 176 23286609"],
+    phoneNumbers: ["+49 2463 7953579", "+49 176 23286605"],
     location: "Luxembourg",
     addressTitle: "FRAGG-Invest GP Sàrl, Luxembourg",
     addressBody:
